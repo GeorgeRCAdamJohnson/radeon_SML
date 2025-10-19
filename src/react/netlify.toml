@@ -1,0 +1,11 @@
+[build]
+  publish = "out"
+  command = "npm run build"
+
+[build.environment]
+  NEXT_PUBLIC_API_URL = "https://ec9e34c28fee.ngrok-free.app"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

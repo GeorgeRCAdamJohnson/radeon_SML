@@ -1,0 +1,14 @@
+node_modules/
+src/react/node_modules/
+.next/
+out/
+dist/
+.netlify/
+*.log
+/.env*
+/.DS_Store
+package-lock.json
+/.vscode/
+coverage/
+__pycache__/
+*.pyc
