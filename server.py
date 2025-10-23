@@ -333,7 +333,60 @@ def generate_androids_response(format_type: str) -> str:
 • Educational Androids - Teaching and training applications
 • Therapeutic Androids - Mental health and rehabilitation support"""
     elif format_type == "detailed":
-        return "ANDROIDS - Human-like robots with realistic appearance and behavior, designed for natural human interaction in various applications including companionship, service, and research."
+        return """ANDROIDS - COMPREHENSIVE ANALYSIS
+
+DEFINITION AND CHARACTERISTICS
+Androids are humanoid robots designed to closely resemble humans in appearance, behavior, and interaction patterns. Unlike traditional robots, androids prioritize human-like aesthetics and social capabilities over purely functional design.
+
+TECHNICAL COMPONENTS
+• Artificial skin and facial features for realistic appearance
+• Advanced actuators for natural movement and gestures
+• Speech synthesis and natural language processing
+• Computer vision for facial recognition and social cues
+• Machine learning algorithms for personality adaptation
+• Sensory systems mimicking human touch, sight, and hearing
+
+CURRENT APPLICATIONS
+• Hospitality industry for customer service and reception
+• Healthcare as patient companions and therapy assistants
+• Education for language learning and special needs support
+• Entertainment in theme parks and interactive experiences
+• Research platforms for studying human-robot interaction
+• Elder care providing companionship and basic assistance
+
+DEVELOPMENT CHALLENGES
+• Uncanny valley effect causing discomfort in human observers
+• Complex manufacturing requiring precision engineering
+• High costs limiting widespread adoption
+• Ethical concerns about human replacement and deception
+• Technical limitations in natural conversation and emotion recognition
+
+FUTURE PROSPECTS
+Android technology continues advancing toward more convincing human simulation, with potential applications in personal assistance, social companionship, and specialized service roles."""
+    elif format_type == "essay":
+        return """Introduction
+
+Androids represent humanity's ambitious attempt to create artificial beings that not only function like humans but also appear and behave indistinguishably from us. This pursuit, rooted in both practical applications and philosophical curiosity, challenges our understanding of what makes us uniquely human while pushing the boundaries of robotics, artificial intelligence, and materials science.
+
+The Android Concept
+
+Unlike traditional robots designed primarily for function, androids prioritize form and social interaction. They embody our desire to create companions, assistants, and workers that can seamlessly integrate into human society without the alienating presence of obviously mechanical beings. This human-centric design philosophy drives innovations in artificial skin, facial animation, and behavioral programming.
+
+Technological Foundations
+
+Modern android development requires convergence of multiple advanced technologies. Sophisticated actuators enable natural movement, while artificial skin provides realistic touch and appearance. Advanced AI systems process natural language and generate appropriate responses, while computer vision allows recognition of human emotions and social cues. These technologies must work in harmony to create convincing human simulation.
+
+Applications and Benefits
+
+Androids show particular promise in service industries where human interaction is valued. In healthcare, android companions can provide consistent emotional support without fatigue or mood variations. Educational applications leverage their infinite patience and adaptability to individual learning styles. Entertainment venues use androids to create immersive experiences that would be impossible with human performers.
+
+Challenges and Limitations
+
+The uncanny valley phenomenon remains a significant obstacle, where near-human appearance creates discomfort rather than acceptance. Manufacturing costs are prohibitive for widespread adoption, while ethical questions arise about replacing human workers and potentially deceiving people about an android's artificial nature. Technical limitations in genuine emotional understanding and creative thinking also constrain current applications.
+
+Conclusion
+
+Androids represent both our technological ambitions and our deep-seated need for connection and companionship. As the technology matures, androids may become valuable partners in addressing societal challenges like aging populations and service labor shortages, while continuing to challenge our concepts of consciousness, identity, and what it means to be human."""
     else:
         return "Androids are humanoid robots designed to closely resemble humans in appearance and behavior."
 
@@ -487,8 +540,82 @@ def generate_comparative_response(topic: str, format_type: str) -> str:
 def generate_gundam_response(format_type: str) -> str:
     if format_type == "summary":
         return "Gundam: Influential mecha anime franchise featuring humanoid combat robots that has shaped both entertainment and real robotics development."
+    elif format_type == "list":
+        return """GUNDAM MOBILE SUITS LIST
+
+• RX-78-2 Gundam - Original Earth Federation prototype mobile suit
+• Zaku II - Mass production Zeon mobile suit with distinctive mono-eye
+• Strike Freedom Gundam - Advanced SEED series mobile suit with dragoon system
+• Wing Gundam Zero - Gundam Wing's ultimate mobile suit with zero system
+• Barbatos - Iron-Blooded Orphans' ancient Gundam frame
+• Nu Gundam - Char's Counterattack finale mobile suit with psychoframe
+• God Gundam - G Gundam's martial arts fighting mobile suit
+• Turn A Gundam - Mysterious mobile suit with butterfly-like design
+• Unicorn Gundam - Psychoframe mobile suit with destroy mode transformation
+• Exia - 00 series solar-powered Gundam with GN drive
+• Epyon - Wing series close-combat mobile suit
+• Deathscythe Hell - Wing series stealth mobile suit with beam scythe
+• Heavyarms - Wing series heavy weapons mobile suit
+• Sandrock - Wing series desert combat mobile suit
+• Shenlong - Wing series Chinese-inspired mobile suit"""
     elif format_type == "detailed":
-        return "GUNDAM FRANCHISE - Comprehensive analysis of the influential mecha anime series featuring mobile suits, realistic military themes, and significant impact on robotics development and popular culture."
+        return """GUNDAM FRANCHISE - COMPREHENSIVE ANALYSIS
+
+FRANCHISE OVERVIEW
+Gundam is a Japanese military science fiction media franchise featuring giant humanoid robots called mobile suits. Created by Yoshiyuki Tomino and Sunrise, the franchise began in 1979 with Mobile Suit Gundam and has become one of the most influential mecha anime series in history.
+
+TECHNICAL SPECIFICATIONS
+• Mobile Suits: 18-20 meter tall humanoid combat vehicles
+• Beam Weapons: Energy-based rifles, sabers, and cannons
+• Armor Systems: Luna titanium alloy and advanced composite materials
+• Propulsion: Thermonuclear reactors and thruster systems
+• Cockpit: 360-degree panoramic display with linear seat
+• Psychoframe Technology: Thought-responsive control systems
+
+MAJOR TIMELINE SERIES
+• Universal Century: Original timeline with realistic military themes
+• After Colony: Gundam Wing's political intrigue setting
+• Cosmic Era: SEED series with genetic enhancement themes
+• Anno Domini: 00 series focusing on solar power technology
+• Post Disaster: Iron-Blooded Orphans' harsh survival setting
+
+CULTURAL IMPACT
+• Revolutionized mecha anime with realistic military storytelling
+• Influenced real robotics research and development
+• Created the "real robot" genre versus "super robot" shows
+• Spawned massive model kit (Gunpla) industry worth billions
+• Inspired engineers at Honda, Boston Dynamics, and other robotics companies
+
+TECHNOLOGICAL INFLUENCE
+• Beam weaponry concepts influenced laser research
+• Mobile suit design principles applied to real humanoid robots
+• Cockpit interface designs studied for VR and AR applications
+• Propulsion systems inspired ion drive research
+• Artificial intelligence concepts from mobile suit AI systems"""
+    elif format_type == "essay":
+        return """Introduction
+
+The Gundam franchise stands as one of the most influential science fiction properties in modern media, fundamentally transforming both the mecha anime genre and real-world robotics development. Since its debut in 1979, Gundam has evolved from a simple robot anime into a complex multimedia franchise that explores themes of war, politics, human evolution, and technological advancement through the lens of giant humanoid combat vehicles called mobile suits.
+
+The Real Robot Revolution
+
+Gundam's creator, Yoshiyuki Tomino, revolutionized mecha anime by introducing the "real robot" concept. Unlike previous "super robot" shows featuring invincible mechanical heroes, Gundam presented mobile suits as military weapons with realistic limitations, maintenance requirements, and tactical applications. This grounded approach made the technology feel plausible and inspired serious consideration of humanoid combat vehicles.
+
+Technological Plausibility
+
+The franchise's commitment to technological realism has made it a touchstone for robotics researchers. Mobile suits operate on principles that, while advanced, remain within the realm of scientific possibility. Their fusion reactors, beam weaponry, and articulated limb systems have inspired real-world research into humanoid robotics, energy weapons, and advanced materials science.
+
+Cultural and Industrial Impact
+
+Gundam's influence extends far beyond entertainment. The franchise has generated billions in revenue through model kits (Gunpla), video games, and merchandise. More significantly, it has inspired a generation of engineers and scientists. Companies like Honda have cited Gundam as inspiration for their ASIMO humanoid robot, while Boston Dynamics' bipedal robots often evoke comparisons to mobile suits.
+
+Engineering Inspiration
+
+The detailed mechanical designs of Gundam mobile suits have provided blueprints for real robotics development. Their articulated joints, sensor systems, and human-machine interfaces have influenced everything from prosthetic limbs to industrial automation. The franchise's exploration of pilot-machine neural interfaces has paralleled developments in brain-computer interface technology.
+
+Conclusion
+
+Gundam represents more than entertainment; it serves as a bridge between science fiction imagination and technological reality. By presenting plausible humanoid robots within compelling narratives, the franchise has inspired both popular culture and scientific advancement, demonstrating the power of speculative fiction to shape our technological future."""
     else:
         return "Gundam is an influential mecha anime franchise featuring humanoid combat robots called mobile suits."
 
@@ -511,7 +638,69 @@ def generate_robotics_response(format_type: str) -> str:
 • Underwater - Ocean exploration, pipeline inspection, marine research
 • Disaster Response - Search and rescue, hazmat cleanup, emergency aid"""
     elif format_type == "detailed":
-        return "ROBOTICS - Comprehensive field integrating multiple engineering disciplines to design, build, and operate autonomous systems for manufacturing, healthcare, exploration, and service applications."
+        return """ROBOTICS - COMPREHENSIVE FIELD ANALYSIS
+
+FIELD DEFINITION
+Robotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.
+
+CORE TECHNOLOGIES
+• Mechanical Systems: Actuators, joints, linkages, and structural components
+• Control Systems: Feedback loops, sensors, and real-time processing
+• Artificial Intelligence: Machine learning, computer vision, and decision-making
+• Power Systems: Batteries, fuel cells, and energy management
+• Communication: Wireless protocols, networking, and human-machine interfaces
+• Materials Science: Lightweight composites, smart materials, and durability
+
+MAJOR APPLICATION DOMAINS
+• Industrial Automation: Manufacturing, assembly, and quality control systems
+• Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices
+• Service Robotics: Cleaning, security, and personal assistance applications
+• Exploration Robotics: Space missions, deep-sea research, and hazardous environments
+• Military Applications: Reconnaissance, bomb disposal, and combat support
+• Agricultural Systems: Precision farming, harvesting, and crop monitoring
+
+EMERGING TRENDS
+• Collaborative robots (cobots) working alongside humans
+• Swarm robotics for coordinated multi-robot systems
+• Soft robotics using flexible materials and bio-inspired designs
+• Autonomous vehicles and delivery systems
+• Brain-computer interfaces for direct neural control
+• Quantum sensors for enhanced perception capabilities
+
+CHALLENGES AND LIMITATIONS
+• Safety and reliability in human-robot interaction
+• Ethical considerations in autonomous decision-making
+• Cost-effectiveness for widespread adoption
+• Technical complexity in unstructured environments
+• Regulatory frameworks for autonomous systems"""
+    elif format_type == "essay":
+        return """Introduction
+
+Robotics represents one of humanity's most ambitious technological endeavors: the creation of machines that can perceive, think, and act autonomously in the physical world. This interdisciplinary field has evolved from simple automated mechanisms to sophisticated systems that rival human capabilities in specific domains, fundamentally transforming industries and reshaping our relationship with technology.
+
+Historical Evolution
+
+The field of robotics emerged from the convergence of mechanical automation, control theory, and computer science in the mid-20th century. Early industrial robots like the Unimate revolutionized manufacturing by performing repetitive tasks with precision and consistency. As computing power increased and sensors became more sophisticated, robots evolved from simple programmable machines to intelligent systems capable of adapting to changing environments.
+
+Technological Foundations
+
+Modern robotics integrates multiple engineering disciplines. Mechanical systems provide the physical structure and movement capabilities, while electrical systems power and control robot operations. Computer science contributes algorithms for perception, planning, and decision-making, while artificial intelligence enables learning and adaptation. This convergence creates systems that can operate autonomously in complex, dynamic environments.
+
+Transformative Applications
+
+Robotics has revolutionized numerous industries. In manufacturing, robots have increased productivity, quality, and safety while reducing costs. Medical robotics has enabled minimally invasive surgeries and precise drug delivery. Space exploration relies heavily on robotic systems to extend human reach into hostile environments. Service robots are beginning to assist with domestic tasks, elder care, and customer service.
+
+Societal Impact
+
+The proliferation of robotics raises important questions about employment, privacy, and human agency. While robots can eliminate dangerous and repetitive jobs, they also displace human workers, requiring societal adaptation through education and policy changes. The increasing autonomy of robotic systems challenges traditional notions of responsibility and accountability.
+
+Future Prospects
+
+Robotics continues advancing toward more capable, versatile, and intelligent systems. Emerging technologies like quantum computing, advanced materials, and brain-computer interfaces promise to unlock new capabilities. As robots become more integrated into daily life, they will likely serve as partners rather than mere tools, fundamentally changing how we work, live, and interact with our environment.
+
+Conclusion
+
+Robotics stands at the intersection of human ambition and technological capability, offering solutions to complex challenges while raising new questions about our future. As this field continues to evolve, it will undoubtedly play a crucial role in addressing global challenges and expanding human potential."""
     else:
         return "Robotics involves designing and operating autonomous machines for various industrial and service applications."
 
@@ -534,7 +723,70 @@ def generate_ai_response(format_type: str) -> str:
 • Genetic Algorithms - Evolution-inspired optimization methods
 • Chatbots & Virtual Assistants - Conversational AI interfaces"""
     elif format_type == "detailed":
-        return "ARTIFICIAL INTELLIGENCE - Comprehensive field encompassing machine learning, neural networks, computer vision, and natural language processing for intelligent automation and decision-making."
+        return """ARTIFICIAL INTELLIGENCE - COMPREHENSIVE ANALYSIS
+
+FIELD OVERVIEW
+Artificial Intelligence encompasses computational systems designed to perform tasks that typically require human intelligence, including learning, reasoning, perception, and decision-making. AI systems can analyze data, recognize patterns, and make predictions or recommendations based on their training and algorithms.
+
+CORE TECHNOLOGIES
+• Machine Learning: Algorithms that improve performance through experience and data
+• Deep Learning: Multi-layered neural networks for complex pattern recognition
+• Natural Language Processing: Understanding and generating human language
+• Computer Vision: Image and video analysis for object recognition and scene understanding
+• Expert Systems: Knowledge-based systems for specialized domain expertise
+• Reinforcement Learning: Learning through trial and error with reward feedback
+
+APPLICATION DOMAINS
+• Healthcare: Diagnostic imaging, drug discovery, and personalized treatment
+• Finance: Fraud detection, algorithmic trading, and risk assessment
+• Transportation: Autonomous vehicles and traffic optimization
+• Manufacturing: Predictive maintenance and quality control
+• Entertainment: Content recommendation and procedural generation
+• Communication: Language translation and virtual assistants
+
+CURRENT CAPABILITIES
+• Image recognition surpassing human accuracy in specific domains
+• Natural language understanding for conversational interfaces
+• Game-playing systems achieving superhuman performance
+• Predictive analytics for business intelligence and forecasting
+• Automated decision-making in structured environments
+• Pattern recognition in complex datasets
+
+LIMITATIONS AND CHALLENGES
+• Lack of general intelligence and common sense reasoning
+• Bias and fairness issues in training data and algorithms
+• Explainability and transparency in decision-making processes
+• Energy consumption and computational requirements
+• Ethical considerations in autonomous systems
+• Safety and reliability in critical applications"""
+    elif format_type == "essay":
+        return """Introduction
+
+Artificial Intelligence represents humanity's quest to create machines that can think, learn, and reason like humans. This transformative technology has evolved from theoretical concepts to practical applications that permeate nearly every aspect of modern life, from the smartphones in our pockets to the algorithms that power global financial markets.
+
+Historical Development
+
+AI's journey began in the 1950s with pioneers like Alan Turing and John McCarthy, who laid the theoretical foundations for machine intelligence. Early AI systems relied on symbolic reasoning and expert systems, but progress was limited by computational constraints. The resurgence of neural networks in the 1980s and the big data revolution of the 2000s enabled the deep learning breakthroughs that define modern AI.
+
+Technological Foundations
+
+Contemporary AI systems rely primarily on machine learning, where algorithms learn patterns from vast datasets rather than following explicitly programmed rules. Deep learning, inspired by neural networks in the human brain, has proven particularly effective for tasks involving perception and pattern recognition. These systems can process information at scales and speeds impossible for human cognition.
+
+Transformative Applications
+
+AI has revolutionized numerous fields. In healthcare, AI systems can diagnose diseases from medical images with accuracy matching or exceeding human specialists. Financial institutions use AI for fraud detection and algorithmic trading. Transportation is being transformed by autonomous vehicles that promise to reduce accidents and improve efficiency. Entertainment platforms use AI to personalize content recommendations for billions of users.
+
+Societal Implications
+
+The rapid advancement of AI raises profound questions about the future of work, privacy, and human agency. While AI can automate routine tasks and augment human capabilities, it also threatens to displace workers and concentrate power in the hands of those who control the technology. Issues of bias, fairness, and accountability in AI systems have become critical concerns requiring careful consideration.
+
+Future Prospects
+
+AI continues advancing toward more general and capable systems. Researchers are working on artificial general intelligence (AGI) that could match human cognitive abilities across all domains. Quantum computing may unlock new AI capabilities, while neuromorphic computing could create more efficient AI hardware. The integration of AI with robotics promises to create intelligent physical agents capable of complex real-world tasks.
+
+Conclusion
+
+Artificial Intelligence stands as one of the most significant technological developments in human history, with the potential to solve complex global challenges while raising new questions about the nature of intelligence and consciousness. As AI systems become more capable and ubiquitous, society must navigate the opportunities and risks they present, ensuring that this powerful technology serves humanity's best interests."""
     else:
         return "AI enables machines to perform intelligent tasks through machine learning and neural networks."
 
@@ -553,7 +805,68 @@ def generate_generic_response(topic: str, format_type: str) -> str:
 • Related Technologies - Connected fields and systems
 • Industry Impact - Effects on various sectors"""
     elif format_type == "detailed":
-        return f"COMPREHENSIVE ANALYSIS: {topic.upper()}\n\nDetailed examination covering technical foundations, applications, and implications in modern technology systems."
+        return f"""COMPREHENSIVE ANALYSIS: {topic.upper()}
+
+OVERVIEW
+{topic.title()} represents a significant area of technological development with applications across multiple industries and research domains. This field combines theoretical foundations with practical implementations to address real-world challenges and opportunities.
+
+TECHNICAL FOUNDATIONS
+The underlying principles of {topic.lower()} involve complex interactions between hardware systems, software algorithms, and human interface design. These systems require careful engineering to balance performance, reliability, and cost-effectiveness.
+
+CURRENT APPLICATIONS
+• Industrial and manufacturing processes
+• Research and development initiatives
+• Consumer and commercial products
+• Healthcare and medical applications
+• Educational and training systems
+• Entertainment and media platforms
+
+BENEFITS AND ADVANTAGES
+• Improved efficiency and productivity
+• Enhanced accuracy and precision
+• Reduced human error and safety risks
+• Cost savings through automation
+• Scalability for large-scale operations
+• Innovation in related fields
+
+CHALLENGES AND LIMITATIONS
+• Technical complexity requiring specialized expertise
+• High initial development and implementation costs
+• Integration challenges with existing systems
+• Regulatory and compliance requirements
+• Ethical and social considerations
+• Maintenance and upgrade requirements
+
+FUTURE PROSPECTS
+Continued advancement in {topic.lower()} technology promises new capabilities and applications, with ongoing research focusing on improved performance, reduced costs, and broader accessibility across various sectors."""
+    elif format_type == "essay":
+        return f"""Introduction
+
+{topic.title()} represents a fascinating intersection of technology, innovation, and human ingenuity. This field has evolved significantly over recent decades, transforming from theoretical concepts into practical applications that impact numerous aspects of modern life and industry.
+
+Historical Context
+
+The development of {topic.lower()} technology has been driven by the convergence of multiple scientific and engineering disciplines. Early pioneers in this field laid the groundwork for today's sophisticated systems through careful research, experimentation, and iterative improvement of core concepts and methodologies.
+
+Technological Foundations
+
+Modern {topic.lower()} systems rely on advanced engineering principles that integrate hardware and software components into cohesive, functional units. These systems must balance competing requirements such as performance, reliability, cost, and usability while meeting the specific needs of their intended applications.
+
+Applications and Impact
+
+The practical applications of {topic.lower()} technology span numerous industries and use cases. From industrial automation to consumer products, these systems have demonstrated their value in improving efficiency, reducing costs, and enabling new capabilities that were previously impossible or impractical.
+
+Challenges and Opportunities
+
+Despite significant progress, {topic.lower()} technology faces ongoing challenges related to complexity, cost, and integration with existing systems. However, these challenges also represent opportunities for innovation and improvement, driving continued research and development efforts.
+
+Future Directions
+
+As {topic.lower()} technology continues to mature, we can expect to see new applications, improved performance, and broader adoption across various sectors. The integration of emerging technologies such as artificial intelligence, advanced materials, and quantum computing may unlock new possibilities and capabilities.
+
+Conclusion
+
+{topic.title()} technology stands as a testament to human innovation and engineering capability. As this field continues to evolve, it will undoubtedly play an increasingly important role in addressing complex challenges and creating new opportunities for progress and development."""
     else:
         return f"Information about {topic} from our knowledge base covering robotics, AI, automation, and technology."
 
@@ -565,7 +878,7 @@ def generate_related_topics(topic: str) -> list:
     elif category == "fictional_robots":
         return ["Gundam Mobile Suits", "Star Wars Droids", "Anime Robots", "Movie Robots"]
     elif category == "gundam":
-        return ["Mobile Suit Technology", "Mecha Anime", "Real Robots", "Fictional Robots"]
+        return ["Mobile Suit Technology", "Mecha Anime", "Real Robots", "Gunpla Models"]
     elif category == "robotics":
         return ["Artificial Intelligence", "Industrial Automation", "Humanoid Robots", "Fictional Robots"]
     elif category == "ai":

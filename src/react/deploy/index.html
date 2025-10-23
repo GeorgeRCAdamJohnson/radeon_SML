@@ -15,23 +15,51 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
         
-        const API_URL = 'https://web-production-d589.up.railway.app';
+        const LOCAL_URL = 'http://localhost:8000';
+        const PRODUCTION_URL = 'https://radeon-ai-backend.onrender.com';
+        const BACKUP_URL = 'https://d802d1c89f25.ngrok-free.app';
         
         const App = () => {
             const [messages, setMessages] = useState([]);
             const [input, setInput] = useState('');
             const [isLoading, setIsLoading] = useState(false);
             const [isConnected, setIsConnected] = useState(false);
-            const [responseFormat, setResponseFormat] = useState('standard');
+            const [currentAPI, setCurrentAPI] = useState(LOCAL_URL);
+            const [responseFormat, setResponseFormat] = useState('detailed');
 
             useEffect(() => {
                 const checkConnection = async () => {
                     try {
-                        const response = await fetch(`${API_URL}/api/health`);
-                        setIsConnected(response.ok);
-                    } catch {
-                        setIsConnected(false);
-                    }
+                        // Try local server first
+                        const localResponse = await fetch(`${LOCAL_URL}/api/health`);
+                        if (localResponse.ok) {
+                            setCurrentAPI(LOCAL_URL);
+                            setIsConnected(true);
+                            return;
+                        }
+                    } catch {}
+                    
+                    try {
+                        // Try production server
+                        const prodResponse = await fetch(`${PRODUCTION_URL}/api/health`);
+                        if (prodResponse.ok) {
+                            setCurrentAPI(PRODUCTION_URL);
+                            setIsConnected(true);
+                            return;
+                        }
+                    } catch {}
+                    
+                    try {
+                        // Fallback to backup URL
+                        const backupResponse = await fetch(`${BACKUP_URL}/api/health`);
+                        if (backupResponse.ok) {
+                            setCurrentAPI(BACKUP_URL);
+                            setIsConnected(true);
+                            return;
+                        }
+                    } catch {}
+                    
+                    setIsConnected(false);
                 };
                 
                 checkConnection();
@@ -56,7 +84,7 @@
                 setIsLoading(true);
 
                 try {
-                    const response = await fetch(`${API_URL}/api/chat`, {
+                    const response = await fetch(`${currentAPI}/api/chat`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ 
@@ -139,7 +167,7 @@
                             <div className={`px-4 py-2 text-sm border-b ${isConnected ? "bg-green-50 text-green-800 border-green-200" : "bg-red-50 text-red-800 border-red-200"}`}>
                                 <div className="flex items-center gap-2">
                                     <div className={`w-2 h-2 rounded-full ${isConnected ? "bg-green-500 animate-pulse" : "bg-red-500"}`}></div>
-                                    {isConnected ? 'Connected to Radeon AI Backend' : 'Disconnected - Check backend server'}
+                                    {isConnected ? `Connected to ${currentAPI.includes('localhost') ? 'Local Python' : currentAPI.includes('onrender') ? 'Production' : 'Backup'} Backend` : 'Disconnected - Check backend server'}
                                 </div>
                             </div>
                             
