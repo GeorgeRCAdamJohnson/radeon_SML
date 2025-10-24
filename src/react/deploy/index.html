@@ -40,25 +40,25 @@
                         }
                     } catch {}
                     
-                    try {
-                        // Try local server
-                        const localResponse = await fetch(`${LOCAL_URL}/api/health`);
-                        if (localResponse.ok) {
-                            setCurrentAPI(LOCAL_URL);
-                            setIsConnected(true);
-                            return;
-                        }
-                    } catch {}
+                    // try {
+                    //     // Try local server
+                    //     const localResponse = await fetch(`${LOCAL_URL}/api/health`);
+                    //     if (localResponse.ok) {
+                    //         setCurrentAPI(LOCAL_URL);
+                    //         setIsConnected(true);
+                    //         return;
+                    //     }
+                    // } catch {}
                     
-                    try {
-                        // Fallback to backup URL
-                        const backupResponse = await fetch(`${BACKUP_URL}/api/health`);
-                        if (backupResponse.ok) {
-                            setCurrentAPI(BACKUP_URL);
-                            setIsConnected(true);
-                            return;
-                        }
-                    } catch {}
+                    // try {
+                    //     // Fallback to backup URL
+                    //     const backupResponse = await fetch(`${BACKUP_URL}/api/health`);
+                    //     if (backupResponse.ok) {
+                    //         setCurrentAPI(BACKUP_URL);
+                    //         setIsConnected(true);
+                    //         return;
+                    //     }
+                    // } catch {}
                     
                     setIsConnected(false);
                 };
