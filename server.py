@@ -545,10 +545,7 @@ def generate_comparative_response(topic: str, format_type: str) -> str:
 
 def generate_gundam_response(format_type: str) -> str:
     print(f"GUNDAM_RESPONSE DEBUG: Called with format_type='{format_type}'")
-    # FORCE DETAILED RESPONSE FOR TESTING
-    if format_type in ["detailed", "essay"]:
-        return "TESTING LONG RESPONSE: " + "This is a very long response to test if the issue is with the response generation or something else. " * 20
-    elif format_type == "summary":
+    if format_type == "summary":
         return "Gundam: Influential mecha anime franchise featuring humanoid combat robots that has shaped both entertainment and real robotics development."
     elif format_type == "list":
         return """GUNDAM MOBILE SUITS LIST
