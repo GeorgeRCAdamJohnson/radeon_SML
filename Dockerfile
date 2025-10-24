@@ -22,4 +22,4 @@ ENV PORT=8000
 EXPOSE 8000
 
 # Start server with static file serving
-CMD ["python", "-u", "server.py"]
+CMD ["python", "-u", "server_enhanced.py"]
