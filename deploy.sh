@@ -1,9 +1,16 @@
 #!/bin/bash
+echo "Deploying to Google Cloud Run..."
 
-echo "Building Docker image..."
-docker build -t radeon-ai .
+# Build and deploy to Google Cloud Run
+gcloud run deploy radeon-ai \
+  --source . \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --port 8000 \
+  --memory 1Gi \
+  --cpu 1 \
+  --timeout 300 \
+  --max-instances 10
 
-echo "Running container..."
-docker run -d -p 8000:8000 --name radeon-ai-container radeon-ai
-
-echo "Container started! Access at http://localhost:8000"
+echo "Deployment complete!"

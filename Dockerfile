@@ -6,8 +6,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy Python server
+# Copy Python server and reasoning agent
 COPY server.py .
+COPY reasoning_agent.py .
+COPY server_enhanced.py .
 
 # Copy React frontend
 COPY src/react/deploy ./static
