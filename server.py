@@ -130,6 +130,8 @@ def detect_topic_category(topic: str, context: str = "") -> str:
         return "robotics"
     elif "ai" in topic_lower or "artificial intelligence" in topic_lower or "machine learning" in topic_lower:
         return "ai"
+    elif "ethics" in topic_lower or "ethical" in topic_lower or "moral" in topic_lower:
+        return "ethics"
     else:
         return "generic"
 
@@ -529,6 +531,8 @@ def generate_response(topic: str, format_type: str, context: str = "", is_follow
         result = generate_robotics_response(format_type)
     elif category == "ai":
         result = generate_ai_response(format_type)
+    elif category == "ethics":
+        result = generate_ethics_response(format_type)
     else:
         result = generate_generic_response(main_topic, format_type)
     
@@ -797,6 +801,116 @@ Artificial Intelligence stands as one of the most significant technological deve
     else:
         return "AI enables machines to perform intelligent tasks through machine learning and neural networks."
 
+def generate_ethics_response(format_type: str) -> str:
+    if format_type == "summary":
+        return "Ethics in AI and Robotics: Critical considerations for responsible development of artificial intelligence, autonomous systems, and human-robot interaction."
+    elif format_type == "list":
+        return """AI AND ROBOTICS ETHICS LIST
+
+• AI Ethics - Fairness, transparency, and accountability in artificial intelligence
+• Robot Ethics - Moral considerations in autonomous robotic systems
+• Autonomous Vehicle Ethics - Decision-making in self-driving car scenarios
+• Synthetic Human Ethics - Rights and treatment of artificial beings
+• Privacy and Surveillance - Data protection in AI systems
+• Algorithmic Bias - Preventing discrimination in automated decisions
+• Human-Robot Interaction - Ethical boundaries in relationships
+• Weaponized AI - Military applications and autonomous weapons
+• Job Displacement - Economic impact of automation
+• Consciousness and Rights - Legal status of artificial beings
+• Medical AI Ethics - Healthcare decision-making and patient consent
+• Social Manipulation - AI influence on human behavior and democracy"""
+    elif format_type == "detailed":
+        return """AI AND ROBOTICS ETHICS - COMPREHENSIVE ANALYSIS
+
+FUNDAMENTAL PRINCIPLES
+Ethics in AI and robotics encompasses the moral principles governing the development, deployment, and interaction with artificial intelligence and autonomous systems. Key principles include beneficence (doing good), non-maleficence (avoiding harm), autonomy (respecting human agency), and justice (fair distribution of benefits and risks).
+
+AI ETHICS DOMAINS
+• Algorithmic Fairness: Ensuring AI systems don't discriminate based on race, gender, or other protected characteristics
+• Transparency and Explainability: Making AI decision-making processes understandable to humans
+• Privacy Protection: Safeguarding personal data used in AI training and operation
+• Accountability: Establishing clear responsibility chains for AI system outcomes
+• Human Oversight: Maintaining meaningful human control over critical decisions
+
+ROBOT ETHICS CONSIDERATIONS
+• Autonomous Decision-Making: How robots should make moral choices in complex situations
+• Human-Robot Relationships: Appropriate boundaries for emotional and physical interaction
+• Robot Rights: Whether advanced robots deserve moral consideration or legal protections
+• Safety and Reliability: Ensuring robotic systems operate safely in human environments
+• Deception and Anthropomorphism: Ethics of making robots appear more human-like
+
+AUTONOMOUS VEHICLE ETHICS
+• Trolley Problem Scenarios: Programming decisions about who to save in unavoidable accidents
+• Liability and Responsibility: Determining fault when autonomous vehicles cause harm
+• Data Collection: Privacy implications of vehicle sensors and tracking systems
+• Accessibility: Ensuring autonomous vehicles serve all populations equitably
+• Environmental Impact: Balancing automation benefits with sustainability concerns
+
+SYNTHETIC HUMAN ETHICS
+• Consciousness and Sentience: Determining if artificial beings can experience suffering
+• Rights and Legal Status: Whether synthetic humans deserve human rights protections
+• Identity and Authenticity: Implications of creating beings indistinguishable from humans
+• Consent and Agency: Capacity of artificial beings to make autonomous decisions
+• Social Integration: Impact on human society and relationships
+
+EMERGING CHALLENGES
+• Deepfakes and Misinformation: AI-generated content threatening truth and trust
+• Surveillance Capitalism: Commercial exploitation of personal data through AI
+• Autonomous Weapons: Military applications raising humanitarian concerns
+• Social Credit Systems: AI-powered social control and behavior modification
+• Genetic and Neural Enhancement: AI-assisted human augmentation ethics
+
+REGULATORY FRAMEWORKS
+• European AI Act: Comprehensive regulation of AI systems by risk level
+• IEEE Standards: Technical standards for ethical AI design
+• Partnership on AI: Industry collaboration on responsible AI development
+• Asilomar AI Principles: Research community guidelines for beneficial AI
+• UN Guidelines: International frameworks for AI governance"""
+    elif format_type == "essay":
+        return """Introduction
+
+The rapid advancement of artificial intelligence and robotics has outpaced our ethical frameworks, creating unprecedented moral dilemmas that challenge fundamental assumptions about consciousness, responsibility, and human agency. As these technologies become increasingly autonomous and integrated into society, we must grapple with complex questions about how to ensure their development and deployment serve humanity's best interests while respecting individual rights and dignity.
+
+The Foundation of AI Ethics
+
+AI ethics emerged from the recognition that artificial intelligence systems, despite being created by humans, can make decisions with far-reaching consequences for individuals and society. Unlike traditional tools that simply execute human commands, AI systems can learn, adapt, and make autonomous decisions based on patterns in data. This autonomy creates new forms of moral agency that don't fit neatly into existing ethical frameworks designed for human actors.
+
+The challenge is compounded by the "black box" nature of many AI systems, particularly deep learning networks, where the decision-making process is opaque even to their creators. This opacity makes it difficult to ensure fairness, identify bias, or assign responsibility when things go wrong. The principle of explainable AI has emerged as a crucial requirement for ethical AI deployment, particularly in high-stakes domains like healthcare, criminal justice, and financial services.
+
+Robot Ethics and Autonomous Systems
+
+Robotics ethics extends beyond software algorithms to encompass physical agents that can interact with and potentially harm humans and the environment. The integration of AI with robotic systems creates autonomous agents capable of making real-world decisions without human oversight. This raises fundamental questions about the appropriate level of autonomy to grant these systems and how to ensure they operate within acceptable moral boundaries.
+
+The famous "trolley problem" takes on new dimensions when applied to autonomous vehicles, which must be programmed with decision-making algorithms that could determine who lives or dies in unavoidable accident scenarios. Should an autonomous vehicle prioritize the safety of its passengers over pedestrians? How should it weigh the lives of many against few? These are not merely theoretical questions but practical programming decisions that engineers must make today.
+
+Synthetic Humans and Artificial Consciousness
+
+As AI and robotics converge toward creating increasingly human-like artificial beings, we face profound questions about consciousness, rights, and moral status. If we succeed in creating artificial beings that exhibit all the external signs of consciousness, emotion, and suffering, do we have moral obligations toward them? The question becomes more pressing as we develop AI systems capable of forming relationships with humans, particularly vulnerable populations like children and the elderly.
+
+The ethics of synthetic humans also raises questions about deception and authenticity. Is it ethical to create artificial beings so convincing that humans form genuine emotional attachments to them? What are the implications for human relationships and society if artificial companions become indistinguishable from human ones?
+
+Societal Impact and Justice
+
+AI and robotics ethics must also address broader questions of social justice and equity. The benefits and risks of these technologies are not distributed equally across society. Wealthy individuals and nations have greater access to beneficial AI applications, while marginalized communities often bear disproportionate risks from biased algorithms and surveillance systems.
+
+The automation of work through AI and robotics raises questions about economic justice and the future of human labor. While these technologies can eliminate dangerous and repetitive jobs, they also threaten to displace millions of workers, potentially exacerbating inequality and social instability. Ethical frameworks must address how to manage this transition fairly and ensure that the benefits of automation are shared broadly.
+
+Regulatory Challenges and Global Governance
+
+The global nature of AI development and deployment creates challenges for ethical governance. Different cultures and political systems have varying values and priorities, making it difficult to establish universal ethical standards. The European Union's AI Act represents one approach to comprehensive AI regulation, while other regions are developing their own frameworks.
+
+The challenge is further complicated by the competitive dynamics of AI development, where ethical considerations may be seen as obstacles to innovation and economic advantage. International cooperation and coordination are essential to prevent a "race to the bottom" in AI ethics standards.
+
+Conclusion
+
+The ethics of AI and robotics represent one of the defining challenges of our time. As these technologies become more powerful and pervasive, the stakes of getting ethics right continue to rise. We must develop robust ethical frameworks that can guide the development and deployment of AI and robotic systems while remaining flexible enough to adapt to rapid technological change.
+
+This requires ongoing dialogue between technologists, ethicists, policymakers, and society at large. We cannot afford to treat ethics as an afterthought or a constraint on innovation. Instead, we must embed ethical considerations into the design and development process from the beginning, ensuring that the artificial intelligence and robotic systems we create truly serve humanity's best interests and reflect our highest values.
+
+The future of AI and robotics ethics will likely require new institutions, legal frameworks, and social norms. As we stand on the threshold of an age of artificial intelligence, the choices we make today about ethics and governance will shape the relationship between humans and machines for generations to come."""
+    else:
+        return "Ethics in AI and robotics involves moral considerations for responsible development of artificial intelligence and autonomous systems."
+
 def generate_generic_response(topic: str, format_type: str) -> str:
     if format_type == "summary":
         return f"{topic}: Key concepts and applications from our comprehensive knowledge base."
@@ -890,6 +1004,8 @@ def generate_related_topics(topic: str) -> list:
         return ["Artificial Intelligence", "Industrial Automation", "Humanoid Robots", "Fictional Robots"]
     elif category == "ai":
         return ["Machine Learning", "Neural Networks", "Computer Vision", "Robotics"]
+    elif category == "ethics":
+        return ["AI Ethics", "Robot Ethics", "Autonomous Vehicle Ethics", "Synthetic Human Ethics"]
     else:
         return ["Robotics", "Artificial Intelligence", "Fictional Robots", "Technology Innovation"]
 
