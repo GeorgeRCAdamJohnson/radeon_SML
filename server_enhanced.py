@@ -180,6 +180,19 @@ async def status():
         }
     }
 
+# Add static file serving
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+import os
+
+# Mount static files
+if os.path.exists("static"):
+    app.mount("/static", StaticFiles(directory="static"), name="static")
+    
+    @app.get("/")
+    async def read_index():
+        return FileResponse('static/index.html')
+
 if __name__ == "__main__":
     import uvicorn
     import os
