@@ -1078,10 +1078,11 @@ async def status():
             "embedding_service": True
         },
         "knowledge_stats": {
-            "total_articles": 800,
-            "total_words": 3500000,
+            "total_articles": 900,
+            "total_words": 4200000,
             "enhanced_knowledge": True,
-            "domains_covered": 25
+            "ethics_articles": 93,
+            "domains_covered": 28
         }
     }
 
