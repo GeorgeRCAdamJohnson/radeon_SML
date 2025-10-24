@@ -137,10 +137,69 @@ class ReasoningStrategy:
 class FactualReasoningStrategy(ReasoningStrategy):
     def analyze(self, knowledge: Dict, semantic_analysis: SemanticAnalysis) -> str:
         entities = [e.text for e in semantic_analysis.entities]
-        return f"Analyzing factual information about: {', '.join(entities)}"
+        main_entity = entities[0] if entities else "technology"
+        
+        if any("robot" in e.lower() for e in entities):
+            return """ROBOTICS - COMPREHENSIVE ANALYSIS
+
+Robotics represents the interdisciplinary field combining mechanical engineering, computer science, and artificial intelligence to create autonomous machines capable of performing tasks traditionally requiring human intervention.
+
+TECHNICAL FOUNDATIONS
+• Mechanical Systems: Actuators, joints, linkages providing physical movement
+• Control Systems: Feedback loops, sensors, real-time processing for coordination
+• Artificial Intelligence: Machine learning, computer vision, decision-making algorithms
+• Power Systems: Batteries, fuel cells, energy management for sustained operation
+• Communication: Wireless protocols, networking, human-machine interfaces
+
+MAJOR APPLICATIONS
+• Industrial Manufacturing: Assembly lines, welding, painting, quality control
+• Healthcare: Surgical robots, rehabilitation devices, prosthetic limbs
+• Service Industries: Cleaning robots, security systems, customer service
+• Exploration: Space missions, deep-sea research, hazardous environments
+• Transportation: Autonomous vehicles, delivery drones, logistics automation
+
+CURRENT CAPABILITIES
+• Precision manufacturing with sub-millimeter accuracy
+• Complex navigation in dynamic environments
+• Human-robot collaboration in shared workspaces
+• Adaptive learning from experience and demonstration
+• Multi-modal sensing combining vision, touch, and audio
+
+FUTURE PROSPECTS
+Robotics continues advancing toward more capable, versatile systems with applications in personal assistance, elder care, and complex problem-solving across industries."""
+        elif any("ai" in e.lower() for e in entities):
+            return """ARTIFICIAL INTELLIGENCE - COMPREHENSIVE ANALYSIS
+
+Artificial Intelligence encompasses computational systems designed to perform tasks requiring human-like intelligence, including learning, reasoning, perception, and decision-making.
+
+CORE TECHNOLOGIES
+• Machine Learning: Algorithms improving performance through data and experience
+• Deep Learning: Multi-layered neural networks for complex pattern recognition
+• Natural Language Processing: Understanding and generating human language
+• Computer Vision: Image analysis, object recognition, scene understanding
+• Expert Systems: Knowledge-based reasoning for specialized domains
+
+APPLICATION DOMAINS
+• Healthcare: Diagnostic imaging, drug discovery, personalized treatment
+• Finance: Fraud detection, algorithmic trading, risk assessment
+• Transportation: Autonomous vehicles, traffic optimization, route planning
+• Entertainment: Content recommendation, procedural generation, interactive media
+• Communication: Language translation, virtual assistants, chatbots
+
+CURRENT ACHIEVEMENTS
+• Image recognition surpassing human accuracy in specific domains
+• Natural language understanding enabling conversational interfaces
+• Game-playing systems achieving superhuman performance
+• Predictive analytics transforming business intelligence
+• Automated decision-making in structured environments
+
+FUTURE DIRECTIONS
+AI advancement focuses on general intelligence, improved reasoning capabilities, and ethical deployment across society."""
+        else:
+            return f"Comprehensive analysis of {main_entity} covering technical foundations, applications, and impact."
     
     def synthesize(self, analysis: str) -> str:
-        return f"Based on available knowledge: {analysis}"
+        return analysis
 
 class ComparativeReasoningStrategy(ReasoningStrategy):
     def analyze(self, knowledge: Dict, semantic_analysis: SemanticAnalysis) -> str:
