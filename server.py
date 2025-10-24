@@ -117,13 +117,13 @@ def detect_topic_category(topic: str, context: str = "") -> str:
     if char_category:
         return char_category
     
-    # Fallback to original logic
-    if "fictional android" in topic_lower:
+    # Fallback to original logic - check specific terms first
+    if "gundam" in topic_lower or "mecha" in topic_lower or "mobile suit" in topic_lower:
+        return "gundam"
+    elif "fictional android" in topic_lower:
         return "fictional_androids"
     elif "fictional robot" in topic_lower:
         return "fictional_robots"
-    elif "gundam" in topic_lower or "mecha" in topic_lower or "mobile suit" in topic_lower:
-        return "gundam"
     elif "android" in topic_lower:
         return "androids"
     elif "robot" in topic_lower or "robotics" in topic_lower:
@@ -492,11 +492,9 @@ Fictional robots serve as more than entertainment; they function as thought expe
         return "Fictional robots include famous characters like C-3PO, R2-D2, Data, Terminator, WALL-E, and many others from science fiction literature, film, and television."
 
 def generate_response(topic: str, format_type: str, context: str = "", is_followup: bool = False) -> str:
-    print(f"GENERATE_RESPONSE DEBUG: topic='{topic}', format_type='{format_type}'")
     # Extract main topic and detect category with context
     main_topic = extract_main_topic(topic)
     category = detect_topic_category(main_topic, context)
-    print(f"GENERATE_RESPONSE DEBUG: main_topic='{main_topic}', category='{category}'")
     
     # Get specific character if detected
     char_category, char_name = fuzzy_character_match(main_topic, context)
@@ -510,34 +508,30 @@ def generate_response(topic: str, format_type: str, context: str = "", is_follow
             category = context_category
     
     # Generate response based on category
-    print(f"GENERATE_RESPONSE DEBUG: Using category '{category}' with format '{format_type}'")
     if category == "fun_question":
-        result = generate_fun_response(topic, format_type)
+        return generate_fun_response(topic, format_type)
     elif category == "specific_android":
-        result = generate_specific_android_response(main_topic, format_type)
+        return generate_specific_android_response(main_topic, format_type)
     elif category == "specific_robot":
-        result = generate_specific_robot_response(main_topic, format_type)
+        return generate_specific_robot_response(main_topic, format_type)
     elif category == "fictional_robots":
-        result = generate_fictional_robots_response(format_type)
+        return generate_fictional_robots_response(format_type)
     elif category == "fictional_androids":
-        result = generate_fictional_androids_response(format_type)
+        return generate_fictional_androids_response(format_type)
     elif category == "comparative":
-        result = generate_comparative_response(topic, format_type)
+        return generate_comparative_response(topic, format_type)
     elif category == "gundam":
-        result = generate_gundam_response(format_type)
+        return generate_gundam_response(format_type)
     elif category == "androids":
-        result = generate_androids_response(format_type)
+        return generate_androids_response(format_type)
     elif category == "robotics":
-        result = generate_robotics_response(format_type)
+        return generate_robotics_response(format_type)
     elif category == "ai":
-        result = generate_ai_response(format_type)
+        return generate_ai_response(format_type)
     elif category == "ethics":
-        result = generate_ethics_response(format_type)
+        return generate_ethics_response(format_type)
     else:
-        result = generate_generic_response(main_topic, format_type)
-    
-    print(f"GENERATE_RESPONSE DEBUG: Generated response length: {len(result)}")
-    return result
+        return generate_generic_response(main_topic, format_type)
 
 def generate_comparative_response(topic: str, format_type: str) -> str:
     if format_type == "summary":
@@ -548,7 +542,6 @@ def generate_comparative_response(topic: str, format_type: str) -> str:
         return f"Comparative analysis of {topic} examining differences between fictional concepts and real-world implementations."
 
 def generate_gundam_response(format_type: str) -> str:
-    print(f"GUNDAM_RESPONSE DEBUG: Called with format_type='{format_type}'")
     if format_type == "summary":
         return "Gundam: Influential mecha anime franchise featuring humanoid combat robots that has shaped both entertainment and real robotics development."
     elif format_type == "list":
@@ -1077,15 +1070,7 @@ async def chat(request: ChatRequest):
         if last_ai_response and is_followup:
             context = last_ai_response[:200]
     
-    main_topic = extract_main_topic(topic)
-    category = detect_topic_category(main_topic, context)
-    print(f"DEBUG: message='{request.message}', format='{format_type}', followup={is_followup}")
-    print(f"DEBUG: main_topic='{main_topic}', category='{category}'")
-    print(f"DEBUG: About to call generate_response with format='{format_type}'")
-    
     response_text = generate_response(topic, format_type, context, is_followup)
-    print(f"DEBUG: Response length: {len(response_text)}")
-    print(f"DEBUG: First 100 chars: {response_text[:100]}...")
     
     # Add AI response to conversation history
     conversations[session_id].append({"role": "assistant", "content": response_text})
