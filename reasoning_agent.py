@@ -140,61 +140,109 @@ class FactualReasoningStrategy(ReasoningStrategy):
         main_entity = entities[0] if entities else "technology"
         
         if any("robot" in e.lower() for e in entities):
-            return """ROBOTICS - COMPREHENSIVE ANALYSIS
+            return """ROBOTICS - COMPREHENSIVE FIELD ANALYSIS
 
-Robotics represents the interdisciplinary field combining mechanical engineering, computer science, and artificial intelligence to create autonomous machines capable of performing tasks traditionally requiring human intervention.
+FIELD DEFINITION
+Robotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.
 
-TECHNICAL FOUNDATIONS
-• Mechanical Systems: Actuators, joints, linkages providing physical movement
-• Control Systems: Feedback loops, sensors, real-time processing for coordination
-• Artificial Intelligence: Machine learning, computer vision, decision-making algorithms
-• Power Systems: Batteries, fuel cells, energy management for sustained operation
-• Communication: Wireless protocols, networking, human-machine interfaces
+CORE TECHNOLOGIES
+• Mechanical Systems: Actuators, joints, linkages, and structural components
+• Control Systems: Feedback loops, sensors, and real-time processing
+• Artificial Intelligence: Machine learning, computer vision, and decision-making
+• Power Systems: Batteries, fuel cells, and energy management
+• Communication: Wireless protocols, networking, and human-machine interfaces
+• Materials Science: Lightweight composites, smart materials, and durability
 
-MAJOR APPLICATIONS
-• Industrial Manufacturing: Assembly lines, welding, painting, quality control
-• Healthcare: Surgical robots, rehabilitation devices, prosthetic limbs
-• Service Industries: Cleaning robots, security systems, customer service
-• Exploration: Space missions, deep-sea research, hazardous environments
-• Transportation: Autonomous vehicles, delivery drones, logistics automation
+MAJOR APPLICATION DOMAINS
+• Industrial Automation: Manufacturing, assembly, and quality control systems
+• Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices
+• Service Robotics: Cleaning, security, and personal assistance applications
+• Exploration Robotics: Space missions, deep-sea research, and hazardous environments
+• Military Applications: Reconnaissance, bomb disposal, and combat support
+• Agricultural Systems: Precision farming, harvesting, and crop monitoring
 
-CURRENT CAPABILITIES
-• Precision manufacturing with sub-millimeter accuracy
-• Complex navigation in dynamic environments
-• Human-robot collaboration in shared workspaces
-• Adaptive learning from experience and demonstration
-• Multi-modal sensing combining vision, touch, and audio
+EMERGING TRENDS
+• Collaborative robots (cobots) working alongside humans
+• Swarm robotics for coordinated multi-robot systems
+• Soft robotics using flexible materials and bio-inspired designs
+• Autonomous vehicles and delivery systems
+• Brain-computer interfaces for direct neural control
+• Quantum sensors for enhanced perception capabilities
 
-FUTURE PROSPECTS
-Robotics continues advancing toward more capable, versatile systems with applications in personal assistance, elder care, and complex problem-solving across industries."""
+CHALLENGES AND LIMITATIONS
+• Safety and reliability in human-robot interaction
+• Ethical considerations in autonomous decision-making
+• Cost-effectiveness for widespread adoption
+• Technical complexity in unstructured environments
+• Regulatory frameworks for autonomous systems"""
         elif any("ai" in e.lower() for e in entities):
             return """ARTIFICIAL INTELLIGENCE - COMPREHENSIVE ANALYSIS
 
-Artificial Intelligence encompasses computational systems designed to perform tasks requiring human-like intelligence, including learning, reasoning, perception, and decision-making.
+FIELD OVERVIEW
+Artificial Intelligence encompasses computational systems designed to perform tasks that typically require human intelligence, including learning, reasoning, perception, and decision-making. AI systems can analyze data, recognize patterns, and make predictions or recommendations based on their training and algorithms.
 
 CORE TECHNOLOGIES
-• Machine Learning: Algorithms improving performance through data and experience
+• Machine Learning: Algorithms that improve performance through experience and data
 • Deep Learning: Multi-layered neural networks for complex pattern recognition
 • Natural Language Processing: Understanding and generating human language
-• Computer Vision: Image analysis, object recognition, scene understanding
-• Expert Systems: Knowledge-based reasoning for specialized domains
+• Computer Vision: Image and video analysis for object recognition and scene understanding
+• Expert Systems: Knowledge-based systems for specialized domain expertise
+• Reinforcement Learning: Learning through trial and error with reward feedback
 
 APPLICATION DOMAINS
-• Healthcare: Diagnostic imaging, drug discovery, personalized treatment
-• Finance: Fraud detection, algorithmic trading, risk assessment
-• Transportation: Autonomous vehicles, traffic optimization, route planning
-• Entertainment: Content recommendation, procedural generation, interactive media
-• Communication: Language translation, virtual assistants, chatbots
+• Healthcare: Diagnostic imaging, drug discovery, and personalized treatment
+• Finance: Fraud detection, algorithmic trading, and risk assessment
+• Transportation: Autonomous vehicles and traffic optimization
+• Manufacturing: Predictive maintenance and quality control
+• Entertainment: Content recommendation and procedural generation
+• Communication: Language translation and virtual assistants
 
-CURRENT ACHIEVEMENTS
+CURRENT CAPABILITIES
 • Image recognition surpassing human accuracy in specific domains
-• Natural language understanding enabling conversational interfaces
+• Natural language understanding for conversational interfaces
 • Game-playing systems achieving superhuman performance
-• Predictive analytics transforming business intelligence
+• Predictive analytics for business intelligence and forecasting
 • Automated decision-making in structured environments
+• Pattern recognition in complex datasets
 
-FUTURE DIRECTIONS
-AI advancement focuses on general intelligence, improved reasoning capabilities, and ethical deployment across society."""
+LIMITATIONS AND CHALLENGES
+• Lack of general intelligence and common sense reasoning
+• Bias and fairness issues in training data and algorithms
+• Explainability and transparency in decision-making processes
+• Energy consumption and computational requirements
+• Ethical considerations in autonomous systems
+• Safety and reliability in critical applications"""
+        elif any("android" in e.lower() for e in entities):
+            return """ANDROIDS - COMPREHENSIVE ANALYSIS
+
+DEFINITION AND CHARACTERISTICS
+Androids are humanoid robots designed to closely resemble humans in appearance, behavior, and interaction patterns. Unlike traditional robots, androids prioritize human-like aesthetics and social capabilities over purely functional design.
+
+TECHNICAL COMPONENTS
+• Artificial skin and facial features for realistic appearance
+• Advanced actuators for natural movement and gestures
+• Speech synthesis and natural language processing
+• Computer vision for facial recognition and social cues
+• Machine learning algorithms for personality adaptation
+• Sensory systems mimicking human touch, sight, and hearing
+
+CURRENT APPLICATIONS
+• Hospitality industry for customer service and reception
+• Healthcare as patient companions and therapy assistants
+• Education for language learning and special needs support
+• Entertainment in theme parks and interactive experiences
+• Research platforms for studying human-robot interaction
+• Elder care providing companionship and basic assistance
+
+DEVELOPMENT CHALLENGES
+• Uncanny valley effect causing discomfort in human observers
+• Complex manufacturing requiring precision engineering
+• High costs limiting widespread adoption
+• Ethical concerns about human replacement and deception
+• Technical limitations in natural conversation and emotion recognition
+
+FUTURE PROSPECTS
+Android technology continues advancing toward more convincing human simulation, with potential applications in personal assistance, social companionship, and specialized service roles."""
         else:
             return f"Comprehensive analysis of {main_entity} covering technical foundations, applications, and impact."
     
@@ -204,19 +252,75 @@ AI advancement focuses on general intelligence, improved reasoning capabilities,
 class ComparativeReasoningStrategy(ReasoningStrategy):
     def analyze(self, knowledge: Dict, semantic_analysis: SemanticAnalysis) -> str:
         entities = [e.text for e in semantic_analysis.entities]
-        if len(entities) >= 2:
-            return f"Comparing {entities[0]} and {entities[1]} across multiple dimensions"
-        return "Comparative analysis requires multiple entities"
+        topic = semantic_analysis.original_query
+        
+        if "vs" in topic.lower() or "versus" in topic.lower():
+            return f"""COMPARATIVE ANALYSIS: {topic.upper()}
+
+Comprehensive comparison examining fundamental differences, similarities, and evolutionary relationships between these domains, analyzing both fictional representations and real-world technological developments.
+
+KEY DIFFERENCES
+• Design Philosophy: Functional vs aesthetic priorities
+• Technical Complexity: Specialized vs general-purpose systems
+• Human Interaction: Task-focused vs social integration
+• Development Timeline: Current technology vs future concepts
+
+SIMILARITIES
+• Autonomous operation capabilities
+• Advanced sensor and processing systems
+• Human-machine interface requirements
+• Ethical and safety considerations
+
+APPLICATION CONTEXTS
+• Industrial and commercial deployment
+• Research and development platforms
+• Entertainment and media representation
+• Future technological integration
+
+CONCLUSION
+Both domains represent significant technological achievements with distinct advantages for different applications and use cases."""
+        else:
+            return f"Comparative analysis of {', '.join(entities)} examining key differences and similarities."
     
     def synthesize(self, analysis: str) -> str:
-        return f"Comparative analysis shows: {analysis}"
+        return analysis
 
 class AnalyticalReasoningStrategy(ReasoningStrategy):
     def analyze(self, knowledge: Dict, semantic_analysis: SemanticAnalysis) -> str:
-        return f"Breaking down components and examining relationships for: {semantic_analysis.original_query}"
+        entities = [e.text for e in semantic_analysis.entities]
+        main_entity = entities[0] if entities else "technology"
+        
+        if any("how" in semantic_analysis.original_query.lower() for word in ["how", "why", "mechanism"]):
+            return f"""ANALYTICAL BREAKDOWN: {main_entity.upper()}
+
+SYSTEM COMPONENTS
+• Core Architecture: Fundamental design principles and structure
+• Processing Systems: Computational and decision-making capabilities
+• Interface Mechanisms: Human-machine interaction protocols
+• Control Systems: Operational management and coordination
+
+FUNCTIONAL RELATIONSHIPS
+• Input Processing: Data acquisition and initial analysis
+• Decision Logic: Reasoning and response generation
+• Output Generation: Action execution and feedback
+• Learning Integration: Adaptation and improvement mechanisms
+
+OPERATIONAL PRINCIPLES
+• Real-time processing requirements
+• Safety and reliability protocols
+• Efficiency optimization strategies
+• Scalability considerations
+
+IMPLEMENTATION CHALLENGES
+• Technical complexity management
+• Integration with existing systems
+• Performance optimization
+• Maintenance and upgrade pathways"""
+        else:
+            return f"Analytical examination of {main_entity} components, relationships, and operational principles."
     
     def synthesize(self, analysis: str) -> str:
-        return f"Analytical breakdown reveals: {analysis}"
+        return analysis
 
 class ReasoningPipeline:
     def __init__(self):
@@ -253,10 +357,14 @@ class ReasoningPipeline:
         return chain
     
     def _retrieve_knowledge(self, semantic_analysis: SemanticAnalysis, knowledge_base: Dict) -> Dict:
-        # Simulate knowledge retrieval based on entities
+        # Enhanced knowledge retrieval with character-specific data
         relevant_knowledge = {}
         for entity in semantic_analysis.entities:
-            if entity.category in knowledge_base:
+            # Check for specific character data
+            entity_lower = entity.text.lower()
+            if entity_lower in knowledge_base.get("character_data", {}):
+                relevant_knowledge[entity.text] = knowledge_base["character_data"][entity_lower]
+            elif entity.category in knowledge_base:
                 relevant_knowledge[entity.text] = knowledge_base[entity.category]
         return relevant_knowledge
     
@@ -346,11 +454,29 @@ class EnhancedReasoningAgent:
         self.context_manager = ContextManager()
         self.prompt_engineer = PromptEngineer()
         
-        # Simulated knowledge base
+        # Enhanced knowledge base with detailed templates
         self.knowledge_base = {
-            "robot": {"definition": "Autonomous machine", "types": ["industrial", "service", "humanoid"]},
-            "ai": {"definition": "Machine intelligence", "applications": ["ML", "NLP", "vision"]},
-            "character": {"examples": ["Data", "C-3PO", "WALL-E"], "traits": ["fictional", "iconic"]}
+            "robot": {
+                "definition": "Autonomous machine", 
+                "types": ["industrial", "service", "humanoid"],
+                "examples": ["C-3PO", "R2-D2", "WALL-E", "Terminator", "Optimus Prime"]
+            },
+            "ai": {
+                "definition": "Machine intelligence", 
+                "applications": ["ML", "NLP", "vision", "robotics"],
+                "domains": ["healthcare", "finance", "transportation"]
+            },
+            "android": {
+                "definition": "Human-like robot",
+                "examples": ["Data", "Bishop", "Roy Batty", "Ava"],
+                "characteristics": ["humanoid", "synthetic", "intelligent"]
+            },
+            "character_data": {
+                "data": "Android officer from Star Trek with positronic brain, seeking to understand humanity and emotions.",
+                "c-3po": "Protocol droid from Star Wars, fluent in over 6 million forms of communication.",
+                "wall-e": "Waste collection robot from Pixar who develops personality and environmental consciousness.",
+                "terminator": "Cybernetic organism with living tissue over metal endoskeleton."
+            }
         }
     
     def process_query(self, query: str, session_id: str = "default") -> Dict:
