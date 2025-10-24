@@ -6,6 +6,7 @@ import time
 import uuid
 import re
 import random
+from reasoning_agent import EnhancedReasoningAgent
 
 app = FastAPI()
 
@@ -23,6 +24,9 @@ class ChatRequest(BaseModel):
     session_id: str = "web-session"
 
 conversations = {}
+
+# Initialize enhanced reasoning agent
+reasoning_agent = EnhancedReasoningAgent()
 
 # Safety and ethics validation
 def validate_ethical_content(topic: str, response: str) -> dict:
@@ -1118,7 +1122,9 @@ async def chat(request: ChatRequest):
         if last_ai_response and is_followup:
             context = last_ai_response[:200]
     
-    response_text = generate_response(topic, format_type, context, is_followup)
+    # Use enhanced reasoning agent
+    reasoning_result = reasoning_agent.process_query(topic, session_id)
+    response_text = reasoning_result['response'] if reasoning_result['response'] else generate_response(topic, format_type, context, is_followup)
     
     # Validate ethical content
     ethics_check = validate_ethical_content(topic, response_text)
