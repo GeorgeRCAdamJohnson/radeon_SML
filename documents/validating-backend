@@ -1,0 +1,99 @@
+1 "2025-10-24 23:04:42 ? Successfully initialized EnhancedReasoningAgent
+2025-10-24 23:04:42 INFO:     Started server process [1]
+2025-10-24 23:04:42 INFO:     Waiting for application startup.
+2025-10-24 23:04:42 INFO:     Application startup complete.
+2025-10-24 23:04:42 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+2025-10-24 23:04:47 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:04:47 INFO:     169.254.169.126:41300 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:04:56 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:04:56 INFO:     169.254.169.126:41304 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:05:26 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:05:26 INFO:     169.254.169.126:3674 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:05:47 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:05:47 INFO:     169.254.169.126:61108 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:05:56 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:05:56 INFO:     169.254.169.126:61122 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:06:26 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:06:26 INFO:     169.254.169.126:42612 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:06:47 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:06:47 INFO:     169.254.169.126:35812 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:06:56 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:06:56 INFO:     169.254.169.126:35820 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:07:26 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:07:26 INFO:     169.254.169.126:2086 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:07:47 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:07:47 INFO:     169.254.169.126:63742 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:07:56 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:07:56 INFO:     169.254.169.126:63748 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:08:26 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:08:26 INFO:     169.254.169.126:49992 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:08:47 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:08:47 INFO:     169.254.169.126:46788 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:08:56 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:08:56 INFO:     169.254.169.126:46802 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:09:26 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:09:26 INFO:     169.254.169.126:6776 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:09:29 GET 200 https://radeon-ai-960026900565.us-central1.run.app/
+2025-10-24 23:09:29 INFO:     169.254.169.126:30866 - "GET / HTTP/1.1" 200 OK
+2025-10-24 23:09:30 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:09:30 INFO:     169.254.169.126:30868 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:09:36 GET 200 https://radeon-ai-960026900565.us-central1.run.app/
+2025-10-24 23:09:36 INFO:     169.254.169.126:30884 - "GET / HTTP/1.1" 200 OK
+2025-10-24 23:09:37 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:09:37 INFO:     169.254.169.126:30896 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:09:47 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:09:47 INFO:     169.254.169.126:49838 - "GET /api/health HTTP/1.1" 200 OK
+2025-10-24 23:10:07 GET 200 https://radeon-ai-960026900565.us-central1.run.app/api/health
+2025-10-24 23:10:07 INFO:     169.254.169.126:38204 - "GET /api/health HTTP/1.1" 200 OK
+"
+
+2. "C:\Users\biges\OneDrive\Desktop\amd_ai\radeon-ai>gcloud run services describe radeon-ai --region us-central1
++ Service radeon-ai in region us-central1
+
+URL:     https://radeon-ai-960026900565.us-central1.run.app
+Ingress: all
+Traffic:
+  100% LATEST (currently radeon-ai-00001-fzv)
+
+Scaling: Auto (Min: 0)
+
+Last updated on 2025-10-24T23:04:46.646376Z by Bigesta@gmail.com:
+  Revision radeon-ai-00001-fzv
+  Container None
+    Image:           us-central1-docker.pkg.dev/radeon-ai-kb-2024/cloud-run-source-deploy/radeon-ai@sha256:6277d9e6fd00211071b60ed720fd814e4d7c29bacb573acf7921dda69dbbf043
+    Port:            8080
+    Memory:          512Mi
+    CPU:             1000m
+    Startup Probe:
+      TCP every 240s
+      Port:          8080
+      Initial delay: 0s
+      Timeout:       240s
+      Failure threshold: 1
+      Type:          Default
+  Service account:   960026900565-compute@developer.gserviceaccount.com
+  Concurrency:       80
+  Max instances:     20
+  Timeout:           300s
+"
+3. 
+":\Users\biges\OneDrive\Desktop\amd_ai\radeon-ai>curl https://radeon-ai-960026900565.us-central1.run.app/health
+{"detail":"Not Found"}"
+
+4. "C:\Users\biges\OneDrive\Desktop\amd_ai\radeon-ai>gcloud run services logs tail radeon-ai --region us-central1
+ERROR: (gcloud.run.services.logs) Invalid choice: 'tail'.
+Maybe you meant:
+  gcloud beta
+  gcloud run
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS
+"C:\Users\biges\OneDrive\Desktop\amd_ai\radeon-ai>gcloud run services logs tail radeon-ai --region us-central1
+ERROR: (gcloud.run.services.logs) Invalid choice: 'tail'.
+Maybe you meant:
+  gcloud beta
+  gcloud run
+
+To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS
+"
