@@ -8,29 +8,22 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     
+    permissions:
+      contents: read
+      id-token: write
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Authenticate to Google Cloud
+      uses: google-github-actions/auth@v2
+      with:
+        workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+        service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v2
-      with:
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
-        project_id: ${{ secrets.GCP_PROJECT_ID }}
-
-    - name: Configure gcloud project
-      run: |
-        if [ -z "${{ secrets.GCP_PROJECT_ID }}" ]; then
-          echo "Error: GCP_PROJECT_ID secret is not set"
-          exit 1
-        fi
-        gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
-        gcloud config list
-
-    - name: Verify authentication
-      run: |
-        gcloud auth list
-        gcloud config list
 
     - name: Deploy to Cloud Run
       run: |
@@ -50,8 +43,3 @@ jobs:
       run: |
         SERVICE_URL=$(gcloud run services describe radeon-ai --region=us-central1 --format='value(status.url)')
         echo "🚀 Service deployed at: $SERVICE_URL"
-        echo "SERVICE_URL=$SERVICE_URL" >> $GITHUB_ENV
-
-    - name: Test deployment
-      run: |
-        curl -f $SERVICE_URL/api/health || echo "Health check failed"

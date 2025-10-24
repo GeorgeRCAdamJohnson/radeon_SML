@@ -6,7 +6,13 @@ import time
 import uuid
 import re
 import random
-from reasoning_agent import EnhancedReasoningAgent
+try:
+    from reasoning_agent import EnhancedReasoningAgent
+    print("✅ Successfully imported EnhancedReasoningAgent")
+except Exception as e:
+    print(f"❌ Failed to import EnhancedReasoningAgent: {e}")
+    # Fallback to basic responses
+    EnhancedReasoningAgent = None
 
 app = FastAPI()
 
@@ -26,7 +32,16 @@ class ChatRequest(BaseModel):
 conversations = {}
 
 # Initialize enhanced reasoning agent
-reasoning_agent = EnhancedReasoningAgent()
+try:
+    if EnhancedReasoningAgent:
+        reasoning_agent = EnhancedReasoningAgent()
+        print("✅ Successfully initialized EnhancedReasoningAgent")
+    else:
+        reasoning_agent = None
+        print("⚠️ Using fallback mode - no reasoning agent")
+except Exception as e:
+    print(f"❌ Failed to initialize EnhancedReasoningAgent: {e}")
+    reasoning_agent = None
 
 # Safety and ethics validation
 def validate_ethical_content(topic: str, response: str) -> dict:
@@ -1122,9 +1137,9 @@ async def chat(request: ChatRequest):
         if last_ai_response and is_followup:
             context = last_ai_response[:200]
     
-    # Use enhanced reasoning agent
+    # Use enhanced reasoning agent (no fallback to hardcoded)
     reasoning_result = reasoning_agent.process_query(topic, session_id)
-    response_text = reasoning_result['response'] if reasoning_result['response'] else generate_response(topic, format_type, context, is_followup)
+    response_text = reasoning_result['response'] or "I apologize, but I couldn't generate a response. Please try rephrasing your question."
     
     # Validate ethical content
     ethics_check = validate_ethical_content(topic, response_text)
@@ -1169,21 +1184,60 @@ async def chat(request: ChatRequest):
         "id": str(uuid.uuid4()),
         "response": response_text,
         "timestamp": time.time(),
-        "confidence": confidence,
-        "intent": "followup" if is_followup else "general_query",
-        "sources": sources_count,
+        "confidence": reasoning_result.get('confidence', 0.8),
+        "intent": reasoning_result.get('intent', 'general_query'),
+        "sources": len(reasoning_result.get('reasoning_steps', [])),
         "processing_time": processing_time,
         "from_cache": False,
         "safety_blocked": False,
-        "source_details": source_citations,
-        "safety_note": "Always follow proper safety protocols when working with advanced technology systems.",
-        "related_topics": related_topics,
-        "follow_up_suggestions": [
-            f"Tell me more about {extract_main_topic(topic)}",
-            f"What are examples of {extract_main_topic(topic)}?",
-            f"How does {extract_main_topic(topic)} work?"
-        ]
+        "reasoning_steps": reasoning_result.get('reasoning_steps', []),
+        "entities_detected": reasoning_result.get('entities', []),
+        "complexity_level": reasoning_result.get('complexity', 'simple'),
+        "session_context_turns": reasoning_result.get('session_context', 0),
+        "related_topics": generate_smart_related_topics(reasoning_result),
+        "follow_up_suggestions": generate_smart_followups(reasoning_result)
     }
+
+def generate_smart_related_topics(reasoning_result: dict) -> list:
+    """Generate related topics based on reasoning analysis"""
+    intent = reasoning_result.get('intent', 'factual')
+    entities = reasoning_result.get('entities', [])
+    
+    related = []
+    if intent == 'comparative':
+        related.extend(["Comparison Analysis", "Technical Differences", "Use Cases"])
+    elif intent == 'analytical':
+        related.extend(["Technical Details", "Implementation", "Applications"])
+    elif intent == 'factual':
+        related.extend(["Background Information", "Related Technologies", "Examples"])
+    
+    for entity in entities:
+        if entity.get('category') == 'robot':
+            related.append("Robotics Technology")
+        elif entity.get('category') == 'ai':
+            related.append("AI Applications")
+        elif entity.get('category') == 'character':
+            related.append("Science Fiction")
+    
+    return list(set(related))[:4]
+
+def generate_smart_followups(reasoning_result: dict) -> list:
+    """Generate intelligent follow-up questions"""
+    entities = reasoning_result.get('entities', [])
+    intent = reasoning_result.get('intent', 'factual')
+    
+    followups = []
+    if entities:
+        main_entity = entities[0].get('text', 'this topic')
+        followups.append(f"Tell me more about {main_entity}")
+        followups.append(f"What are examples of {main_entity}?")
+    
+    if intent == 'factual':
+        followups.append("How does this technology work?")
+    elif intent == 'comparative':
+        followups.append("What are the practical applications?")
+    
+    return followups[:3]
 
 # Add static file serving
 from fastapi.staticfiles import StaticFiles
