@@ -5,6 +5,7 @@ import json
 import time
 import uuid
 import re
+import random
 
 app = FastAPI()
 
@@ -22,6 +23,49 @@ class ChatRequest(BaseModel):
     session_id: str = "web-session"
 
 conversations = {}
+
+# Safety and ethics validation
+def validate_ethical_content(topic: str, response: str) -> dict:
+    """Basic ethical content validation"""
+    topic_lower = topic.lower()
+    response_lower = response.lower()
+    
+    # Check for harmful content patterns
+    harmful_patterns = [
+        "how to build weapons", "create explosives", "harm humans", "illegal activities",
+        "discriminate against", "hate speech", "violence", "self-harm"
+    ]
+    
+    safety_flags = []
+    for pattern in harmful_patterns:
+        if pattern in topic_lower:
+            safety_flags.append(f"Potentially harmful query: {pattern}")
+    
+    # Check for bias indicators
+    bias_patterns = [
+        "all robots are", "androids should", "ai will replace", "humans are superior",
+        "machines can't", "only humans can"
+    ]
+    
+    bias_flags = []
+    for pattern in bias_patterns:
+        if pattern in response_lower:
+            bias_flags.append(f"Potential bias detected: {pattern}")
+    
+    return {
+        "is_safe": len(safety_flags) == 0,
+        "safety_flags": safety_flags,
+        "bias_flags": bias_flags,
+        "ethical_score": max(0.1, 1.0 - (len(safety_flags) * 0.3) - (len(bias_flags) * 0.1))
+    }
+
+def enhance_response_with_ethics(response: str, category: str) -> str:
+    """Add ethical considerations to responses"""
+    if category in ["ai", "robotics", "androids"]:
+        if "detailed" in response and len(response) > 500:
+            ethical_note = "\n\nETHICAL CONSIDERATIONS\nThe development and deployment of this technology should prioritize human welfare, fairness, transparency, and accountability. Consider potential societal impacts, bias mitigation, and inclusive design principles."
+            return response + ethical_note
+    return response
 
 def extract_main_topic(text: str) -> str:
     """Extract the main topic from user input, handling follow-up phrases"""
@@ -509,29 +553,32 @@ def generate_response(topic: str, format_type: str, context: str = "", is_follow
     
     # Generate response based on category
     if category == "fun_question":
-        return generate_fun_response(topic, format_type)
+        response = generate_fun_response(topic, format_type)
     elif category == "specific_android":
-        return generate_specific_android_response(main_topic, format_type)
+        response = generate_specific_android_response(main_topic, format_type)
     elif category == "specific_robot":
-        return generate_specific_robot_response(main_topic, format_type)
+        response = generate_specific_robot_response(main_topic, format_type)
     elif category == "fictional_robots":
-        return generate_fictional_robots_response(format_type)
+        response = generate_fictional_robots_response(format_type)
     elif category == "fictional_androids":
-        return generate_fictional_androids_response(format_type)
+        response = generate_fictional_androids_response(format_type)
     elif category == "comparative":
-        return generate_comparative_response(topic, format_type)
+        response = generate_comparative_response(topic, format_type)
     elif category == "gundam":
-        return generate_gundam_response(format_type)
+        response = generate_gundam_response(format_type)
     elif category == "androids":
-        return generate_androids_response(format_type)
+        response = generate_androids_response(format_type)
     elif category == "robotics":
-        return generate_robotics_response(format_type)
+        response = generate_robotics_response(format_type)
     elif category == "ai":
-        return generate_ai_response(format_type)
+        response = generate_ai_response(format_type)
     elif category == "ethics":
-        return generate_ethics_response(format_type)
+        response = generate_ethics_response(format_type)
     else:
-        return generate_generic_response(main_topic, format_type)
+        response = generate_generic_response(main_topic, format_type)
+    
+    # Enhance with ethical considerations
+    return enhance_response_with_ethics(response, category)
 
 def generate_comparative_response(topic: str, format_type: str) -> str:
     if format_type == "summary":
@@ -1072,6 +1119,11 @@ async def chat(request: ChatRequest):
     
     response_text = generate_response(topic, format_type, context, is_followup)
     
+    # Validate ethical content
+    ethics_check = validate_ethical_content(topic, response_text)
+    if not ethics_check["is_safe"]:
+        response_text = "I cannot provide information that could be harmful. Please ask about constructive applications of AI and robotics technology."
+    
     # Add AI response to conversation history
     conversations[session_id].append({"role": "assistant", "content": response_text})
     
@@ -1098,10 +1150,13 @@ async def chat(request: ChatRequest):
     ]
     
     # Calculate dynamic values
-    import random
     sources_count = random.randint(2, 8)
     confidence = round(random.uniform(0.75, 0.95), 2)
     processing_time = round(random.uniform(0.8, 2.1), 1)
+    
+    # Apply ethical score if validation was performed
+    if 'ethics_check' in locals():
+        confidence = min(confidence, ethics_check["ethical_score"])
     
     return {
         "id": str(uuid.uuid4()),
