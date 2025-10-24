@@ -30,20 +30,20 @@
             useEffect(() => {
                 const checkConnection = async () => {
                     try {
-                        // Try local server first
-                        const localResponse = await fetch(`${LOCAL_URL}/api/health`);
-                        if (localResponse.ok) {
-                            setCurrentAPI(LOCAL_URL);
+                        // Try production server first
+                        const prodResponse = await fetch(`${PRODUCTION_URL}/api/health`);
+                        if (prodResponse.ok) {
+                            setCurrentAPI(PRODUCTION_URL);
                             setIsConnected(true);
                             return;
                         }
                     } catch {}
                     
                     try {
-                        // Try production server
-                        const prodResponse = await fetch(`${PRODUCTION_URL}/api/health`);
-                        if (prodResponse.ok) {
-                            setCurrentAPI(PRODUCTION_URL);
+                        // Try local server
+                        const localResponse = await fetch(`${LOCAL_URL}/api/health`);
+                        if (localResponse.ok) {
+                            setCurrentAPI(LOCAL_URL);
                             setIsConnected(true);
                             return;
                         }
