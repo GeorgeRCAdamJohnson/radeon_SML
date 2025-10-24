@@ -27,10 +27,10 @@ jobs:
         gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
         gcloud config list
 
-    - name: Enable required APIs
+    - name: Verify authentication
       run: |
-        gcloud services enable run.googleapis.com
-        gcloud services enable cloudbuild.googleapis.com
+        gcloud auth list
+        gcloud config list
 
     - name: Deploy to Cloud Run
       run: |
