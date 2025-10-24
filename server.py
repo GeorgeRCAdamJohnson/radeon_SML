@@ -18,7 +18,7 @@ app.add_middleware(
 
 class ChatRequest(BaseModel):
     message: str
-    format: str = "standard"
+    format: str = "detailed"
     session_id: str = "web-session"
 
 conversations = {}
@@ -490,9 +490,11 @@ Fictional robots serve as more than entertainment; they function as thought expe
         return "Fictional robots include famous characters like C-3PO, R2-D2, Data, Terminator, WALL-E, and many others from science fiction literature, film, and television."
 
 def generate_response(topic: str, format_type: str, context: str = "", is_followup: bool = False) -> str:
+    print(f"GENERATE_RESPONSE DEBUG: topic='{topic}', format_type='{format_type}'")
     # Extract main topic and detect category with context
     main_topic = extract_main_topic(topic)
     category = detect_topic_category(main_topic, context)
+    print(f"GENERATE_RESPONSE DEBUG: main_topic='{main_topic}', category='{category}'")
     
     # Get specific character if detected
     char_category, char_name = fuzzy_character_match(main_topic, context)
@@ -506,28 +508,32 @@ def generate_response(topic: str, format_type: str, context: str = "", is_follow
             category = context_category
     
     # Generate response based on category
+    print(f"GENERATE_RESPONSE DEBUG: Using category '{category}' with format '{format_type}'")
     if category == "fun_question":
-        return generate_fun_response(topic, format_type)
+        result = generate_fun_response(topic, format_type)
     elif category == "specific_android":
-        return generate_specific_android_response(main_topic, format_type)
+        result = generate_specific_android_response(main_topic, format_type)
     elif category == "specific_robot":
-        return generate_specific_robot_response(main_topic, format_type)
+        result = generate_specific_robot_response(main_topic, format_type)
     elif category == "fictional_robots":
-        return generate_fictional_robots_response(format_type)
+        result = generate_fictional_robots_response(format_type)
     elif category == "fictional_androids":
-        return generate_fictional_androids_response(format_type)
+        result = generate_fictional_androids_response(format_type)
     elif category == "comparative":
-        return generate_comparative_response(topic, format_type)
+        result = generate_comparative_response(topic, format_type)
     elif category == "gundam":
-        return generate_gundam_response(format_type)
+        result = generate_gundam_response(format_type)
     elif category == "androids":
-        return generate_androids_response(format_type)
+        result = generate_androids_response(format_type)
     elif category == "robotics":
-        return generate_robotics_response(format_type)
+        result = generate_robotics_response(format_type)
     elif category == "ai":
-        return generate_ai_response(format_type)
+        result = generate_ai_response(format_type)
     else:
-        return generate_generic_response(main_topic, format_type)
+        result = generate_generic_response(main_topic, format_type)
+    
+    print(f"GENERATE_RESPONSE DEBUG: Generated response length: {len(result)}")
+    return result
 
 def generate_comparative_response(topic: str, format_type: str) -> str:
     if format_type == "summary":
@@ -538,7 +544,11 @@ def generate_comparative_response(topic: str, format_type: str) -> str:
         return f"Comparative analysis of {topic} examining differences between fictional concepts and real-world implementations."
 
 def generate_gundam_response(format_type: str) -> str:
-    if format_type == "summary":
+    print(f"GUNDAM_RESPONSE DEBUG: Called with format_type='{format_type}'")
+    # FORCE DETAILED RESPONSE FOR TESTING
+    if format_type in ["detailed", "essay"]:
+        return "TESTING LONG RESPONSE: " + "This is a very long response to test if the issue is with the response generation or something else. " * 20
+    elif format_type == "summary":
         return "Gundam: Influential mecha anime franchise featuring humanoid combat robots that has shaped both entertainment and real robotics development."
     elif format_type == "list":
         return """GUNDAM MOBILE SUITS LIST
@@ -946,9 +956,15 @@ async def chat(request: ChatRequest):
         if last_ai_response and is_followup:
             context = last_ai_response[:200]
     
+    main_topic = extract_main_topic(topic)
+    category = detect_topic_category(main_topic, context)
     print(f"DEBUG: message='{request.message}', format='{format_type}', followup={is_followup}")
+    print(f"DEBUG: main_topic='{main_topic}', category='{category}'")
+    print(f"DEBUG: About to call generate_response with format='{format_type}'")
     
     response_text = generate_response(topic, format_type, context, is_followup)
+    print(f"DEBUG: Response length: {len(response_text)}")
+    print(f"DEBUG: First 100 chars: {response_text[:100]}...")
     
     # Add AI response to conversation history
     conversations[session_id].append({"role": "assistant", "content": response_text})
@@ -994,6 +1010,19 @@ async def chat(request: ChatRequest):
             f"How does {extract_main_topic(topic)} work?"
         ]
     }
+
+# Add static file serving
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+import os
+
+# Mount static files
+if os.path.exists("static"):
+    app.mount("/static", StaticFiles(directory="static"), name="static")
+    
+    @app.get("/")
+    async def read_index():
+        return FileResponse('static/index.html')
 
 if __name__ == "__main__":
     import uvicorn

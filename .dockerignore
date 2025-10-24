@@ -1,0 +1,14 @@
+__pycache__
+*.pyc
+.git
+.gitignore
+README.md
+.env
+node_modules
+.next
+data/cache
+data/logs
+*.bat
+*.sh
+render.yaml
+docker-compose.yml
