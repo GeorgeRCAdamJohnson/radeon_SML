@@ -34,6 +34,7 @@ jobs:
           --source . \
           --platform managed \
           --region $REGION \
+          --project $PROJECT_ID \
           --allow-unauthenticated \
           --port 8000 \
           --memory 1Gi \
