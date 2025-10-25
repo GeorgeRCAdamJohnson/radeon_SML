@@ -1,0 +1,174 @@
+{
+  "timestamp": "2025-10-24T18:12:32",
+  "short_threshold": 300,
+  "entries_checked": 8,
+  "total_word_delta": 224431,
+  "changes": [
+    {
+      "title": "Facial recognition",
+      "original_word_count": 120,
+      "url": "https://en.wikipedia.org/wiki/Facial%20recognition",
+      "attempts": [
+        {
+          "method": "html",
+          "status": 200,
+          "word_count": 120
+        }
+      ],
+      "updated": false
+    },
+    {
+      "title": "Ex Machina",
+      "original_word_count": 220,
+      "url": "https://en.wikipedia.org/wiki/Ex%20Machina",
+      "attempts": [
+        {
+          "method": "html",
+          "status": 200,
+          "word_count": 220
+        }
+      ],
+      "updated": false
+    },
+    {
+      "title": "arXiv: Raising AI Ethics Awareness through an AI Ethics Quiz for Software\n  Practitioners",
+      "original_word_count": 259,
+      "url": "https://arxiv.org/search/?query=AI+ethics",
+      "attempts": [
+        {
+          "method": "html",
+          "status": 403
+        },
+        {
+          "method": "html_cand",
+          "candidate": "Artificial intelligence",
+          "status": 200,
+          "word_count": 39183
+        }
+      ],
+      "search_candidates": [
+        "Artificial intelligence"
+      ],
+      "updated": true,
+      "update_mode": "replaced_from_candidate:Artificial intelligence"
+    },
+    {
+      "title": "arXiv: Big data ethics, machine ethics or information ethics? Navigating the\n  maze of applied ethics in IT",
+      "original_word_count": 196,
+      "url": "https://arxiv.org/search/?query=AI+ethics",
+      "attempts": [
+        {
+          "method": "html",
+          "status": 403
+        },
+        {
+          "method": "html_cand",
+          "candidate": "Glossary of artificial intelligence",
+          "status": 200,
+          "word_count": 59966
+        }
+      ],
+      "search_candidates": [
+        "Glossary of artificial intelligence",
+        "History of artificial intelligence",
+        "Deepfake"
+      ],
+      "updated": true,
+      "update_mode": "replaced_from_candidate:Glossary of artificial intelligence"
+    },
+    {
+      "title": "arXiv: E-LENS: User Requirements-Oriented AI Ethics Assurance",
+      "original_word_count": 192,
+      "url": "https://arxiv.org/search/?query=AI+ethics",
+      "attempts": [
+        {
+          "method": "html",
+          "status": 403
+        },
+        {
+          "method": "html_cand",
+          "candidate": "YouTube",
+          "status": 200,
+          "word_count": 26074
+        }
+      ],
+      "search_candidates": [
+        "YouTube"
+      ],
+      "updated": true,
+      "update_mode": "replaced_from_candidate:YouTube"
+    },
+    {
+      "title": "arXiv: Big data ethics, machine ethics or information ethics? Navigating the\n  maze of applied ethics in IT",
+      "original_word_count": 196,
+      "url": "https://arxiv.org/search/?query=machine+ethics",
+      "attempts": [
+        {
+          "method": "html",
+          "status": 403
+        },
+        {
+          "method": "html_cand",
+          "candidate": "Glossary of artificial intelligence",
+          "status": 200,
+          "word_count": 59966
+        }
+      ],
+      "search_candidates": [
+        "Glossary of artificial intelligence",
+        "History of artificial intelligence",
+        "Deepfake"
+      ],
+      "updated": true,
+      "update_mode": "replaced_from_candidate:Glossary of artificial intelligence"
+    },
+    {
+      "title": "arXiv: Reinforcement Learning and Machine ethics:a systematic review",
+      "original_word_count": 147,
+      "url": "https://arxiv.org/search/?query=machine+ethics",
+      "attempts": [
+        {
+          "method": "html",
+          "status": 403
+        },
+        {
+          "method": "html_cand",
+          "candidate": "Machine learning",
+          "status": 200,
+          "word_count": 19129
+        }
+      ],
+      "search_candidates": [
+        "Machine learning",
+        "Deep learning",
+        "AI safety"
+      ],
+      "updated": true,
+      "update_mode": "replaced_from_candidate:Machine learning"
+    },
+    {
+      "title": "arXiv: A Bibliometric View of AI Ethics Development",
+      "original_word_count": 106,
+      "url": "https://arxiv.org/search/?query=machine+ethics",
+      "attempts": [
+        {
+          "method": "html",
+          "status": 403
+        },
+        {
+          "method": "html_cand",
+          "candidate": "Applications of artificial intelligence",
+          "status": 200,
+          "word_count": 21209
+        }
+      ],
+      "search_candidates": [
+        "Applications of artificial intelligence",
+        "Artificial intelligence in healthcare",
+        "Artificial intelligence marketing"
+      ],
+      "updated": true,
+      "update_mode": "replaced_from_candidate:Applications of artificial intelligence"
+    }
+  ]
+}

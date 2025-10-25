@@ -1,0 +1,11 @@
+{
+  "articles_crawled": 186,
+  "total_words": 1188035,
+  "failed_requests": 0,
+  "start_time": "2025-10-24T17:25:19.270107",
+  "end_time": "2025-10-24T18:12:32",
+  "total_duration_seconds": 291.583426,
+  "articles_per_minute": 38.273780348544236,
+  "average_words_per_article": 6387.284946236559,
+  "knowledge_base_file": "data\\enhanced_robotics_knowledge.json"
+}
