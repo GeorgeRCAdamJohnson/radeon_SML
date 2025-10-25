@@ -10,6 +10,9 @@ from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
 from enum import Enum
 import time
+import os
+import subprocess
+import traceback
 
 class IntentType(Enum):
     FACTUAL = "factual"
@@ -454,8 +457,75 @@ class EnhancedReasoningAgent:
         self.context_manager = ContextManager()
         self.prompt_engineer = PromptEngineer()
         
-        # Enhanced knowledge base with detailed templates
-        self.knowledge_base = {
+        # Load knowledge from external source if available
+        self.knowledge_base = self._load_knowledge_base()
+        
+    def _load_knowledge_base(self):
+        """Load knowledge base from JSON file or use fallback"""
+        knowledge_data = {}
+        
+        try:
+            # Load enhanced robotics knowledge
+            robotics_files = [
+                'data/enhanced_robotics_knowledge.json',
+                'src/data/enhanced_robotics_knowledge.json',
+                'C:/Users/biges/Desktop/amd_ai/radeon-ai/src/data/enhanced_robotics_knowledge.json'
+            ]
+            for robotics_file in robotics_files:
+                if os.path.exists(robotics_file):
+                    with open(robotics_file, 'r', encoding='utf-8') as f:
+                        robotics_data = json.load(f)
+                        # Defensive merging: support dict or list formats
+                        if isinstance(robotics_data, dict):
+                            knowledge_data.update(robotics_data)
+                        elif isinstance(robotics_data, list):
+                            # convert list of articles into an 'articles' collection
+                            knowledge_data.setdefault('articles', [])
+                            knowledge_data['articles'].extend(robotics_data)
+                        else:
+                            print(f"⚠️ Unrecognized robotics data format in {robotics_file}: {type(robotics_data)}")
+                        print(f"✅ Loaded robotics knowledge from {robotics_file} (type={type(robotics_data).__name__})")
+                    break
+            
+            # Load enhanced ethics data
+            ethics_files = [
+                'enhanced_ethics_data.json',
+                'data/enhanced_ethics_data.json',
+                'C:/Users/biges/OneDrive/Desktop/amd_ai/data/enhanced_ethics_data.json'
+            ]
+            for ethics_file in ethics_files:
+                if os.path.exists(ethics_file):
+                    with open(ethics_file, 'r', encoding='utf-8') as f:
+                        ethics_data = json.load(f)
+                        if isinstance(ethics_data, dict):
+                            knowledge_data.update(ethics_data)
+                        elif isinstance(ethics_data, list):
+                            knowledge_data.setdefault('articles', [])
+                            knowledge_data['articles'].extend(ethics_data)
+                        else:
+                            print(f"⚠️ Unrecognized ethics data format in {ethics_file}: {type(ethics_data)}")
+                        print(f"✅ Loaded ethics knowledge from {ethics_file} (type={type(ethics_data).__name__})")
+                    break
+                    
+            if knowledge_data:
+                return knowledge_data
+                
+        except Exception as e:
+            print(f"❌ Could not load external knowledge base: {e}")
+            # Dump diagnostics to help debug KB loading in containers/CI
+            try:
+                self._dump_kb_diagnostics(robotics_files, ethics_files, exception_info=traceback.format_exc())
+            except Exception:
+                print("⚠️ Failed to write KB diagnostics")
+        
+        print("⚠️ Using fallback knowledge base")
+        # Also write diagnostics when falling back and no external data was loaded
+        try:
+            self._dump_kb_diagnostics(robotics_files, ethics_files)
+        except Exception:
+            pass
+        # Fallback to basic knowledge base
+        return {
             "robot": {
                 "definition": "Autonomous machine", 
                 "types": ["industrial", "service", "humanoid"],
@@ -478,6 +548,64 @@ class EnhancedReasoningAgent:
                 "terminator": "Cybernetic organism with living tissue over metal endoskeleton."
             }
         }
+
+    def _dump_kb_diagnostics(self, robotics_files, ethics_files, exception_info: str = None):
+        """Collect diagnostics about KB files and git state and write to data/kb_fallback_debug.json."""
+        diag = {
+            "timestamp": time.time(),
+            "robotics_files_tested": [],
+            "ethics_files_tested": [],
+            "exception": exception_info,
+            "git": {},
+        }
+
+        os.makedirs('data', exist_ok=True)
+
+        def inspect_file(path):
+            info = {"path": path, "exists": False}
+            try:
+                info["exists"] = os.path.exists(path)
+                if info["exists"]:
+                    info["size_bytes"] = os.path.getsize(path)
+                    # try to load JSON to capture parse errors
+                    try:
+                        with open(path, 'r', encoding='utf-8') as f:
+                            json.load(f)
+                        info["json_load"] = "ok"
+                    except Exception as jerr:
+                        info["json_load"] = f"error: {str(jerr)}"
+                else:
+                    info["note"] = "missing"
+            except Exception as e:
+                info["inspect_error"] = str(e)
+            return info
+
+        for p in robotics_files:
+            diag["robotics_files_tested"].append(inspect_file(p))
+
+        for p in ethics_files:
+            diag["ethics_files_tested"].append(inspect_file(p))
+
+        # Run a few git commands to capture repo state (safe if git not available)
+        def run_git(cmd_args):
+            try:
+                out = subprocess.check_output(["git"] + cmd_args, stderr=subprocess.STDOUT, cwd=os.getcwd(), text=True)
+                return out.strip()
+            except Exception as e:
+                return f"git-error: {str(e)}"
+
+        diag["git"]["branch"] = run_git(["rev-parse", "--abbrev-ref", "HEAD"])
+        diag["git"]["commit"] = run_git(["rev-parse", "--short", "HEAD"])
+        diag["git"]["status"] = run_git(["status", "--porcelain"])
+        diag["git"]["last_commit_msg"] = run_git(["log", "-1", "--pretty=%B"])
+
+        out_path = os.path.join('data', 'kb_fallback_debug.json')
+        try:
+            with open(out_path, 'w', encoding='utf-8') as f:
+                json.dump(diag, f, ensure_ascii=False, indent=2)
+            print(f"✅ Wrote KB fallback diagnostics to {out_path}")
+        except Exception as e:
+            print(f"❌ Failed to write diagnostics file: {e}")
     
     def process_query(self, query: str, session_id: str = "default") -> Dict:
         # 1. Semantic Analysis
