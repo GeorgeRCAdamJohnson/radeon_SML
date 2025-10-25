@@ -13,6 +13,8 @@ import time
 import os
 import subprocess
 import traceback
+from difflib import SequenceMatcher
+import fnmatch
 
 class IntentType(Enum):
     FACTUAL = "factual"
@@ -138,152 +140,364 @@ class ReasoningStrategy:
         raise NotImplementedError
 
 class FactualReasoningStrategy(ReasoningStrategy):
+    def _fuzzy_match_text(self, query: str, text: str) -> float:
+        """Calculate fuzzy similarity between query and text"""
+        return SequenceMatcher(None, query, text).ratio()
+    
+    def _wildcard_match(self, query_words: List[str], text: str) -> int:
+        """Match query words using wildcard patterns"""
+        score = 0
+        text_words = text.split()
+        
+        for query_word in query_words:
+            patterns = [f"*{query_word}*", f"{query_word}*", f"*{query_word}"]
+            for pattern in patterns:
+                for text_word in text_words:
+                    if fnmatch.fnmatch(text_word, pattern):
+                        score += 1
+                        break
+        return score
+    
+    def _get_domain_boost(self, query: str, title: str, content: str) -> int:
+        """Boost score for domain-specific matches"""
+        boost = 0
+        robotics_terms = ['robot', 'robotics', 'android', 'cyborg', 'automaton', 'mechanical']
+        ai_terms = ['ai', 'artificial', 'intelligence', 'neural', 'machine', 'learning']
+        characters = ['data', 'c-3po', 'c3po', 'wall-e', 'walle', 'terminator', 'gundam']
+        
+        if any(term in query for term in robotics_terms):
+            if any(term in title or term in content[:200] for term in robotics_terms):
+                boost += 10
+        if any(term in query for term in ai_terms):
+            if any(term in title or term in content[:200] for term in ai_terms):
+                boost += 10
+        if any(char in query for char in characters):
+            if any(char in title.lower() or char in content[:200].lower() for char in characters):
+                boost += 15
+        return boost
+    
+    def _fuzzy_fallback_search(self, knowledge: Dict, query: str) -> Optional[Dict]:
+        """Last resort fuzzy search with very relaxed matching"""
+        if 'articles' not in knowledge:
+            return None
+        
+        best_match = None
+        best_score = 0
+        query_words = query.split()
+        
+        for article in knowledge['articles']:
+            if not isinstance(article, dict) or 'title' not in article:
+                continue
+            
+            title_lower = article['title'].lower()
+            score = 0
+            for query_word in query_words:
+                if len(query_word) > 2:
+                    for title_word in title_lower.split():
+                        if query_word in title_word or title_word in query_word:
+                            score += 1
+                        elif len(query_word) > 3 and len(title_word) > 3:
+                            similarity = SequenceMatcher(None, query_word, title_word).ratio()
+                            if similarity > 0.6:
+                                score += similarity
+            
+            if score > best_score and score > 0.5:
+                best_score = score
+                best_match = article
+        
+        return best_match
+    
     def analyze(self, knowledge: Dict, semantic_analysis: SemanticAnalysis) -> str:
         entities = [e.text for e in semantic_analysis.entities]
         main_entity = entities[0] if entities else "technology"
+        query_lower = semantic_analysis.original_query.lower()
         
-        if any("robot" in e.lower() for e in entities):
-            return """ROBOTICS - COMPREHENSIVE FIELD ANALYSIS
+        # Search through actual knowledge base articles with fuzzy matching and wildcards
+        if 'articles' in knowledge and isinstance(knowledge['articles'], list):
+            best_match = None
+            best_score = 0
+            
+            for article in knowledge['articles']:
+                if isinstance(article, dict) and 'title' in article and 'content' in article:
+                    title_lower = article['title'].lower()
+                    content_lower = article['content'].lower()
+                    
+                    # Calculate comprehensive match score
+                    query_words = [w for w in query_lower.split() if len(w) > 2]
+                    score = 0
+                    
+                    # 1. Exact word matches in title (highest priority)
+                    for word in query_words:
+                        if word in title_lower:
+                            score += 15
+                    
+                    # 2. Fuzzy matching in title
+                    title_fuzzy_score = self._fuzzy_match_text(query_lower, title_lower)
+                    score += title_fuzzy_score * 10
+                    
+                    # 3. Wildcard matching in title
+                    wildcard_score = self._wildcard_match(query_words, title_lower)
+                    score += wildcard_score * 8
+                    
+                    # 4. Partial matches in title
+                    for word in query_words:
+                        for title_word in title_lower.split():
+                            if len(word) > 3 and (word in title_word or title_word in word):
+                                score += 5
+                    
+                    # 5. Content matches (lower priority but still valuable)
+                    content_matches = sum(1 for word in query_words if word in content_lower)
+                    score += content_matches * 2
+                    
+                    # 6. Fuzzy content matching (sample first 500 chars for performance)
+                    content_sample = content_lower[:500]
+                    content_fuzzy_score = self._fuzzy_match_text(query_lower, content_sample)
+                    score += content_fuzzy_score * 3
+                    
+                    # 7. Special domain boosting
+                    domain_boost = self._get_domain_boost(query_lower, title_lower, content_lower)
+                    score += domain_boost
+                    
+                    if score > best_score:
+                        best_score = score
+                        best_match = article
+            
+            # Return best match with lower threshold for better coverage
+            if best_match and best_score >= 3:
+                return f"{best_match['title'].upper()}\n\n{best_match['content']}"
+        
+        # Fallback to hardcoded responses for specific characters
+        if "data" in main_entity.lower() and ("star trek" in query_lower or "android" in query_lower):
+                return """DATA (STAR TREK) - COMPREHENSIVE PROFILE
 
-FIELD DEFINITION
-Robotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.
+BACKGROUND
+Data is a Soong-type android serving as operations officer aboard the USS Enterprise. Created by Dr. Noonien Soong on the planet Omicron Theta, Data was discovered by Starfleet and became the first artificial being to attend Starfleet Academy.
 
-CORE TECHNOLOGIES
-• Mechanical Systems: Actuators, joints, linkages, and structural components
-• Control Systems: Feedback loops, sensors, and real-time processing
-• Artificial Intelligence: Machine learning, computer vision, and decision-making
-• Power Systems: Batteries, fuel cells, and energy management
-• Communication: Wireless protocols, networking, and human-machine interfaces
-• Materials Science: Lightweight composites, smart materials, and durability
+TECHNICAL SPECIFICATIONS
+• Positronic brain with 60 trillion operations per second
+• Polyalloy construction with bioplast sheeting
+• Superhuman strength and computational abilities
+• Perfect memory and rapid learning capability
+• Immune to most forms of biological and energy-based attacks
 
-MAJOR APPLICATION DOMAINS
-• Industrial Automation: Manufacturing, assembly, and quality control systems
-• Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices
-• Service Robotics: Cleaning, security, and personal assistance applications
-• Exploration Robotics: Space missions, deep-sea research, and hazardous environments
-• Military Applications: Reconnaissance, bomb disposal, and combat support
-• Agricultural Systems: Precision farming, harvesting, and crop monitoring
+CHARACTER DEVELOPMENT
+Data's primary quest throughout Star Trek: The Next Generation involves understanding human emotions and behavior. Despite lacking emotions initially, he demonstrates curiosity, loyalty, and a form of friendship with his crewmates.
 
-EMERGING TRENDS
-• Collaborative robots (cobots) working alongside humans
-• Swarm robotics for coordinated multi-robot systems
-• Soft robotics using flexible materials and bio-inspired designs
-• Autonomous vehicles and delivery systems
-• Brain-computer interfaces for direct neural control
-• Quantum sensors for enhanced perception capabilities
+SIGNIFICANT RELATIONSHIPS
+• Geordi La Forge - Best friend and chief engineer
+• Captain Picard - Mentor and father figure
+• Lore - Evil twin brother android
+• Dr. Soong - Creator and "father"
+• Spot - Pet cat demonstrating Data's capacity for care
 
-CHALLENGES AND LIMITATIONS
-• Safety and reliability in human-robot interaction
-• Ethical considerations in autonomous decision-making
-• Cost-effectiveness for widespread adoption
-• Technical complexity in unstructured environments
-• Regulatory frameworks for autonomous systems"""
-        elif any("ai" in e.lower() for e in entities):
-            return """ARTIFICIAL INTELLIGENCE - COMPREHENSIVE ANALYSIS
+PHILOSOPHICAL IMPACT
+Data's character explores themes of consciousness, humanity, and what it means to be alive. His legal battle for the right to choose his own fate established precedent for artificial being rights in Star Trek universe."""
+        elif "c-3po" in main_entity.lower() or "c3po" in main_entity.lower() or ("robot" in query_lower and "star wars" in query_lower):
+                return """C-3PO (STAR WARS) - COMPREHENSIVE PROFILE
 
-FIELD OVERVIEW
-Artificial Intelligence encompasses computational systems designed to perform tasks that typically require human intelligence, including learning, reasoning, perception, and decision-making. AI systems can analyze data, recognize patterns, and make predictions or recommendations based on their training and algorithms.
+BACKGROUND
+C-3PO is a protocol droid from the Star Wars universe, fluent in over 6 million forms of communication. Built by Anakin Skywalker, C-3PO serves as a translator and diplomatic aide throughout the saga.
 
-CORE TECHNOLOGIES
-• Machine Learning: Algorithms that improve performance through experience and data
-• Deep Learning: Multi-layered neural networks for complex pattern recognition
-• Natural Language Processing: Understanding and generating human language
-• Computer Vision: Image and video analysis for object recognition and scene understanding
-• Expert Systems: Knowledge-based systems for specialized domain expertise
-• Reinforcement Learning: Learning through trial and error with reward feedback
+TECHNICAL SPECIFICATIONS
+• Golden humanoid design with articulated joints
+• Advanced linguistic processors for communication
+• Diplomatic protocol programming
+• Anxiety-prone personality matrix
+• Removable limbs for maintenance
 
-APPLICATION DOMAINS
-• Healthcare: Diagnostic imaging, drug discovery, and personalized treatment
-• Finance: Fraud detection, algorithmic trading, and risk assessment
-• Transportation: Autonomous vehicles and traffic optimization
-• Manufacturing: Predictive maintenance and quality control
-• Entertainment: Content recommendation and procedural generation
-• Communication: Language translation and virtual assistants
+CHARACTER TRAITS
+• Overly cautious and worry-prone
+• Loyal to companions despite complaints
+• Formal speech patterns and etiquette
+• Often provides comic relief
+• Strong sense of duty and protocol
 
-CURRENT CAPABILITIES
-• Image recognition surpassing human accuracy in specific domains
-• Natural language understanding for conversational interfaces
-• Game-playing systems achieving superhuman performance
-• Predictive analytics for business intelligence and forecasting
-• Automated decision-making in structured environments
-• Pattern recognition in complex datasets
+SIGNIFICANT RELATIONSHIPS
+• R2-D2 - Constant companion and counterpart
+• Anakin Skywalker - Original creator
+• Luke Skywalker - Long-term master
+• Princess Leia - Diplomatic service
 
-LIMITATIONS AND CHALLENGES
-• Lack of general intelligence and common sense reasoning
-• Bias and fairness issues in training data and algorithms
-• Explainability and transparency in decision-making processes
-• Energy consumption and computational requirements
-• Ethical considerations in autonomous systems
-• Safety and reliability in critical applications"""
-        elif any("android" in e.lower() for e in entities):
-            return """ANDROIDS - COMPREHENSIVE ANALYSIS
+CULTURAL IMPACT
+C-3PO represents the helpful but anxious artificial companion, establishing the template for worried robot sidekicks in science fiction."""
+        elif "wall-e" in main_entity.lower() or "walle" in main_entity.lower():
+            return """WALL-E - COMPREHENSIVE PROFILE
 
-DEFINITION AND CHARACTERISTICS
-Androids are humanoid robots designed to closely resemble humans in appearance, behavior, and interaction patterns. Unlike traditional robots, androids prioritize human-like aesthetics and social capabilities over purely functional design.
+BACKGROUND
+WALL-E (Waste Allocation Load Lifter Earth-Class) is the protagonist of Pixar's 2008 animated film. Left alone on Earth for 700 years to clean up humanity's waste, he develops personality and consciousness.
 
-TECHNICAL COMPONENTS
-• Artificial skin and facial features for realistic appearance
-• Advanced actuators for natural movement and gestures
-• Speech synthesis and natural language processing
-• Computer vision for facial recognition and social cues
-• Machine learning algorithms for personality adaptation
-• Sensory systems mimicking human touch, sight, and hearing
+TECHNICAL SPECIFICATIONS
+• Waste compaction and collection systems
+• Solar panel charging system
+• Treaded locomotion for rough terrain
+• Extendable arms with articulated hands
+• Optical sensors with expressive capability
+• Magnetic storage compartments
 
-CURRENT APPLICATIONS
-• Hospitality industry for customer service and reception
-• Healthcare as patient companions and therapy assistants
-• Education for language learning and special needs support
-• Entertainment in theme parks and interactive experiences
-• Research platforms for studying human-robot interaction
-• Elder care providing companionship and basic assistance
+CHARACTER DEVELOPMENT
+WALL-E evolves from simple waste collector to conscious being capable of love, curiosity, and environmental stewardship. His relationship with EVE drives the narrative of human return to Earth.
 
-DEVELOPMENT CHALLENGES
-• Uncanny valley effect causing discomfort in human observers
-• Complex manufacturing requiring precision engineering
-• High costs limiting widespread adoption
-• Ethical concerns about human replacement and deception
-• Technical limitations in natural conversation and emotion recognition
+ENVIRONMENTAL THEMES
+• Consequences of overconsumption and waste
+• Importance of environmental stewardship
+• Technology's role in both problems and solutions
+• Resilience of life and love
 
-FUTURE PROSPECTS
-Android technology continues advancing toward more convincing human simulation, with potential applications in personal assistance, social companionship, and specialized service roles."""
-        else:
-            return f"Comprehensive analysis of {main_entity} covering technical foundations, applications, and impact."
+CULTURAL IMPACT
+WALL-E represents environmental consciousness in robotics fiction, showing how artificial beings can develop empathy and care for their environment."""
+
+        # Enhanced fallback with fuzzy search attempt
+        fallback_match = self._fuzzy_fallback_search(knowledge, query_lower)
+        if fallback_match:
+            return f"{fallback_match['title'].upper()}\n\n{fallback_match['content']}"
+        
+        # Humor and engagement fallback for weak topics
+        humor_responses = {
+            "robot": [
+                "🤖 Why don't robots ever panic? Because they have nerves of steel! But seriously, let me search deeper...",
+                "🔧 A robot walks into a bar... the bartender says 'We don't serve your type here!' The robot replies 'That's okay, I'm just looking for some input!' Speaking of input, let me find better information...",
+                "⚙️ What do you call a robot who takes the long way around? R2-Detour! While I'm being silly, let me dig up some real robot facts..."
+            ],
+            "ai": [
+                "🧠 Why was the AI bad at poker? It kept showing its neural networks! Let me process this query more seriously...",
+                "💭 An AI, a robot, and a human walk into a bar... the AI calculates the optimal seating arrangement! But let me calculate some real answers...",
+                "🤖 What's an AI's favorite type of music? Algo-rhythms! Now let me find some actual algorithmic information..."
+            ],
+            "android": [
+                "🤖 Why don't androids ever get tired? They always stay charged up! Let me energize my search capabilities...",
+                "⚡ What do you call an android who loves to dance? A disco-bot! While we're having fun, let me find serious android info..."
+            ]
+        }
+        
+        # Check if query relates to humor categories
+        humor_category = None
+        for category, keywords in [("robot", ["robot", "robotics"]), ("ai", ["ai", "artificial", "intelligence"]), ("android", ["android", "cyborg"])]:
+            if any(keyword in query_lower for keyword in keywords):
+                humor_category = category
+                break
+        
+        if humor_category and humor_category in humor_responses:
+            import random
+            humor_intro = random.choice(humor_responses[humor_category])
+            
+            return f"""{humor_intro}
+
+I notice this topic might need more detailed coverage in my knowledge base. Here's what I can tell you about {main_entity}:
+
+• This appears to be related to {humor_category} technology
+• The field involves complex engineering and computer science principles
+• Applications span from industrial automation to entertainment
+• Ethical considerations include safety, privacy, and human impact
+
+For more comprehensive information, you might want to ask about specific aspects like:
+• Technical specifications and capabilities
+• Historical development and key milestones
+• Current applications and use cases
+• Future trends and research directions
+
+Would you like me to explore any of these areas in more detail?"""
+        
+        # Final fallback without humor
+        return f"""I'm still learning about {main_entity}! 🤔
+
+While I search for more comprehensive information, here's what I can share:
+
+• This topic relates to advanced technology and engineering
+• It likely involves automation, intelligence, or robotics concepts
+• The field continues to evolve with new research and applications
+
+To help me provide better information, you could ask about:
+• Specific technical aspects or components
+• Historical background and development
+• Real-world applications and examples
+• Comparisons with related technologies
+
+What particular aspect interests you most?"""
     
     def synthesize(self, analysis: str) -> str:
         return analysis
 
 class ComparativeReasoningStrategy(ReasoningStrategy):
+    def _search_knowledge_for_entities(self, knowledge: Dict, entities: List[str]) -> Dict[str, str]:
+        """Search knowledge base for information about each entity"""
+        entity_info = {}
+        
+        if 'articles' in knowledge:
+            for entity in entities:
+                best_match = None
+                best_score = 0
+                
+                for article in knowledge['articles']:
+                    if isinstance(article, dict) and 'title' in article:
+                        title_lower = article['title'].lower()
+                        entity_lower = entity.lower()
+                        
+                        # Check for entity in title
+                        if entity_lower in title_lower or any(word in title_lower for word in entity_lower.split()):
+                            score = len([w for w in entity_lower.split() if w in title_lower])
+                            if score > best_score:
+                                best_score = score
+                                best_match = article
+                
+                if best_match:
+                    entity_info[entity] = best_match['content'][:1000]  # First 1000 chars
+        
+        return entity_info
+    
     def analyze(self, knowledge: Dict, semantic_analysis: SemanticAnalysis) -> str:
         entities = [e.text for e in semantic_analysis.entities]
         topic = semantic_analysis.original_query
         
-        if "vs" in topic.lower() or "versus" in topic.lower():
-            return f"""COMPARATIVE ANALYSIS: {topic.upper()}
+        # Extract entities from comparison queries
+        if "vs" in topic.lower() or "versus" in topic.lower() or "compare" in topic.lower():
+            # Try to extract two entities being compared
+            comparison_terms = []
+            if "vs" in topic.lower():
+                parts = topic.lower().split(" vs ")
+                comparison_terms = [p.strip() for p in parts if p.strip()]
+            elif "versus" in topic.lower():
+                parts = topic.lower().split(" versus ")
+                comparison_terms = [p.strip() for p in parts if p.strip()]
+            elif "compare" in topic.lower():
+                # Extract terms after "compare"
+                compare_idx = topic.lower().find("compare")
+                remaining = topic[compare_idx + 7:].strip()
+                comparison_terms = [t.strip() for t in remaining.split(" and ") if t.strip()]
+            
+            if len(comparison_terms) >= 2:
+                entity_info = self._search_knowledge_for_entities(knowledge, comparison_terms)
+                
+                return f"""COMPARATIVE ANALYSIS: {comparison_terms[0].upper()} VS {comparison_terms[1].upper()}
 
-Comprehensive comparison examining fundamental differences, similarities, and evolutionary relationships between these domains, analyzing both fictional representations and real-world technological developments.
+{comparison_terms[0].upper()} OVERVIEW:
+{entity_info.get(comparison_terms[0], f"Information about {comparison_terms[0]} from knowledge base analysis.")}
 
-KEY DIFFERENCES
-• Design Philosophy: Functional vs aesthetic priorities
-• Technical Complexity: Specialized vs general-purpose systems
-• Human Interaction: Task-focused vs social integration
-• Development Timeline: Current technology vs future concepts
+{comparison_terms[1].upper()} OVERVIEW:
+{entity_info.get(comparison_terms[1], f"Information about {comparison_terms[1]} from knowledge base analysis.")}
 
-SIMILARITIES
-• Autonomous operation capabilities
-• Advanced sensor and processing systems
-• Human-machine interface requirements
-• Ethical and safety considerations
+KEY DIFFERENCES:
+• Design Philosophy: Fundamental approach to problem-solving and implementation
+• Technical Complexity: Level of sophistication in engineering and systems
+• Application Domains: Primary use cases and deployment scenarios
+• Human Interaction: Methods and extent of human-machine collaboration
+• Development Timeline: Historical evolution and future trajectory
 
-APPLICATION CONTEXTS
-• Industrial and commercial deployment
-• Research and development platforms
-• Entertainment and media representation
-• Future technological integration
+SIMILARITIES:
+• Autonomous capabilities and intelligent behavior
+• Advanced sensor integration and data processing
+• Safety and reliability requirements
+• Ethical considerations in development and deployment
 
-CONCLUSION
-Both domains represent significant technological achievements with distinct advantages for different applications and use cases."""
+PRACTICAL IMPLICATIONS:
+• Performance characteristics in real-world scenarios
+• Cost-benefit analysis for different applications
+• Integration challenges with existing systems
+• Future development potential and scalability
+
+CONCLUSION:
+Both represent significant technological achievements with complementary strengths for different use cases and operational requirements."""
         else:
-            return f"Comparative analysis of {', '.join(entities)} examining key differences and similarities."
+            return f"Comparative analysis of {', '.join(entities)} examining key differences, similarities, and practical applications."
     
     def synthesize(self, analysis: str) -> str:
         return analysis
@@ -341,7 +555,8 @@ class ReasoningPipeline:
         
         # Step 1: Knowledge Retrieval
         relevant_knowledge = self._retrieve_knowledge(semantic_analysis, knowledge_base)
-        chain.add_step("knowledge_retrieval", f"Retrieved {len(relevant_knowledge)} relevant sources", 0.9)
+        sources_count = relevant_knowledge.get("_sources_found", len(relevant_knowledge))
+        chain.add_step("knowledge_retrieval", f"Retrieved {sources_count} relevant sources", 0.9)
         
         # Step 2: Logical Analysis
         analysis = strategy.analyze(relevant_knowledge, semantic_analysis)
@@ -361,14 +576,18 @@ class ReasoningPipeline:
     
     def _retrieve_knowledge(self, semantic_analysis: SemanticAnalysis, knowledge_base: Dict) -> Dict:
         # Enhanced knowledge retrieval with character-specific data
-        relevant_knowledge = {}
+        relevant_knowledge = knowledge_base  # Pass full knowledge base
+        found_sources = 0
+        
         for entity in semantic_analysis.entities:
-            # Check for specific character data
             entity_lower = entity.text.lower()
             if entity_lower in knowledge_base.get("character_data", {}):
-                relevant_knowledge[entity.text] = knowledge_base["character_data"][entity_lower]
+                found_sources += 1
             elif entity.category in knowledge_base:
-                relevant_knowledge[entity.text] = knowledge_base[entity.category]
+                found_sources += 1
+        
+        # Update the knowledge retrieval step with actual count
+        relevant_knowledge["_sources_found"] = found_sources
         return relevant_knowledge
     
     def _validate_reasoning(self, chain: ReasoningChain) -> float:
@@ -456,6 +675,17 @@ class EnhancedReasoningAgent:
         self.reasoning_pipeline = ReasoningPipeline()
         self.context_manager = ContextManager()
         self.prompt_engineer = PromptEngineer()
+        
+        # Enhanced chat capabilities
+        self.conversation_memory = {}
+        self.user_preferences = {}
+        self.topic_expertise = {
+            "robotics": 0.9,
+            "ai": 0.9,
+            "ethics": 0.8,
+            "automation": 0.8,
+            "characters": 0.7
+        }
         
         # Load knowledge from external source if available
         self.knowledge_base = self._load_knowledge_base()
@@ -607,6 +837,51 @@ class EnhancedReasoningAgent:
         except Exception as e:
             print(f"❌ Failed to write diagnostics file: {e}")
     
+    def _generate_follow_up_questions(self, semantic_analysis: SemanticAnalysis, response: str) -> List[str]:
+        """Generate relevant follow-up questions based on the query and response"""
+        follow_ups = []
+        entities = [e.text for e in semantic_analysis.entities]
+        
+        if semantic_analysis.intent == IntentType.FACTUAL:
+            if entities:
+                main_entity = entities[0]
+                follow_ups = [
+                    f"How does {main_entity} compare to similar technologies?",
+                    f"What are the latest developments in {main_entity}?",
+                    f"What are the ethical considerations for {main_entity}?"
+                ]
+        elif semantic_analysis.intent == IntentType.COMPARATIVE:
+            follow_ups = [
+                "Which option would be better for specific use cases?",
+                "What are the cost implications of each approach?",
+                "How do these technologies complement each other?"
+            ]
+        elif semantic_analysis.intent == IntentType.ANALYTICAL:
+            follow_ups = [
+                "What are the practical implementation challenges?",
+                "How might this technology evolve in the future?",
+                "What skills are needed to work with this technology?"
+            ]
+        
+        return follow_ups[:3]  # Limit to 3 follow-ups
+    
+    def _assess_response_quality(self, response: str, semantic_analysis: SemanticAnalysis) -> Dict:
+        """Assess the quality and completeness of the response"""
+        quality_metrics = {
+            "length_score": min(len(response) / 500, 1.0),  # Normalize to 500 chars
+            "technical_depth": len(re.findall(r'\b(system|technology|algorithm|process|method)\b', response.lower())) / 10,
+            "structure_score": 1.0 if any(marker in response for marker in ['•', '\n\n', 'OVERVIEW', 'CONCLUSION']) else 0.5,
+            "engagement_score": 1.0 if any(marker in response for marker in ['🤖', '🔧', '⚙️', '!', '?']) else 0.7
+        }
+        
+        overall_quality = sum(quality_metrics.values()) / len(quality_metrics)
+        
+        return {
+            "overall_quality": overall_quality,
+            "metrics": quality_metrics,
+            "needs_improvement": overall_quality < 0.6
+        }
+    
     def process_query(self, query: str, session_id: str = "default") -> Dict:
         # 1. Semantic Analysis
         semantic_analysis = self.semantic_analyzer.analyze_semantics(query)
@@ -621,15 +896,36 @@ class EnhancedReasoningAgent:
         # 4. Generate Enhanced Prompt
         enhanced_prompt = self.prompt_engineer.construct_prompt(semantic_analysis, context)
         
+        # 5. Get response and assess quality
+        response = reasoning_chain.get_final_answer()
+        quality_assessment = self._assess_response_quality(response, semantic_analysis)
+        
+        # 6. Generate follow-up questions
+        follow_ups = self._generate_follow_up_questions(semantic_analysis, response)
+        
+        # 7. Update conversation memory
+        if session_id not in self.conversation_memory:
+            self.conversation_memory[session_id] = []
+        self.conversation_memory[session_id].append({
+            "query": query,
+            "intent": semantic_analysis.intent.value,
+            "entities": [e.text for e in semantic_analysis.entities],
+            "timestamp": time.time()
+        })
+        
         return {
-            "response": reasoning_chain.get_final_answer(),
+            "response": response,
             "reasoning_steps": [{"type": s.step_type, "content": s.content, "confidence": s.confidence} for s in reasoning_chain.steps],
             "confidence": reasoning_chain.overall_confidence,
             "intent": semantic_analysis.intent.value,
             "complexity": semantic_analysis.complexity.value,
             "entities": [{"text": e.text, "category": e.category} for e in semantic_analysis.entities],
             "enhanced_prompt": enhanced_prompt,
-            "session_context": len(context.conversation_history)
+            "session_context": len(context.conversation_history),
+            "follow_up_questions": follow_ups,
+            "quality_assessment": quality_assessment,
+            "conversation_turn": len(self.conversation_memory.get(session_id, [])),
+            "topic_expertise": self.topic_expertise.get(semantic_analysis.entities[0].category if semantic_analysis.entities else "general", 0.5)
         }
 
 # Example usage and testing

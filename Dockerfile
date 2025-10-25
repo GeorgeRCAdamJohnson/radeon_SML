@@ -1,25 +1,15 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 WORKDIR /app
 
-# Copy requirements and install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy Python server and reasoning agent
 COPY server.py .
 COPY reasoning_agent.py .
-COPY server_enhanced.py .
+COPY data/ ./data/
+COPY src/react/deploy/ ./static/
 
-# Copy React frontend
-COPY src/react/deploy ./static
-
-# Set environment variables
-ENV PYTHONUNBUFFERED=1
-ENV PORT=8000
-
-# Expose port
 EXPOSE 8000
 
-# Start server with static file serving
-CMD ["python", "-u", "server.py"]
+CMD ["python", "-m", "uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -16,49 +16,38 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
         
-        const LOCAL_URL = 'http://localhost:8000';
-        const PRODUCTION_URL = 'https://radeon-ai-960026900565.us-central1.run.app';
-        const BACKUP_URL = 'https://backup-offline.example.com';
+        const DOCKER_URL = window.location.origin;
+        const NGROK_URL = 'https://d802d1c89f25.ngrok-free.app';
         
         const App = () => {
             const [messages, setMessages] = useState([]);
             const [input, setInput] = useState('');
             const [isLoading, setIsLoading] = useState(false);
             const [isConnected, setIsConnected] = useState(false);
-            const [currentAPI, setCurrentAPI] = useState(LOCAL_URL);
+            const [currentAPI, setCurrentAPI] = useState(DOCKER_URL);
             const [responseFormat, setResponseFormat] = useState('detailed');
 
             useEffect(() => {
                 const checkConnection = async () => {
                     try {
-                        // Try production server first
-                        const prodResponse = await fetch(`${PRODUCTION_URL}/api/health`);
-                        if (prodResponse.ok) {
-                            setCurrentAPI(PRODUCTION_URL);
+                        // Try Docker first
+                        const dockerResponse = await fetch(`${DOCKER_URL}/api/health`);
+                        if (dockerResponse.ok) {
+                            setCurrentAPI(DOCKER_URL);
                             setIsConnected(true);
                             return;
                         }
                     } catch {}
                     
-                    // try {
-                    //     // Try local server
-                    //     const localResponse = await fetch(`${LOCAL_URL}/api/health`);
-                    //     if (localResponse.ok) {
-                    //         setCurrentAPI(LOCAL_URL);
-                    //         setIsConnected(true);
-                    //         return;
-                    //     }
-                    // } catch {}
-                    
-                    // try {
-                    //     // Fallback to backup URL
-                    //     const backupResponse = await fetch(`${BACKUP_URL}/api/health`);
-                    //     if (backupResponse.ok) {
-                    //         setCurrentAPI(BACKUP_URL);
-                    //         setIsConnected(true);
-                    //         return;
-                    //     }
-                    // } catch {}
+                    try {
+                        // Fallback to ngrok
+                        const ngrokResponse = await fetch(`${NGROK_URL}/api/health`);
+                        if (ngrokResponse.ok) {
+                            setCurrentAPI(NGROK_URL);
+                            setIsConnected(true);
+                            return;
+                        }
+                    } catch {}
                     
                     setIsConnected(false);
                 };
@@ -168,7 +157,7 @@
                             <div className={`px-4 py-2 text-sm border-b ${isConnected ? "bg-green-50 text-green-800 border-green-200" : "bg-red-50 text-red-800 border-red-200"}`}>
                                 <div className="flex items-center gap-2">
                                     <div className={`w-2 h-2 rounded-full ${isConnected ? "bg-green-500 animate-pulse" : "bg-red-500"}`}></div>
-                                    {isConnected ? `Connected to ${currentAPI.includes('localhost') ? 'Local Python' : currentAPI.includes('onrender') ? 'Production' : 'Backup'} Backend` : 'Disconnected - Check backend server'}
+                                    {isConnected ? `Connected to ${currentAPI.includes('localhost') ? 'Docker' : 'ngrok'} Backend` : 'Disconnected - Check backend server'}
                                 </div>
                             </div>
                             
