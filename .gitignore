@@ -12,3 +12,4 @@ package-lock.json
 coverage/
 __pycache__/
 *.pyc
+data/badformat

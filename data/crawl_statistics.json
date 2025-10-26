@@ -1,13 +1,13 @@
 {
   "articles_crawled": 339,
-  "total_words": 1188104,
+  "total_words": 1002005,
   "failed_requests": 0,
   "cache_hits": 0,
   "cache_hit_rate": 0.0,
-  "start_time": "2025-10-25T19:34:11.984939",
-  "end_time": "2025-10-25T19:39:58.817766",
-  "total_duration_seconds": 346.832827,
-  "articles_per_minute": 58.644967882466325,
-  "average_words_per_article": 3504.731563421829,
+  "start_time": "2025-10-25T20:01:19.435064",
+  "end_time": "2025-10-25T20:06:51.625278",
+  "total_duration_seconds": 332.190214,
+  "articles_per_minute": 61.22997952010711,
+  "average_words_per_article": 2955.7669616519174,
   "knowledge_base_file": "data\\enhanced_robotics_knowledge.json"
 }

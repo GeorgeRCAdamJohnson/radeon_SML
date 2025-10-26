@@ -116,22 +116,55 @@ def clean_content(content):
     
     # Remove script and style elements completely
     content = re.sub(r'<(script|style)[^>]*>.*?</\1>', '', content, flags=re.DOTALL | re.IGNORECASE)
+    
+    # Remove complex JSON/template structures (enhanced for malformed data)
+    content = re.sub(r'\{"[^"]*":[^}]*\}', '', content)  # Simple JSON objects
+    content = re.sub(r'\{[^}]*"target"[^}]*\}', '', content)  # Template target objects
+    content = re.sub(r'\{[^}]*"template"[^}]*\}', '', content)  # Template objects
+    content = re.sub(r'\{[^}]*"params"[^}]*\}', '', content)  # Parameter objects
+    content = re.sub(r'\{[^}]*"wt"[^}]*\}', '', content)  # Wikitext objects
+    content = re.sub(r'\{[^}]*"href"[^}]*\}', '', content)  # Link objects
+    
+    # Remove MediaWiki parser output and CSS
+    content = re.sub(r'\.mw-parser-output[^}]*\}', '', content)
+    content = re.sub(r'@media[^}]*\{[^}]*\}', '', content)
+    content = re.sub(r'\.[a-zA-Z-]+\{[^}]*\}', '', content)  # CSS rules
+    
     # Remove HTML/XML tags
     content = re.sub(r'<[^>]+>', ' ', content)
-    # Remove MediaWiki parser output
-    content = re.sub(r'\.mw-parser-output[^}]+}', '', content)
-    # Remove JSON-like structures
-    content = re.sub(r'\{[^}]*"[^}]*\}', '', content)
-    # Remove HTML entities
+    
+    # Remove template and wikitext artifacts
+    content = re.sub(r'\{\{[^}]*\}\}', '', content)  # Template calls
+    content = re.sub(r'\[\[[^\]]*\]\]', '', content)  # Wiki links
+    content = re.sub(r'\{\|[^}]*\|\}', '', content)  # Wiki tables
+    
+    # Remove HTML entities and special characters
     content = re.sub(r'&[a-zA-Z0-9#]+;', ' ', content)
-    # Remove citation markers
+    content = re.sub(r'&lt;', '<', content)
+    content = re.sub(r'&gt;', '>', content)
+    content = re.sub(r'&quot;', '"', content)
+    content = re.sub(r'&apos;', "'", content)
+    content = re.sub(r'&amp;', '&', content)
+    
+    # Remove citation markers and references
     content = re.sub(r'\[\d+\]', '', content)
-    # Remove template markers
-    content = re.sub(r'\{\{[^}]+\}\}', '', content)
-    # Remove excessive whitespace
-    content = re.sub(r'\s+', ' ', content)
-    # Remove common HTML artifacts
-    content = re.sub(r'(class|id|style)="[^"]*"', '', content)
+    content = re.sub(r'\{\{[Cc]ite[^}]*\}\}', '', content)
+    content = re.sub(r'\{\{[Rr]ef[^}]*\}\}', '', content)
+    
+    # Remove common HTML/CSS artifacts
+    content = re.sub(r'(class|id|style|data-[^=]*)="[^"]*"', '', content)
+    content = re.sub(r'(margin|padding|font|color|background)[^;]*;', '', content)
+    
+    # Remove malformed JSON fragments
+    content = re.sub(r'"[^"]*":[^,}]*[,}]', '', content)
+    content = re.sub(r'"i":\d+', '', content)
+    content = re.sub(r'"\\n\\n"', ' ', content)
+    
+    # Clean up remaining artifacts
+    content = re.sub(r'[{}\[\]"\\]+', ' ', content)  # Remove remaining brackets and quotes
+    content = re.sub(r'\s+', ' ', content)  # Normalize whitespace
+    content = re.sub(r'^[\s,.:;-]+', '', content)  # Remove leading punctuation
+    content = re.sub(r'[\s,.:;-]+$', '', content)  # Remove trailing punctuation
     
     return content.strip()
 
@@ -312,6 +345,10 @@ class EnhancedWikipediaCrawler:
             
             article_title = summary_data.get('title', title)
             article_summary = summary_data.get('extract', '')
+            
+            # Clean the content before saving/returning
+            full_content = clean_content(full_content)
+            article_summary = clean_content(article_summary)
             
             # Save to cache
             self._save_to_cache(title, article_title, article_summary, full_content)

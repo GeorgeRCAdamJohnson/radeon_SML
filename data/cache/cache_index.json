@@ -1,862 +1,862 @@
 {
   "Robot": {
     "filename": "Robot.json",
-    "timestamp": "2025-10-25T19:34:13.162683"
+    "timestamp": "2025-10-25T20:01:20.605669"
   },
   "Robotics": {
     "filename": "Robotics.json",
-    "timestamp": "2025-10-25T19:34:14.285001"
+    "timestamp": "2025-10-25T20:01:22.415086"
   },
   "Industrial robot": {
     "filename": "Industrial_robot.json",
-    "timestamp": "2025-10-25T19:34:15.562740"
+    "timestamp": "2025-10-25T20:01:23.418359"
   },
   "Autonomous robot": {
     "filename": "Autonomous_robot.json",
-    "timestamp": "2025-10-25T19:34:16.501769"
+    "timestamp": "2025-10-25T20:01:25.215374"
   },
   "Mobile robot": {
     "filename": "Mobile_robot.json",
-    "timestamp": "2025-10-25T19:34:17.978960"
+    "timestamp": "2025-10-25T20:01:27.008762"
   },
   "Humanoid robot": {
     "filename": "Humanoid_robot.json",
-    "timestamp": "2025-10-25T19:34:19.835063"
+    "timestamp": "2025-10-25T20:01:28.283042"
   },
   "Robot operating system": {
     "filename": "Robot_operating_system.json",
-    "timestamp": "2025-10-25T19:34:21.642237"
+    "timestamp": "2025-10-25T20:01:29.539607"
   },
   "Robot locomotion": {
     "filename": "Robot_locomotion.json",
-    "timestamp": "2025-10-25T19:34:22.883538"
+    "timestamp": "2025-10-25T20:01:31.374430"
   },
   "Robot kinematics": {
     "filename": "Robot_kinematics.json",
-    "timestamp": "2025-10-25T19:34:23.953351"
+    "timestamp": "2025-10-25T20:01:32.555796"
   },
   "Robot control": {
     "filename": "Robot_control.json",
-    "timestamp": "2025-10-25T19:34:26.256312"
+    "timestamp": "2025-10-25T20:01:33.600714"
   },
   "Robot vision": {
     "filename": "Robot_vision.json",
-    "timestamp": "2025-10-25T19:34:27.446032"
+    "timestamp": "2025-10-25T20:01:34.682748"
   },
   "Swarm robotics": {
     "filename": "Swarm_robotics.json",
-    "timestamp": "2025-10-25T19:34:28.878152"
+    "timestamp": "2025-10-25T20:01:35.679068"
   },
   "Medical robot": {
     "filename": "Medical_robot.json",
-    "timestamp": "2025-10-25T19:34:30.441777"
+    "timestamp": "2025-10-25T20:01:36.766387"
   },
   "Military robot": {
     "filename": "Military_robot.json",
-    "timestamp": "2025-10-25T19:34:31.653739"
+    "timestamp": "2025-10-25T20:01:38.356718"
   },
   "Service robot": {
     "filename": "Service_robot.json",
-    "timestamp": "2025-10-25T19:34:32.819274"
+    "timestamp": "2025-10-25T20:01:40.239135"
   },
   "Agricultural robot": {
     "filename": "Agricultural_robot.json",
-    "timestamp": "2025-10-25T19:34:33.856314"
+    "timestamp": "2025-10-25T20:01:41.713880"
   },
   "Underwater robot": {
     "filename": "Underwater_robot.json",
-    "timestamp": "2025-10-25T19:34:35.712808"
+    "timestamp": "2025-10-25T20:01:43.606328"
   },
   "Robot ethics": {
     "filename": "Robot_ethics.json",
-    "timestamp": "2025-10-25T19:34:37.378642"
+    "timestamp": "2025-10-25T20:01:44.901521"
   },
   "Human-robot interaction": {
     "filename": "Human-robot_interaction.json",
-    "timestamp": "2025-10-25T19:34:38.625913"
+    "timestamp": "2025-10-25T20:01:46.762704"
   },
   "Robot learning": {
     "filename": "Robot_learning.json",
-    "timestamp": "2025-10-25T19:34:40.238078"
+    "timestamp": "2025-10-25T20:01:47.792176"
   },
   "Robot navigation": {
     "filename": "Robot_navigation.json",
-    "timestamp": "2025-10-25T19:34:41.359445"
+    "timestamp": "2025-10-25T20:01:48.897446"
   },
   "Actuator": {
     "filename": "Actuator.json",
-    "timestamp": "2025-10-25T19:34:42.776799"
+    "timestamp": "2025-10-25T20:01:49.843369"
   },
   "Robot arm": {
     "filename": "Robot_arm.json",
-    "timestamp": "2025-10-25T19:34:44.569612"
+    "timestamp": "2025-10-25T20:01:51.154889"
   },
   "End effector": {
     "filename": "End_effector.json",
-    "timestamp": "2025-10-25T19:34:46.352383"
+    "timestamp": "2025-10-25T20:01:52.400925"
   },
   "Artificial intelligence": {
     "filename": "Artificial_intelligence.json",
-    "timestamp": "2025-10-25T19:34:49.466898"
+    "timestamp": "2025-10-25T20:01:54.271974"
   },
   "Machine learning": {
     "filename": "Machine_learning.json",
-    "timestamp": "2025-10-25T19:34:50.617906"
+    "timestamp": "2025-10-25T20:01:55.970380"
   },
   "Deep learning": {
     "filename": "Deep_learning.json",
-    "timestamp": "2025-10-25T19:34:52.490281"
+    "timestamp": "2025-10-25T20:01:57.150863"
   },
   "Neural network": {
     "filename": "Neural_network.json",
-    "timestamp": "2025-10-25T19:34:54.425755"
+    "timestamp": "2025-10-25T20:01:58.178579"
   },
   "Computer vision": {
     "filename": "Computer_vision.json",
-    "timestamp": "2025-10-25T19:34:55.414038"
+    "timestamp": "2025-10-25T20:02:00.035874"
   },
   "Natural language processing": {
     "filename": "Natural_language_processing.json",
-    "timestamp": "2025-10-25T19:34:56.939109"
+    "timestamp": "2025-10-25T20:02:01.705235"
   },
   "Expert system": {
     "filename": "Expert_system.json",
-    "timestamp": "2025-10-25T19:34:57.984769"
+    "timestamp": "2025-10-25T20:02:03.074902"
   },
   "Knowledge representation": {
     "filename": "Knowledge_representation.json",
-    "timestamp": "2025-10-25T19:34:59.775318"
+    "timestamp": "2025-10-25T20:02:04.306273"
   },
   "Machine reasoning": {
     "filename": "Machine_reasoning.json",
-    "timestamp": "2025-10-25T19:35:01.753513"
+    "timestamp": "2025-10-25T20:02:05.990001"
   },
   "Cognitive science": {
     "filename": "Cognitive_science.json",
-    "timestamp": "2025-10-25T19:35:03.612907"
+    "timestamp": "2025-10-25T20:02:08.999694"
   },
   "Artificial neural network": {
     "filename": "Artificial_neural_network.json",
-    "timestamp": "2025-10-25T19:35:05.135674"
+    "timestamp": "2025-10-25T20:02:10.372930"
   },
   "Convolutional neural network": {
     "filename": "Convolutional_neural_network.json",
-    "timestamp": "2025-10-25T19:35:06.787695"
+    "timestamp": "2025-10-25T20:02:11.863778"
   },
   "Recurrent neural network": {
     "filename": "Recurrent_neural_network.json",
-    "timestamp": "2025-10-25T19:35:08.230473"
+    "timestamp": "2025-10-25T20:02:13.764711"
   },
   "Reinforcement learning": {
     "filename": "Reinforcement_learning.json",
-    "timestamp": "2025-10-25T19:35:09.230459"
+    "timestamp": "2025-10-25T20:02:15.428994"
   },
   "Supervised learning": {
     "filename": "Supervised_learning.json",
-    "timestamp": "2025-10-25T19:35:10.109620"
+    "timestamp": "2025-10-25T20:02:16.794233"
   },
   "Unsupervised learning": {
     "filename": "Unsupervised_learning.json",
-    "timestamp": "2025-10-25T19:35:11.278979"
+    "timestamp": "2025-10-25T20:02:18.088101"
   },
   "Transfer learning": {
     "filename": "Transfer_learning.json",
-    "timestamp": "2025-10-25T19:35:12.951634"
+    "timestamp": "2025-10-25T20:02:19.159311"
   },
   "Feature learning": {
     "filename": "Feature_learning.json",
-    "timestamp": "2025-10-25T19:35:14.466963"
+    "timestamp": "2025-10-25T20:02:20.747571"
   },
   "Pattern recognition": {
     "filename": "Pattern_recognition.json",
-    "timestamp": "2025-10-25T19:35:15.994230"
+    "timestamp": "2025-10-25T20:02:23.008099"
   },
   "Speech recognition": {
     "filename": "Speech_recognition.json",
-    "timestamp": "2025-10-25T19:35:17.378123"
+    "timestamp": "2025-10-25T20:02:24.348449"
   },
   "Image recognition": {
     "filename": "Image_recognition.json",
-    "timestamp": "2025-10-25T19:35:18.910570"
+    "timestamp": "2025-10-25T20:02:25.832661"
   },
   "Facial recognition": {
     "filename": "Facial_recognition.json",
-    "timestamp": "2025-10-25T19:35:20.002413"
+    "timestamp": "2025-10-25T20:02:27.498404"
   },
   "AI ethics": {
     "filename": "AI_ethics.json",
-    "timestamp": "2025-10-25T19:35:22.001141"
+    "timestamp": "2025-10-25T20:02:28.682259"
   },
   "Explainable AI": {
     "filename": "Explainable_AI.json",
-    "timestamp": "2025-10-25T19:35:23.325673"
+    "timestamp": "2025-10-25T20:02:30.588227"
   },
   "AI safety": {
     "filename": "AI_safety.json",
-    "timestamp": "2025-10-25T19:35:25.155035"
+    "timestamp": "2025-10-25T20:02:32.171112"
   },
   "AI alignment": {
     "filename": "AI_alignment.json",
-    "timestamp": "2025-10-25T19:35:26.403821"
+    "timestamp": "2025-10-25T20:02:33.700083"
   },
   "Automation": {
     "filename": "Automation.json",
-    "timestamp": "2025-10-25T19:35:27.458301"
+    "timestamp": "2025-10-25T20:02:35.281222"
   },
   "Control theory": {
     "filename": "Control_theory.json",
-    "timestamp": "2025-10-25T19:35:28.807917"
+    "timestamp": "2025-10-25T20:02:36.305625"
   },
   "Control system": {
     "filename": "Control_system.json",
-    "timestamp": "2025-10-25T19:35:30.325808"
+    "timestamp": "2025-10-25T20:02:37.712940"
   },
   "Feedback control": {
     "filename": "Feedback_control.json",
-    "timestamp": "2025-10-25T19:35:31.911226"
+    "timestamp": "2025-10-25T20:02:39.466774"
   },
   "PID controller": {
     "filename": "PID_controller.json",
-    "timestamp": "2025-10-25T19:35:33.049741"
+    "timestamp": "2025-10-25T20:02:41.401674"
   },
   "Programmable logic controller": {
     "filename": "Programmable_logic_controller.json",
-    "timestamp": "2025-10-25T19:35:34.176610"
+    "timestamp": "2025-10-25T20:02:43.170585"
   },
   "SCADA": {
     "filename": "SCADA.json",
-    "timestamp": "2025-10-25T19:35:35.866041"
+    "timestamp": "2025-10-25T20:02:44.652247"
   },
   "Industrial automation": {
     "filename": "Industrial_automation.json",
-    "timestamp": "2025-10-25T19:35:37.701449"
+    "timestamp": "2025-10-25T20:02:45.823965"
   },
   "Process control": {
     "filename": "Process_control.json",
-    "timestamp": "2025-10-25T19:35:39.060287"
+    "timestamp": "2025-10-25T20:02:47.764457"
   },
   "Motion control": {
     "filename": "Motion_control.json",
-    "timestamp": "2025-10-25T19:35:40.224045"
+    "timestamp": "2025-10-25T20:02:49.006588"
   },
   "Servo motor": {
     "filename": "Servo_motor.json",
-    "timestamp": "2025-10-25T19:35:42.116465"
+    "timestamp": "2025-10-25T20:02:50.875047"
   },
   "Stepper motor": {
     "filename": "Stepper_motor.json",
-    "timestamp": "2025-10-25T19:35:43.949166"
+    "timestamp": "2025-10-25T20:02:52.054001"
   },
   "Sensor": {
     "filename": "Sensor.json",
-    "timestamp": "2025-10-25T19:35:44.945803"
+    "timestamp": "2025-10-25T20:02:53.664503"
   },
   "Human-machine interface": {
     "filename": "Human-machine_interface.json",
-    "timestamp": "2025-10-25T19:35:46.501376"
+    "timestamp": "2025-10-25T20:02:55.252230"
   },
   "Manufacturing execution system": {
     "filename": "Manufacturing_execution_system.json",
-    "timestamp": "2025-10-25T19:35:47.765770"
+    "timestamp": "2025-10-25T20:02:56.359647"
   },
   "Computer-integrated manufacturing": {
     "filename": "Computer-integrated_manufacturing.json",
-    "timestamp": "2025-10-25T19:35:49.263739"
+    "timestamp": "2025-10-25T20:02:57.579046"
   },
   "Flexible manufacturing system": {
     "filename": "Flexible_manufacturing_system.json",
-    "timestamp": "2025-10-25T19:35:50.382837"
+    "timestamp": "2025-10-25T20:02:59.210871"
   },
   "Automated guided vehicle": {
     "filename": "Automated_guided_vehicle.json",
-    "timestamp": "2025-10-25T19:35:51.923912"
+    "timestamp": "2025-10-25T20:03:00.755385"
   },
   "Assembly line": {
     "filename": "Assembly_line.json",
-    "timestamp": "2025-10-25T19:35:52.907091"
+    "timestamp": "2025-10-25T20:03:02.070775"
   },
   "Quality control": {
     "filename": "Quality_control.json",
-    "timestamp": "2025-10-25T19:35:53.817596"
+    "timestamp": "2025-10-25T20:03:03.334707"
   },
   "Internet of Things": {
     "filename": "Internet_of_Things.json",
-    "timestamp": "2025-10-25T19:35:55.681512"
+    "timestamp": "2025-10-25T20:03:04.967616"
   },
   "Edge computing": {
     "filename": "Edge_computing.json",
-    "timestamp": "2025-10-25T19:35:56.661134"
+    "timestamp": "2025-10-25T20:03:06.745306"
   },
   "Cloud robotics": {
     "filename": "Cloud_robotics.json",
-    "timestamp": "2025-10-25T19:35:57.847981"
+    "timestamp": "2025-10-25T20:03:08.444578"
   },
   "Augmented reality": {
     "filename": "Augmented_reality.json",
-    "timestamp": "2025-10-25T19:35:59.816219"
+    "timestamp": "2025-10-25T20:03:09.860893"
   },
   "Virtual reality": {
     "filename": "Virtual_reality.json",
-    "timestamp": "2025-10-25T19:36:05.471462"
+    "timestamp": "2025-10-25T20:03:11.698639"
   },
   "Digital twin": {
     "filename": "Digital_twin.json",
-    "timestamp": "2025-10-25T19:36:06.872178"
+    "timestamp": "2025-10-25T20:03:13.108392"
   },
   "Blockchain": {
     "filename": "Blockchain.json",
-    "timestamp": "2025-10-25T19:36:07.995689"
+    "timestamp": "2025-10-25T20:03:14.277318"
   },
   "Quantum computing": {
     "filename": "Quantum_computing.json",
-    "timestamp": "2025-10-25T19:36:10.635893"
+    "timestamp": "2025-10-25T20:03:15.942530"
   },
   "Embedded system": {
     "filename": "Embedded_system.json",
-    "timestamp": "2025-10-25T19:36:12.083406"
+    "timestamp": "2025-10-25T20:03:16.916120"
   },
   "Real-time computing": {
     "filename": "Real-time_computing.json",
-    "timestamp": "2025-10-25T19:36:13.842249"
+    "timestamp": "2025-10-25T20:03:18.181668"
   },
   "Distributed computing": {
     "filename": "Distributed_computing.json",
-    "timestamp": "2025-10-25T19:36:14.761399"
+    "timestamp": "2025-10-25T20:03:19.118029"
   },
   "Parallel computing": {
     "filename": "Parallel_computing.json",
-    "timestamp": "2025-10-25T19:36:15.788287"
+    "timestamp": "2025-10-25T20:03:20.063952"
   },
   "GPU computing": {
     "filename": "GPU_computing.json",
-    "timestamp": "2025-10-25T19:36:18.958983"
+    "timestamp": "2025-10-25T20:03:21.862884"
   },
   "FPGA": {
     "filename": "FPGA.json",
-    "timestamp": "2025-10-25T19:36:20.313995"
+    "timestamp": "2025-10-25T20:03:22.817141"
   },
   "Microcontroller": {
     "filename": "Microcontroller.json",
-    "timestamp": "2025-10-25T19:36:21.797643"
+    "timestamp": "2025-10-25T20:03:24.346306"
   },
   "Single-board computer": {
     "filename": "Single-board_computer.json",
-    "timestamp": "2025-10-25T19:36:23.327916"
+    "timestamp": "2025-10-25T20:03:25.625242"
   },
   "Raspberry Pi": {
     "filename": "Raspberry_Pi.json",
-    "timestamp": "2025-10-25T19:36:25.035126"
+    "timestamp": "2025-10-25T20:03:27.147097"
   },
   "Arduino": {
     "filename": "Arduino.json",
-    "timestamp": "2025-10-25T19:36:26.133983"
+    "timestamp": "2025-10-25T20:03:28.422774"
   },
   "Systems engineering": {
     "filename": "Systems_engineering.json",
-    "timestamp": "2025-10-25T19:36:27.328219"
+    "timestamp": "2025-10-25T20:03:29.473940"
   },
   "Software engineering": {
     "filename": "Software_engineering.json",
-    "timestamp": "2025-10-25T19:36:28.657718"
+    "timestamp": "2025-10-25T20:03:30.545807"
   },
   "Electrical engineering": {
     "filename": "Electrical_engineering.json",
-    "timestamp": "2025-10-25T19:36:30.167088"
+    "timestamp": "2025-10-25T20:03:32.220357"
   },
   "Mechanical engineering": {
     "filename": "Mechanical_engineering.json",
-    "timestamp": "2025-10-25T19:36:32.047597"
+    "timestamp": "2025-10-25T20:03:33.740058"
   },
   "Control engineering": {
     "filename": "Control_engineering.json",
-    "timestamp": "2025-10-25T19:36:33.299556"
+    "timestamp": "2025-10-25T20:03:35.425286"
   },
   "Signal processing": {
     "filename": "Signal_processing.json",
-    "timestamp": "2025-10-25T19:36:34.646092"
+    "timestamp": "2025-10-25T20:03:37.276630"
   },
   "Digital signal processing": {
     "filename": "Digital_signal_processing.json",
-    "timestamp": "2025-10-25T19:36:36.306700"
+    "timestamp": "2025-10-25T20:03:38.293019"
   },
   "Linear algebra": {
     "filename": "Linear_algebra.json",
-    "timestamp": "2025-10-25T19:36:38.273231"
+    "timestamp": "2025-10-25T20:03:39.383707"
   },
   "Calculus": {
     "filename": "Calculus.json",
-    "timestamp": "2025-10-25T19:36:39.307802"
+    "timestamp": "2025-10-25T20:03:41.033016"
   },
   "Statistics": {
     "filename": "Statistics.json",
-    "timestamp": "2025-10-25T19:36:40.215471"
+    "timestamp": "2025-10-25T20:03:42.207101"
   },
   "Probability theory": {
     "filename": "Probability_theory.json",
-    "timestamp": "2025-10-25T19:36:41.174374"
+    "timestamp": "2025-10-25T20:03:43.927531"
   },
   "Optimization": {
     "filename": "Optimization.json",
-    "timestamp": "2025-10-25T19:36:42.331872"
+    "timestamp": "2025-10-25T20:03:45.347437"
   },
   "Algorithm": {
     "filename": "Algorithm.json",
-    "timestamp": "2025-10-25T19:36:43.764841"
+    "timestamp": "2025-10-25T20:03:46.229242"
   },
   "Data structure": {
     "filename": "Data_structure.json",
-    "timestamp": "2025-10-25T19:36:45.655861"
+    "timestamp": "2025-10-25T20:03:47.358926"
   },
   "Software architecture": {
     "filename": "Software_architecture.json",
-    "timestamp": "2025-10-25T19:36:47.277008"
+    "timestamp": "2025-10-25T20:03:49.068115"
   },
   "Design pattern": {
     "filename": "Design_pattern.json",
-    "timestamp": "2025-10-25T19:36:49.010274"
+    "timestamp": "2025-10-25T20:03:49.965501"
   },
   "Agile software development": {
     "filename": "Agile_software_development.json",
-    "timestamp": "2025-10-25T19:36:50.896982"
+    "timestamp": "2025-10-25T20:03:50.973576"
   },
   "Industry 4.0": {
     "filename": "Industry_40.json",
-    "timestamp": "2025-10-25T19:36:52.504746"
+    "timestamp": "2025-10-25T20:03:52.524725"
   },
   "Smart factory": {
     "filename": "Smart_factory.json",
-    "timestamp": "2025-10-25T19:36:54.345363"
+    "timestamp": "2025-10-25T20:03:53.814632"
   },
   "Smart manufacturing": {
     "filename": "Smart_manufacturing.json",
-    "timestamp": "2025-10-25T19:36:56.045070"
+    "timestamp": "2025-10-25T20:03:55.080250"
   },
   "Digital transformation": {
     "filename": "Digital_transformation.json",
-    "timestamp": "2025-10-25T19:36:57.045699"
+    "timestamp": "2025-10-25T20:03:56.328533"
   },
   "Cyber-physical system": {
     "filename": "Cyber-physical_system.json",
-    "timestamp": "2025-10-25T19:36:58.650728"
+    "timestamp": "2025-10-25T20:03:57.723046"
   },
   "Smart city": {
     "filename": "Smart_city.json",
-    "timestamp": "2025-10-25T19:36:59.798892"
+    "timestamp": "2025-10-25T20:03:59.198078"
   },
   "Autonomous vehicle": {
     "filename": "Autonomous_vehicle.json",
-    "timestamp": "2025-10-25T19:37:01.564987"
+    "timestamp": "2025-10-25T20:04:00.935467"
   },
   "Drone": {
     "filename": "Drone.json",
-    "timestamp": "2025-10-25T19:37:03.244848"
+    "timestamp": "2025-10-25T20:04:02.462638"
   },
   "3D printing": {
     "filename": "3D_printing.json",
-    "timestamp": "2025-10-25T19:37:04.368160"
+    "timestamp": "2025-10-25T20:04:04.283562"
   },
   "Additive manufacturing": {
     "filename": "Additive_manufacturing.json",
-    "timestamp": "2025-10-25T19:37:05.609612"
+    "timestamp": "2025-10-25T20:04:05.557078"
   },
   "Computer-aided design": {
     "filename": "Computer-aided_design.json",
-    "timestamp": "2025-10-25T19:37:07.486299"
+    "timestamp": "2025-10-25T20:04:06.547380"
   },
   "Computer-aided manufacturing": {
     "filename": "Computer-aided_manufacturing.json",
-    "timestamp": "2025-10-25T19:37:09.050491"
+    "timestamp": "2025-10-25T20:04:07.587289"
   },
   "Product lifecycle management": {
     "filename": "Product_lifecycle_management.json",
-    "timestamp": "2025-10-25T19:37:10.612317"
+    "timestamp": "2025-10-25T20:04:08.969207"
   },
   "Supply chain management": {
     "filename": "Supply_chain_management.json",
-    "timestamp": "2025-10-25T19:37:11.550860"
+    "timestamp": "2025-10-25T20:04:10.821684"
   },
   "Logistics": {
     "filename": "Logistics.json",
-    "timestamp": "2025-10-25T19:37:13.294323"
+    "timestamp": "2025-10-25T20:04:12.386133"
   },
   "Warehouse automation": {
     "filename": "Warehouse_automation.json",
-    "timestamp": "2025-10-25T19:37:14.799137"
+    "timestamp": "2025-10-25T20:04:14.085054"
   },
   "Nanotechnology": {
     "filename": "Nanotechnology.json",
-    "timestamp": "2025-10-25T19:37:16.153402"
+    "timestamp": "2025-10-25T20:04:15.008020"
   },
   "Nanorobotics": {
     "filename": "Nanorobotics.json",
-    "timestamp": "2025-10-25T19:37:17.757057"
+    "timestamp": "2025-10-25T20:04:16.691303"
   },
   "Molecular nanotechnology": {
     "filename": "Molecular_nanotechnology.json",
-    "timestamp": "2025-10-25T19:37:19.271104"
+    "timestamp": "2025-10-25T20:04:17.756381"
   },
   "Nanobots": {
     "filename": "Nanobots.json",
-    "timestamp": "2025-10-25T19:37:20.358694"
+    "timestamp": "2025-10-25T20:04:19.552007"
   },
   "Grey goo": {
     "filename": "Grey_goo.json",
-    "timestamp": "2025-10-25T19:37:21.615551"
+    "timestamp": "2025-10-25T20:04:20.841620"
   },
   "Gray goo": {
     "filename": "Gray_goo.json",
-    "timestamp": "2025-10-25T19:37:23.826857"
+    "timestamp": "2025-10-25T20:04:22.019941"
   },
   "Molecular assembler": {
     "filename": "Molecular_assembler.json",
-    "timestamp": "2025-10-25T19:37:25.306562"
+    "timestamp": "2025-10-25T20:04:23.817211"
   },
   "Self-replicating machine": {
     "filename": "Self-replicating_machine.json",
-    "timestamp": "2025-10-25T19:37:26.875058"
+    "timestamp": "2025-10-25T20:04:25.511333"
   },
   "Technological singularity": {
     "filename": "Technological_singularity.json",
-    "timestamp": "2025-10-25T19:37:28.867064"
+    "timestamp": "2025-10-25T20:04:27.003620"
   },
   "Intelligence explosion": {
     "filename": "Intelligence_explosion.json",
-    "timestamp": "2025-10-25T19:37:30.916735"
+    "timestamp": "2025-10-25T20:04:28.816550"
   },
   "Singularity": {
     "filename": "Singularity.json",
-    "timestamp": "2025-10-25T19:37:31.847244"
+    "timestamp": "2025-10-25T20:04:30.109250"
   },
   "Existential risk": {
     "filename": "Existential_risk.json",
-    "timestamp": "2025-10-25T19:37:33.048542"
+    "timestamp": "2025-10-25T20:04:31.635263"
   },
   "Global catastrophic risk": {
     "filename": "Global_catastrophic_risk.json",
-    "timestamp": "2025-10-25T19:37:34.103378"
+    "timestamp": "2025-10-25T20:04:32.573784"
   },
   "AI risk": {
     "filename": "AI_risk.json",
-    "timestamp": "2025-10-25T19:37:35.521093"
+    "timestamp": "2025-10-25T20:04:33.772831"
   },
   "Doomsday argument": {
     "filename": "Doomsday_argument.json",
-    "timestamp": "2025-10-25T19:37:37.222031"
+    "timestamp": "2025-10-25T20:04:35.156683"
   },
   "Precautionary principle": {
     "filename": "Precautionary_principle.json",
-    "timestamp": "2025-10-25T19:37:38.130326"
+    "timestamp": "2025-10-25T20:04:36.886018"
   },
   "Risk assessment": {
     "filename": "Risk_assessment.json",
-    "timestamp": "2025-10-25T19:37:39.348986"
+    "timestamp": "2025-10-25T20:04:38.573808"
   },
   "Technology assessment": {
     "filename": "Technology_assessment.json",
-    "timestamp": "2025-10-25T19:37:40.999700"
+    "timestamp": "2025-10-25T20:04:40.169967"
   },
   "Artificial intelligence ethics": {
     "filename": "Artificial_intelligence_ethics.json",
-    "timestamp": "2025-10-25T19:37:42.803720"
+    "timestamp": "2025-10-25T20:04:42.079105"
   },
   "Roboethics": {
     "filename": "Roboethics.json",
-    "timestamp": "2025-10-25T19:37:44.771759"
+    "timestamp": "2025-10-25T20:04:43.703992"
   },
   "Machine ethics": {
     "filename": "Machine_ethics.json",
-    "timestamp": "2025-10-25T19:37:46.354817"
+    "timestamp": "2025-10-25T20:04:44.961543"
   },
   "Algorithmic bias": {
     "filename": "Algorithmic_bias.json",
-    "timestamp": "2025-10-25T19:37:47.714450"
+    "timestamp": "2025-10-25T20:04:46.407740"
   },
   "Explainable artificial intelligence": {
     "filename": "Explainable_artificial_intelligence.json",
-    "timestamp": "2025-10-25T19:37:48.862320"
+    "timestamp": "2025-10-25T20:04:47.344406"
   },
   "Algorithmic accountability": {
     "filename": "Algorithmic_accountability.json",
-    "timestamp": "2025-10-25T19:37:50.166977"
+    "timestamp": "2025-10-25T20:04:48.916010"
   },
   "AI governance": {
     "filename": "AI_governance.json",
-    "timestamp": "2025-10-25T19:37:51.438864"
+    "timestamp": "2025-10-25T20:04:49.945419"
   },
   "Laws of robotics": {
     "filename": "Laws_of_robotics.json",
-    "timestamp": "2025-10-25T19:37:52.576191"
+    "timestamp": "2025-10-25T20:04:51.801810"
   },
   "Three Laws of Robotics": {
     "filename": "Three_Laws_of_Robotics.json",
-    "timestamp": "2025-10-25T19:37:54.260562"
+    "timestamp": "2025-10-25T20:04:52.976455"
   },
   "Isaac Asimov": {
     "filename": "Isaac_Asimov.json",
-    "timestamp": "2025-10-25T19:37:55.653612"
+    "timestamp": "2025-10-25T20:04:54.487798"
   },
   "Social robot": {
     "filename": "Social_robot.json",
-    "timestamp": "2025-10-25T19:37:57.222252"
+    "timestamp": "2025-10-25T20:04:56.210299"
   },
   "Companion robot": {
     "filename": "Companion_robot.json",
-    "timestamp": "2025-10-25T19:37:58.872135"
+    "timestamp": "2025-10-25T20:04:57.719429"
   },
   "Robot rights": {
     "filename": "Robot_rights.json",
-    "timestamp": "2025-10-25T19:38:00.580247"
+    "timestamp": "2025-10-25T20:04:59.289407"
   },
   "Artificial moral agents": {
     "filename": "Artificial_moral_agents.json",
-    "timestamp": "2025-10-25T19:38:01.685616"
+    "timestamp": "2025-10-25T20:05:00.614264"
   },
   "Self-driving car": {
     "filename": "Self-driving_car.json",
-    "timestamp": "2025-10-25T19:38:03.475485"
+    "timestamp": "2025-10-25T20:05:01.960031"
   },
   "Trolley problem": {
     "filename": "Trolley_problem.json",
-    "timestamp": "2025-10-25T19:38:05.138203"
+    "timestamp": "2025-10-25T20:05:03.792717"
   },
   "Vehicle automation": {
     "filename": "Vehicle_automation.json",
-    "timestamp": "2025-10-25T19:38:07.173171"
+    "timestamp": "2025-10-25T20:05:05.121293"
   },
   "Autonomous car liability": {
     "filename": "Autonomous_car_liability.json",
-    "timestamp": "2025-10-25T19:38:08.588269"
+    "timestamp": "2025-10-25T20:05:06.580634"
   },
   "Android (robot)": {
     "filename": "Android_robot.json",
-    "timestamp": "2025-10-25T19:38:10.593922"
+    "timestamp": "2025-10-25T20:05:07.874017"
   },
   "Artificial consciousness": {
     "filename": "Artificial_consciousness.json",
-    "timestamp": "2025-10-25T19:38:12.430450"
+    "timestamp": "2025-10-25T20:05:09.037226"
   },
   "Machine consciousness": {
     "filename": "Machine_consciousness.json",
-    "timestamp": "2025-10-25T19:38:13.791691"
+    "timestamp": "2025-10-25T20:05:10.743371"
   },
   "Transhumanism": {
     "filename": "Transhumanism.json",
-    "timestamp": "2025-10-25T19:38:15.124469"
+    "timestamp": "2025-10-25T20:05:12.295207"
   },
   "Cyborg": {
     "filename": "Cyborg.json",
-    "timestamp": "2025-10-25T19:38:16.277041"
+    "timestamp": "2025-10-25T20:05:13.893094"
   },
   "Brain-computer interface": {
     "filename": "Brain-computer_interface.json",
-    "timestamp": "2025-10-25T19:38:17.789112"
+    "timestamp": "2025-10-25T20:05:15.579668"
   },
   "Neural implant": {
     "filename": "Neural_implant.json",
-    "timestamp": "2025-10-25T19:38:19.210996"
+    "timestamp": "2025-10-25T20:05:17.357065"
   },
   "Human enhancement": {
     "filename": "Human_enhancement.json",
-    "timestamp": "2025-10-25T19:38:20.318790"
+    "timestamp": "2025-10-25T20:05:18.624811"
   },
   "Technology ethics": {
     "filename": "Technology_ethics.json",
-    "timestamp": "2025-10-25T19:38:21.420931"
+    "timestamp": "2025-10-25T20:05:20.243498"
   },
   "Computer ethics": {
     "filename": "Computer_ethics.json",
-    "timestamp": "2025-10-25T19:38:22.896901"
+    "timestamp": "2025-10-25T20:05:21.752917"
   },
   "Information ethics": {
     "filename": "Information_ethics.json",
-    "timestamp": "2025-10-25T19:38:24.583757"
+    "timestamp": "2025-10-25T20:05:23.288914"
   },
   "Privacy": {
     "filename": "Privacy.json",
-    "timestamp": "2025-10-25T19:38:25.973967"
+    "timestamp": "2025-10-25T20:05:24.470827"
   },
   "Surveillance": {
     "filename": "Surveillance.json",
-    "timestamp": "2025-10-25T19:38:27.453018"
+    "timestamp": "2025-10-25T20:05:25.759197"
   },
   "Digital rights": {
     "filename": "Digital_rights.json",
-    "timestamp": "2025-10-25T19:38:28.717620"
+    "timestamp": "2025-10-25T20:05:26.938490"
   },
   "Algorithmic transparency": {
     "filename": "Algorithmic_transparency.json",
-    "timestamp": "2025-10-25T19:38:30.671716"
+    "timestamp": "2025-10-25T20:05:28.732703"
   },
   "Artificial general intelligence": {
     "filename": "Artificial_general_intelligence.json",
-    "timestamp": "2025-10-25T19:38:32.452637"
+    "timestamp": "2025-10-25T20:05:30.408545"
   },
   "Fairness (machine learning)": {
     "filename": "Fairness_machine_learning.json",
-    "timestamp": "2025-10-25T19:38:34.057089"
+    "timestamp": "2025-10-25T20:05:31.870076"
   },
   "AI bias": {
     "filename": "AI_bias.json",
-    "timestamp": "2025-10-25T19:38:35.445590"
+    "timestamp": "2025-10-25T20:05:33.031876"
   },
   "Algorithmic fairness": {
     "filename": "Algorithmic_fairness.json",
-    "timestamp": "2025-10-25T19:38:36.584001"
+    "timestamp": "2025-10-25T20:05:34.242536"
   },
   "Ethics of artificial intelligence": {
     "filename": "Ethics_of_artificial_intelligence.json",
-    "timestamp": "2025-10-25T19:38:37.759254"
+    "timestamp": "2025-10-25T20:05:35.607136"
   },
   "Responsible AI": {
     "filename": "Responsible_AI.json",
-    "timestamp": "2025-10-25T19:38:39.495115"
+    "timestamp": "2025-10-25T20:05:37.400164"
   },
   "AI regulation": {
     "filename": "AI_regulation.json",
-    "timestamp": "2025-10-25T19:38:40.822655"
+    "timestamp": "2025-10-25T20:05:38.867912"
   },
   "AI policy": {
     "filename": "AI_policy.json",
-    "timestamp": "2025-10-25T19:38:42.973206"
+    "timestamp": "2025-10-25T20:05:40.587312"
   },
   "Digital ethics": {
     "filename": "Digital_ethics.json",
-    "timestamp": "2025-10-25T19:38:44.610580"
+    "timestamp": "2025-10-25T20:05:41.999698"
   },
   "Computational ethics": {
     "filename": "Computational_ethics.json",
-    "timestamp": "2025-10-25T19:38:46.087298"
+    "timestamp": "2025-10-25T20:05:43.495996"
   },
   "Dual-use technology": {
     "filename": "Dual-use_technology.json",
-    "timestamp": "2025-10-25T19:38:47.450125"
+    "timestamp": "2025-10-25T20:05:45.252306"
   },
   "Technology governance": {
     "filename": "Technology_governance.json",
-    "timestamp": "2025-10-25T19:38:49.221361"
+    "timestamp": "2025-10-25T20:05:47.115336"
   },
   "Blade Runner": {
     "filename": "Blade_Runner.json",
-    "timestamp": "2025-10-25T19:38:50.897563"
+    "timestamp": "2025-10-25T20:05:48.669295"
   },
   "Ex Machina": {
     "filename": "Ex_Machina.json",
-    "timestamp": "2025-10-25T19:38:52.270804"
+    "timestamp": "2025-10-25T20:05:50.030346"
   },
   "Westworld": {
     "filename": "Westworld.json",
-    "timestamp": "2025-10-25T19:38:53.992011"
+    "timestamp": "2025-10-25T20:05:51.065077"
   },
   "Black Mirror": {
     "filename": "Black_Mirror.json",
-    "timestamp": "2025-10-25T19:38:55.558937"
+    "timestamp": "2025-10-25T20:05:52.874572"
   },
   "I, Robot": {
     "filename": "I_Robot.json",
-    "timestamp": "2025-10-25T19:38:57.010765"
+    "timestamp": "2025-10-25T20:05:54.643595"
   },
   "The Matrix": {
     "filename": "The_Matrix.json",
-    "timestamp": "2025-10-25T19:38:58.202406"
+    "timestamp": "2025-10-25T20:05:55.670468"
   },
   "Terminator (franchise)": {
     "filename": "Terminator_franchise.json",
-    "timestamp": "2025-10-25T19:38:59.956503"
+    "timestamp": "2025-10-25T20:05:57.420498"
   },
   "Ghost in the Shell": {
     "filename": "Ghost_in_the_Shell.json",
-    "timestamp": "2025-10-25T19:39:01.228247"
+    "timestamp": "2025-10-25T20:05:58.862026"
   },
   "Artificial intelligence in fiction": {
     "filename": "Artificial_intelligence_in_fiction.json",
-    "timestamp": "2025-10-25T19:39:02.747143"
+    "timestamp": "2025-10-25T20:06:00.785446"
   },
   "Cyberpunk": {
     "filename": "Cyberpunk.json",
-    "timestamp": "2025-10-25T19:39:04.755687"
+    "timestamp": "2025-10-25T20:06:01.818441"
   },
   "Transhumanism in fiction": {
     "filename": "Transhumanism_in_fiction.json",
-    "timestamp": "2025-10-25T19:39:06.068184"
+    "timestamp": "2025-10-25T20:06:03.324913"
   },
   "AI takeover": {
     "filename": "AI_takeover.json",
-    "timestamp": "2025-10-25T19:39:08.461751"
+    "timestamp": "2025-10-25T20:06:04.802031"
   },
   "Technological dystopia": {
     "filename": "Technological_dystopia.json",
-    "timestamp": "2025-10-25T19:39:09.760577"
+    "timestamp": "2025-10-25T20:06:05.882616"
   },
   "Philosophy of artificial intelligence": {
     "filename": "Philosophy_of_artificial_intelligence.json",
-    "timestamp": "2025-10-25T19:39:12.234498"
+    "timestamp": "2025-10-25T20:06:07.080422"
   },
   "Mind uploading": {
     "filename": "Mind_uploading.json",
-    "timestamp": "2025-10-25T19:39:13.563858"
+    "timestamp": "2025-10-25T20:06:08.656780"
   },
   "Digital immortality": {
     "filename": "Digital_immortality.json",
-    "timestamp": "2025-10-25T19:39:14.533608"
+    "timestamp": "2025-10-25T20:06:10.271985"
   },
   "Posthumanism": {
     "filename": "Posthumanism.json",
-    "timestamp": "2025-10-25T19:39:15.436249"
+    "timestamp": "2025-10-25T20:06:11.837653"
   },
   "Bioethics": {
     "filename": "Bioethics.json",
-    "timestamp": "2025-10-25T19:39:16.693162"
+    "timestamp": "2025-10-25T20:06:13.446914"
   },
   "Differential privacy": {
     "filename": "Differential_privacy.json",
-    "timestamp": "2025-10-25T19:39:22.116794"
+    "timestamp": "2025-10-25T20:06:15.458994"
   },
   "Federated learning": {
     "filename": "Federated_learning.json",
-    "timestamp": "2025-10-25T19:39:23.203143"
+    "timestamp": "2025-10-25T20:06:16.664642"
   },
   "Adversarial machine learning": {
     "filename": "Adversarial_machine_learning.json",
-    "timestamp": "2025-10-25T19:39:25.294208"
+    "timestamp": "2025-10-25T20:06:19.979930"
   },
   "Instrumental convergence": {
     "filename": "Instrumental_convergence.json",
-    "timestamp": "2025-10-25T19:39:27.835388"
+    "timestamp": "2025-10-25T20:06:21.743247"
   },
   "Orthogonality thesis": {
     "filename": "Orthogonality_thesis.json",
-    "timestamp": "2025-10-25T19:39:29.376817"
+    "timestamp": "2025-10-25T20:06:23.335655"
   },
   "Friendly artificial intelligence": {
     "filename": "Friendly_artificial_intelligence.json",
-    "timestamp": "2025-10-25T19:39:30.506395"
+    "timestamp": "2025-10-25T20:06:24.793915"
   },
   "AI control problem": {
     "filename": "AI_control_problem.json",
-    "timestamp": "2025-10-25T19:39:32.123691"
+    "timestamp": "2025-10-25T20:06:26.393253"
   },
   "AI boxing": {
     "filename": "AI_boxing.json",
-    "timestamp": "2025-10-25T19:39:33.290276"
+    "timestamp": "2025-10-25T20:06:27.649462"
   },
   "Oracle AI": {
     "filename": "Oracle_AI.json",
-    "timestamp": "2025-10-25T19:39:34.520957"
+    "timestamp": "2025-10-25T20:06:29.232581"
   },
   "Hard problem of consciousness": {
     "filename": "Hard_problem_of_consciousness.json",
-    "timestamp": "2025-10-25T19:39:35.823380"
+    "timestamp": "2025-10-25T20:06:30.450276"
   },
   "Chinese room": {
     "filename": "Chinese_room.json",
-    "timestamp": "2025-10-25T19:39:37.365265"
+    "timestamp": "2025-10-25T20:06:32.319416"
   },
   "Turing test": {
     "filename": "Turing_test.json",
-    "timestamp": "2025-10-25T19:39:38.429117"
+    "timestamp": "2025-10-25T20:06:33.991558"
   },
   "Moravec's paradox": {
     "filename": "Moravecs_paradox.json",
-    "timestamp": "2025-10-25T19:39:40.109822"
+    "timestamp": "2025-10-25T20:06:35.132353"
   }
 }
