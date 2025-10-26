@@ -810,6 +810,49 @@ class EnhancedReasoningAgent:
         
         # Load knowledge from external source if available
         self.knowledge_base = self._load_knowledge_base()
+    
+    def _clean_response_content(self, content: str) -> str:
+        """Aggressively clean HTML artifacts and malformed content from responses"""
+        if not content:
+            return content
+        
+        # Remove MediaWiki CSS and parser output
+        content = re.sub(r'\.mw-parser-output[^}]*\}', '', content)
+        content = re.sub(r'@media[^}]*\{[^}]*\}', '', content)
+        content = re.sub(r'\.[a-zA-Z-]+\{[^}]*\}', '', content)
+        
+        # Remove HTML tags and attributes
+        content = re.sub(r'<[^>]+>', ' ', content)
+        content = re.sub(r'&lt;[^&]*&gt;', ' ', content)
+        
+        # Remove HTML entities
+        content = re.sub(r'&[a-zA-Z0-9#]+;', ' ', content)
+        content = re.sub(r'&quot;', '"', content)
+        content = re.sub(r'&amp;', '&', content)
+        content = re.sub(r'&lt;', '<', content)
+        content = re.sub(r'&gt;', '>', content)
+        
+        # Remove Wikipedia-specific artifacts
+        content = re.sub(r'\[\d+\]', '', content)  # Citation markers
+        content = re.sub(r'\{\{[^}]*\}\}', '', content)  # Template calls
+        content = re.sub(r'\[\[[^\]]*\]\]', '', content)  # Wiki links
+        
+        # Remove CSS properties and values
+        content = re.sub(r'(font-style|padding|margin|color|background)[^;]*;', '', content)
+        content = re.sub(r'(class|id|style|data-[^=]*)="[^"]*"', '', content)
+        
+        # Remove malformed JSON and template fragments
+        content = re.sub(r'\{[^}]*"[^}]*\}', '', content)
+        content = re.sub(r'"[^"]*":[^,}]*[,}]', '', content)
+        content = re.sub(r'"i":\d+', '', content)
+        
+        # Clean up remaining artifacts
+        content = re.sub(r'[{}\[\]"\\]+', ' ', content)
+        content = re.sub(r'\s+', ' ', content)
+        content = re.sub(r'^[\s,.:;-]+', '', content)
+        content = re.sub(r'[\s,.:;-]+$', '', content)
+        
+        return content.strip()
         
     def _load_knowledge_base(self):
         """Load knowledge base from JSON file or use fallback"""
@@ -1017,8 +1060,9 @@ class EnhancedReasoningAgent:
         # 4. Generate Enhanced Prompt
         enhanced_prompt = self.prompt_engineer.construct_prompt(semantic_analysis, context)
         
-        # 5. Get response and assess quality
+        # 5. Get response, clean it, and assess quality
         response = reasoning_chain.get_final_answer()
+        response = self._clean_response_content(response)  # Clean HTML artifacts
         quality_assessment = self._assess_response_quality(response, semantic_analysis)
         
         # 6. Generate follow-up questions
