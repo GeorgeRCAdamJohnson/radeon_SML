@@ -114,18 +114,24 @@ def clean_content(content):
     if not content:
         return content
     
+    # Remove script and style elements completely
+    content = re.sub(r'<(script|style)[^>]*>.*?</\1>', '', content, flags=re.DOTALL | re.IGNORECASE)
     # Remove HTML/XML tags
     content = re.sub(r'<[^>]+>', ' ', content)
     # Remove MediaWiki parser output
     content = re.sub(r'\.mw-parser-output[^}]+}', '', content)
+    # Remove JSON-like structures
+    content = re.sub(r'\{[^}]*"[^}]*\}', '', content)
     # Remove HTML entities
     content = re.sub(r'&[a-zA-Z0-9#]+;', ' ', content)
-    # Remove excessive whitespace
-    content = re.sub(r'\s+', ' ', content)
     # Remove citation markers
     content = re.sub(r'\[\d+\]', '', content)
     # Remove template markers
     content = re.sub(r'\{\{[^}]+\}\}', '', content)
+    # Remove excessive whitespace
+    content = re.sub(r'\s+', ' ', content)
+    # Remove common HTML artifacts
+    content = re.sub(r'(class|id|style)="[^"]*"', '', content)
     
     return content.strip()
 
