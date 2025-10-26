@@ -9,9 +9,9 @@ import os
 import random
 try:
     from reasoning_agent import EnhancedReasoningAgent
-    print("✅ Successfully imported EnhancedReasoningAgent")
+    print("Successfully imported EnhancedReasoningAgent")
 except Exception as e:
-    print(f"❌ Failed to import EnhancedReasoningAgent: {e}")
+    print(f"Failed to import EnhancedReasoningAgent: {e}")
     # Fallback to basic responses
     EnhancedReasoningAgent = None
 
@@ -36,12 +36,12 @@ conversations = {}
 try:
     if EnhancedReasoningAgent:
         reasoning_agent = EnhancedReasoningAgent()
-        print("✅ Successfully initialized EnhancedReasoningAgent")
+        print("Successfully initialized EnhancedReasoningAgent")
     else:
         reasoning_agent = None
-        print("⚠️ Using fallback mode - no reasoning agent")
+        print("Using fallback mode - no reasoning agent")
 except Exception as e:
-    print(f"❌ Failed to initialize EnhancedReasoningAgent: {e}")
+    print(f"Failed to initialize EnhancedReasoningAgent: {e}")
     reasoning_agent = None
 
 # Safety and ethics validation

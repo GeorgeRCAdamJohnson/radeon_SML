@@ -16,6 +16,138 @@ from datetime import datetime
 from typing import List, Dict, Set, Tuple, Optional
 import random
 
+# Metadata enhancement functions
+def determine_entity_type(title, content):
+    """Determine entity type from title and content"""
+    title_lower = title.lower()
+    content_lower = content.lower()
+    
+    # Scientist/Person detection
+    if any(term in content_lower for term in ['scientist', 'researcher', 'professor', 'physicist', 'mathematician', 'engineer']):
+        return 'scientist'
+    
+    # Character detection
+    if any(term in title_lower for term in ['data', 'hal', 'amuro', 'char']):
+        if 'android' in content_lower or 'artificial' in content_lower:
+            return 'android_character'
+        elif 'ai' in content_lower or 'computer' in content_lower:
+            return 'ai_character'
+        else:
+            return 'human_character'
+    
+    # Franchise detection
+    if any(term in title_lower for term in ['star trek', 'gundam', 'space odyssey']):
+        return 'franchise'
+    
+    # Theory/Concept detection
+    if any(term in title_lower for term in ['theory', 'principle', 'law', 'theorem', 'hypothesis']):
+        return 'theory'
+    
+    # Ethics/Philosophy detection
+    if any(term in title_lower for term in ['ethics', 'philosophy', 'moral', 'rights']):
+        return 'ethics_concept'
+    
+    # Technology detection
+    if any(term in title_lower for term in ['robot', 'mobile', 'industrial', 'algorithm', 'system']):
+        return 'technology'
+    
+    return 'concept'
+
+def extract_tags(title, content, domain):
+    """Extract relevant tags from content"""
+    tags = []
+    content_lower = content.lower()
+    title_lower = title.lower()
+    
+    # Academic/Scientific tags
+    if any(term in content_lower for term in ['theory', 'theoretical', 'hypothesis']):
+        tags.append('theoretical')
+    if any(term in content_lower for term in ['mathematics', 'mathematical', 'algorithm']):
+        tags.append('mathematics')
+    if any(term in content_lower for term in ['physics', 'quantum', 'mechanics']):
+        tags.append('physics')
+    if any(term in content_lower for term in ['ethics', 'moral', 'philosophy']):
+        tags.append('ethics')
+    if any(term in content_lower for term in ['research', 'experiment', 'study']):
+        tags.append('research')
+    
+    # AI/Robot tags
+    if any(term in content_lower for term in ['artificial intelligence', 'ai']):
+        tags.append('artificial_intelligence')
+    if any(term in content_lower for term in ['android', 'synthetic']):
+        tags.append('android')
+    if any(term in content_lower for term in ['robot', 'robotic']):
+        tags.append('robotics')
+    if any(term in content_lower for term in ['machine learning', 'neural network']):
+        tags.append('machine_learning')
+    
+    # Sci-fi genre tags
+    if any(term in content_lower for term in ['space', 'starship', 'galaxy']):
+        tags.append('space_opera')
+    if any(term in content_lower for term in ['mecha', 'mobile suit']):
+        tags.append('mecha')
+    if any(term in content_lower for term in ['dystopia', 'malfunction', 'rebellion']):
+        tags.append('dystopian')
+    if any(term in content_lower for term in ['utopia', 'exploration', 'peaceful']):
+        tags.append('utopian')
+    
+    # Technology tags
+    if any(term in content_lower for term in ['beam', 'laser', 'energy weapon']):
+        tags.append('beam_weapons')
+    if any(term in content_lower for term in ['industrial', 'manufacturing']):
+        tags.append('industrial')
+    if any(term in content_lower for term in ['autonomous', 'automatic']):
+        tags.append('autonomous')
+    if any(term in content_lower for term in ['computer', 'computing', 'software']):
+        tags.append('computing')
+    
+    # Safety/Risk tags
+    if any(term in content_lower for term in ['safety', 'risk', 'danger', 'threat']):
+        tags.append('safety')
+    if any(term in content_lower for term in ['alignment', 'control', 'governance']):
+        tags.append('ai_safety')
+    
+    return list(set(tags))  # Remove duplicates
+
+def clean_content(content):
+    """Clean HTML/XML formatting from content"""
+    if not content:
+        return content
+    
+    # Remove HTML/XML tags
+    content = re.sub(r'<[^>]+>', ' ', content)
+    # Remove MediaWiki parser output
+    content = re.sub(r'\.mw-parser-output[^}]+}', '', content)
+    # Remove HTML entities
+    content = re.sub(r'&[a-zA-Z0-9#]+;', ' ', content)
+    # Remove excessive whitespace
+    content = re.sub(r'\s+', ' ', content)
+    # Remove citation markers
+    content = re.sub(r'\[\d+\]', '', content)
+    # Remove template markers
+    content = re.sub(r'\{\{[^}]+\}\}', '', content)
+    
+    return content.strip()
+
+def add_metadata_to_entry(entry):
+    """Add metadata to a single entry"""
+    if 'entity_type' in entry:
+        return entry  # Already has metadata
+    
+    title = entry.get('title', '')
+    content = entry.get('content', '')
+    domain = entry.get('domain', '')
+    
+    # Clean content
+    entry['content'] = clean_content(content)
+    
+    # Add metadata
+    entry['entity_type'] = determine_entity_type(title, entry['content'])
+    entry['tags'] = extract_tags(title, entry['content'], domain)
+    entry['related_entities'] = {}  # Will be populated manually for key entries
+    
+    return entry
+
 class EnhancedWikipediaCrawler:
     def __init__(self, output_dir: str = "data"):
         self.output_dir = Path(output_dir)
@@ -152,7 +284,7 @@ class EnhancedWikipediaCrawler:
             content_response = self.session.get(content_url, timeout=10)
             
             if content_response.status_code != 200:
-                print(f"❌ Failed to fetch summary for {title}: {content_response.status_code}")
+                print(f"[ERROR] Failed to fetch summary for {title}: {content_response.status_code}")
                 return None, None, None
             
             summary_data = content_response.json()
@@ -162,7 +294,7 @@ class EnhancedWikipediaCrawler:
             full_response = self.session.get(full_url, timeout=15)
             
             if full_response.status_code != 200:
-                print(f"⚠️ Using summary only for {title}")
+                print(f"[WARNING] Using summary only for {title}")
                 full_content = summary_data.get('extract', '')
             else:
                 # Extract text from HTML (basic text extraction)
@@ -181,7 +313,7 @@ class EnhancedWikipediaCrawler:
             return (article_title, article_summary, full_content)
             
         except Exception as e:
-            print(f"❌ Error fetching {title}: {e}")
+            print(f"[ERROR] Error fetching {title}: {e}")
             self.crawl_stats["failed_requests"] += 1
             return None, None, None
 
@@ -222,6 +354,8 @@ class EnhancedWikipediaCrawler:
                                 "domain": "academic",
                                 "extracted_at": datetime.now().isoformat()
                             }
+                            # Add metadata enhancement
+                            article_data = add_metadata_to_entry(article_data)
                             self.knowledge_base.append(article_data)
                             self.crawl_stats["articles_crawled"] += 1
                             self.crawl_stats["total_words"] += len(summary.split())
@@ -317,6 +451,8 @@ class EnhancedWikipediaCrawler:
                 "domain": article["domain"],
                 "extracted_at": datetime.now().isoformat()
             }
+            # Add metadata enhancement
+            article_data = add_metadata_to_entry(article_data)
             self.knowledge_base.append(article_data)
             self.crawl_stats["articles_crawled"] += 1
             self.crawl_stats["total_words"] += article_data["word_count"]
@@ -378,6 +514,8 @@ class EnhancedWikipediaCrawler:
                 "domain": article["domain"],
                 "extracted_at": datetime.now().isoformat()
             }
+            # Add metadata enhancement
+            article_data = add_metadata_to_entry(article_data)
             self.knowledge_base.append(article_data)
             self.crawl_stats["articles_crawled"] += 1
             self.crawl_stats["total_words"] += article_data["word_count"]
@@ -422,6 +560,8 @@ class EnhancedWikipediaCrawler:
                 "domain": framework["domain"],
                 "extracted_at": datetime.now().isoformat()
             }
+            # Add metadata enhancement
+            article_data = add_metadata_to_entry(article_data)
             self.knowledge_base.append(article_data)
             self.crawl_stats["articles_crawled"] += 1
             self.crawl_stats["total_words"] += article_data["word_count"]
@@ -487,6 +627,8 @@ class EnhancedWikipediaCrawler:
                 "domain": site["domain"],
                 "extracted_at": datetime.now().isoformat()
             }
+            # Add metadata enhancement
+            article_data = add_metadata_to_entry(article_data)
             self.knowledge_base.append(article_data)
             self.crawl_stats["articles_crawled"] += 1
             self.crawl_stats["total_words"] += article_data["word_count"]
@@ -529,6 +671,8 @@ class EnhancedWikipediaCrawler:
                 "domain": article["domain"],
                 "extracted_at": datetime.now().isoformat()
             }
+            # Add metadata enhancement
+            article_data = add_metadata_to_entry(article_data)
             self.knowledge_base.append(article_data)
             self.crawl_stats["articles_crawled"] += 1
             self.crawl_stats["total_words"] += article_data["word_count"]
@@ -619,6 +763,9 @@ class EnhancedWikipediaCrawler:
                     "from_cache": True
                 }
                 
+                # Add metadata enhancement
+                article_data = add_metadata_to_entry(article_data)
+                
                 self.knowledge_base.append(article_data)
                 self.crawled_articles.add(title)
                 self.crawl_stats["articles_crawled"] += 1
@@ -651,6 +798,9 @@ class EnhancedWikipediaCrawler:
             "extracted_at": datetime.now().isoformat(),
             "from_cache": False
         }
+        
+        # Add metadata enhancement
+        article_data = add_metadata_to_entry(article_data)
         
         self.knowledge_base.append(article_data)
         self.crawled_articles.add(title)
@@ -908,6 +1058,8 @@ class EnhancedWikipediaCrawler:
                     'domain': item.get('category') or item.get('domain') or 'ethics',
                     'extracted_at': item.get('extracted_at') or datetime.now().isoformat()
                 }
+                # Add metadata enhancement
+                article_data = add_metadata_to_entry(article_data)
 
                 self.knowledge_base.append(article_data)
                 existing_titles.add(key)
@@ -992,16 +1144,16 @@ def main():
         print(f"[SUCCESS] Stats file: {stats_file}")
         
     except KeyboardInterrupt:
-        print("\n⚠️ Crawling interrupted by user")
+        print("\n[WARNING] Crawling interrupted by user")
         if crawler.knowledge_base:
-            print("💾 Saving partial results...")
+            print("[INFO] Saving partial results...")
             crawler.save_knowledge_base()
             crawler.print_final_summary()
     
     except Exception as e:
-        print(f"\n❌ Error during crawling: {e}")
+        print(f"\n[ERROR] Error during crawling: {e}")
         if crawler.knowledge_base:
-            print("💾 Saving partial results...")
+            print("[INFO] Saving partial results...")
             crawler.save_knowledge_base()
 
 if __name__ == "__main__":

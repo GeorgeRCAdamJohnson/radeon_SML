@@ -72,9 +72,9 @@ class SemanticAnalyzer:
         }
         
         self.entity_patterns = {
-            "robot": [r"robot", r"android", r"cyborg", r"automaton"],
+            "robot": [r"robot", r"android", r"cyborg", r"automaton", r"gundam", r"mecha", r"mobile suit"],
             "ai": [r"\bai\b", r"artificial intelligence", r"machine learning", r"neural network"],
-            "character": [r"data", r"c-3po", r"r2-d2", r"wall-e", r"terminator", r"optimus"],
+            "character": [r"data", r"c-3po", r"r2-d2", r"wall-e", r"terminator", r"optimus", r"gundam"],
             "technology": [r"sensor", r"actuator", r"processor", r"algorithm", r"system"]
         }
     
@@ -161,20 +161,67 @@ class FactualReasoningStrategy(ReasoningStrategy):
     def _get_domain_boost(self, query: str, title: str, content: str) -> int:
         """Boost score for domain-specific matches"""
         boost = 0
-        robotics_terms = ['robot', 'robotics', 'android', 'cyborg', 'automaton', 'mechanical']
-        ai_terms = ['ai', 'artificial', 'intelligence', 'neural', 'machine', 'learning']
-        characters = ['data', 'c-3po', 'c3po', 'wall-e', 'walle', 'terminator', 'gundam']
+        query_lower = query.lower()
+        title_lower = title.lower()
+        content_lower = content[:500].lower()
         
-        if any(term in query for term in robotics_terms):
-            if any(term in title or term in content[:200] for term in robotics_terms):
-                boost += 10
-        if any(term in query for term in ai_terms):
-            if any(term in title or term in content[:200] for term in ai_terms):
-                boost += 10
-        if any(char in query for char in characters):
-            if any(char in title.lower() or char in content[:200].lower() for char in characters):
+        # Character-specific boosts (highest priority)
+        characters = ['gundam', 'data', 'c-3po', 'c3po', 'wall-e', 'walle', 'terminator', 'optimus', 'bender']
+        for char in characters:
+            if char in query_lower and char in title_lower:
+                boost += 25  # Very high boost for character matches
+        
+        # Robotics terms
+        robotics_terms = ['robot', 'robotics', 'android', 'cyborg', 'automaton', 'mechanical', 'mecha', 'mobile suit']
+        for term in robotics_terms:
+            if term in query_lower and (term in title_lower or term in content_lower):
                 boost += 15
+        
+        # AI terms
+        ai_terms = ['ai', 'artificial', 'intelligence', 'neural', 'machine', 'learning']
+        for term in ai_terms:
+            if term in query_lower and (term in title_lower or term in content_lower):
+                boost += 15
+        
+        # Franchise-specific terms
+        franchises = ['star wars', 'star trek', 'transformers', 'pixar', 'anime', 'manga']
+        for franchise in franchises:
+            if franchise in query_lower and (franchise in title_lower or franchise in content_lower):
+                boost += 20
+        
         return boost
+    
+    def _relaxed_search(self, knowledge: Dict, query: str) -> Optional[Dict]:
+        """More relaxed search for partial matches"""
+        if 'articles' not in knowledge:
+            return None
+        
+        best_match = None
+        best_score = 0
+        query_words = [w for w in query.split() if len(w) > 2]
+        
+        for article in knowledge['articles']:
+            if not isinstance(article, dict) or 'title' not in article:
+                continue
+            
+            title_lower = article['title'].lower()
+            score = 0
+            
+            # Check for any word matches
+            for query_word in query_words:
+                if query_word in title_lower:
+                    score += 5
+                # Check for partial matches in title words
+                for title_word in title_lower.split():
+                    if len(query_word) > 3 and len(title_word) > 3:
+                        if query_word in title_word or title_word in query_word:
+                            score += 3
+            
+            if score > best_score and score > 2:
+                best_score = score
+                best_match = article
+        
+        return best_match
     
     def _fuzzy_fallback_search(self, knowledge: Dict, query: str) -> Optional[Dict]:
         """Last resort fuzzy search with very relaxed matching"""
@@ -212,62 +259,115 @@ class FactualReasoningStrategy(ReasoningStrategy):
         main_entity = entities[0] if entities else "technology"
         query_lower = semantic_analysis.original_query.lower()
         
+        # Handle both list and dict knowledge base formats
+        articles = []
+        if isinstance(knowledge, list):
+            articles = knowledge
+        elif 'articles' in knowledge and isinstance(knowledge['articles'], list):
+            articles = knowledge['articles']
+        elif isinstance(knowledge, dict) and 'articles' not in knowledge:
+            # Convert dict format to list for processing
+            for key, value in knowledge.items():
+                if isinstance(value, list):
+                    articles.extend(value)
+        
         # Search through actual knowledge base articles with fuzzy matching and wildcards
-        if 'articles' in knowledge and isinstance(knowledge['articles'], list):
+        if articles:
+            print(f"[DEBUG] Searching {len(articles)} articles for query: '{query_lower}'")
             best_match = None
             best_score = 0
             
-            for article in knowledge['articles']:
+            for article in articles:
                 if isinstance(article, dict) and 'title' in article and 'content' in article:
                     title_lower = article['title'].lower()
                     content_lower = article['content'].lower()
                     
-                    # Calculate comprehensive match score
+                    # Calculate comprehensive match score with better prioritization
                     query_words = [w for w in query_lower.split() if len(w) > 2]
                     score = 0
                     
-                    # 1. Exact word matches in title (highest priority)
+                    # 1. Exact query match in title (highest priority)
+                    if query_lower.strip() in title_lower:
+                        score += 50
+                    
+                    # 2. Exact word matches in title
+                    title_words = title_lower.split()
                     for word in query_words:
-                        if word in title_lower:
-                            score += 15
+                        if word in title_words:
+                            score += 20
                     
-                    # 2. Fuzzy matching in title
-                    title_fuzzy_score = self._fuzzy_match_text(query_lower, title_lower)
-                    score += title_fuzzy_score * 10
-                    
-                    # 3. Wildcard matching in title
-                    wildcard_score = self._wildcard_match(query_words, title_lower)
-                    score += wildcard_score * 8
-                    
-                    # 4. Partial matches in title
+                    # 3. Partial word matches in title
                     for word in query_words:
-                        for title_word in title_lower.split():
+                        for title_word in title_words:
                             if len(word) > 3 and (word in title_word or title_word in word):
-                                score += 5
+                                score += 10
                     
-                    # 5. Content matches (lower priority but still valuable)
-                    content_matches = sum(1 for word in query_words if word in content_lower)
-                    score += content_matches * 2
-                    
-                    # 6. Fuzzy content matching (sample first 500 chars for performance)
-                    content_sample = content_lower[:500]
-                    content_fuzzy_score = self._fuzzy_match_text(query_lower, content_sample)
-                    score += content_fuzzy_score * 3
-                    
-                    # 7. Special domain boosting
+                    # 4. Domain-specific boosting (before other scoring)
                     domain_boost = self._get_domain_boost(query_lower, title_lower, content_lower)
                     score += domain_boost
+                    
+                    # 5. Fuzzy matching in title (only if no exact matches)
+                    if score < 20:
+                        title_fuzzy_score = self._fuzzy_match_text(query_lower, title_lower)
+                        score += title_fuzzy_score * 15
+                    
+                    # 6. Content matches (lower priority)
+                    content_matches = sum(1 for word in query_words if word in content_lower)
+                    score += content_matches * 3
+                    
+                    # 7. Wildcard matching as fallback
+                    if score < 10:
+                        wildcard_score = self._wildcard_match(query_words, title_lower)
+                        score += wildcard_score * 8
                     
                     if score > best_score:
                         best_score = score
                         best_match = article
+                        print(f"[DEBUG] New best match: '{article['title']}' with score {score}")
             
-            # Return best match with lower threshold for better coverage
-            if best_match and best_score >= 3:
+            print(f"[DEBUG] Final best match: {best_match['title'] if best_match else 'None'} with score {best_score}")
+            
+            # Return best match with appropriate threshold
+            if best_match and best_score >= 10:
+                print(f"[DEBUG] Returning match above threshold: {best_match['title']}")
                 return f"{best_match['title'].upper()}\n\n{best_match['content']}"
+            
+            # If no good match found, try a more relaxed search
+            if not best_match or best_score < 10:
+                print(f"[DEBUG] No good match found, trying relaxed search...")
+                relaxed_match = self._relaxed_search({'articles': articles}, query_lower)
+                if relaxed_match:
+                    return f"{relaxed_match['title'].upper()}\n\n{relaxed_match['content']}"
         
-        # Fallback to hardcoded responses for specific characters
-        if "data" in main_entity.lower() and ("star trek" in query_lower or "android" in query_lower):
+        # Fallback to hardcoded responses for specific characters and topics
+        if "gundam" in query_lower or "mecha" in query_lower or "mobile suit" in query_lower:
+            return """GUNDAM MOBILE SUITS - COMPREHENSIVE ANALYSIS
+
+The Gundam franchise stands as one of the most influential science fiction properties in modern media, fundamentally transforming both the mecha anime genre and real-world robotics development since its inception in 1979.
+
+TECHNICAL SPECIFICATIONS
+• Mobile suits typically stand 18-20 meters tall
+• Powered by compact thermonuclear reactors or exotic energy sources
+• Humanoid design for versatility and tactical advantage
+• Advanced sensor arrays and targeting systems
+• Beam weaponry and physical combat capabilities
+
+ICONIC MOBILE SUITS
+• RX-78-2 Gundam - Original Earth Federation prototype
+• Zaku II - Mass production Zeon mobile suit
+• Strike Freedom - Advanced SEED series unit
+• Wing Gundam Zero - Ultimate Gundam Wing mobile suit
+• Barbatos - Ancient Iron-Blooded Orphans frame
+
+CULTURAL IMPACT
+Gundam revolutionized mecha anime by introducing "real robot" concepts where giant robots were treated as military weapons with realistic limitations rather than invincible super machines.
+
+TECHNOLOGICAL INFLUENCE
+The franchise has inspired real-world robotics research, with companies like Honda citing Gundam as inspiration for humanoid robot development.
+
+FRANCHISE SCOPE
+Spanning multiple timelines and universes, Gundam explores themes of war, politics, human evolution, and the relationship between technology and humanity through compelling narratives and detailed mechanical designs."""
+        elif "data" in main_entity.lower() and ("star trek" in query_lower or "android" in query_lower):
                 return """DATA (STAR TREK) - COMPREHENSIVE PROFILE
 
 BACKGROUND
@@ -347,7 +447,7 @@ CULTURAL IMPACT
 WALL-E represents environmental consciousness in robotics fiction, showing how artificial beings can develop empathy and care for their environment."""
 
         # Enhanced fallback with fuzzy search attempt
-        fallback_match = self._fuzzy_fallback_search(knowledge, query_lower)
+        fallback_match = self._fuzzy_fallback_search({'articles': articles}, query_lower)
         if fallback_match:
             return f"{fallback_match['title'].upper()}\n\n{fallback_match['content']}"
         
@@ -579,15 +679,36 @@ class ReasoningPipeline:
         relevant_knowledge = knowledge_base  # Pass full knowledge base
         found_sources = 0
         
+        # Count actual matches in the knowledge base
+        articles = []
+        if isinstance(knowledge_base, list):
+            articles = knowledge_base
+        elif 'articles' in knowledge_base and isinstance(knowledge_base['articles'], list):
+            articles = knowledge_base['articles']
+        
+        # Search for entity matches in articles
         for entity in semantic_analysis.entities:
             entity_lower = entity.text.lower()
-            if entity_lower in knowledge_base.get("character_data", {}):
-                found_sources += 1
-            elif entity.category in knowledge_base:
-                found_sources += 1
+            for article in articles:
+                if isinstance(article, dict) and 'title' in article:
+                    if entity_lower in article['title'].lower() or entity_lower in article.get('content', '').lower():
+                        found_sources += 1
+                        break
+        
+        # Also check character data if available
+        if isinstance(knowledge_base, dict):
+            for entity in semantic_analysis.entities:
+                entity_lower = entity.text.lower()
+                if entity_lower in knowledge_base.get("character_data", {}):
+                    found_sources += 1
+                elif entity.category in knowledge_base:
+                    found_sources += 1
         
         # Update the knowledge retrieval step with actual count
-        relevant_knowledge["_sources_found"] = found_sources
+        if isinstance(relevant_knowledge, dict):
+            relevant_knowledge["_sources_found"] = found_sources
+        else:
+            relevant_knowledge = {"articles": relevant_knowledge, "_sources_found": found_sources}
         return relevant_knowledge
     
     def _validate_reasoning(self, chain: ReasoningChain) -> float:
@@ -713,8 +834,8 @@ class EnhancedReasoningAgent:
                             knowledge_data.setdefault('articles', [])
                             knowledge_data['articles'].extend(robotics_data)
                         else:
-                            print(f"⚠️ Unrecognized robotics data format in {robotics_file}: {type(robotics_data)}")
-                        print(f"✅ Loaded robotics knowledge from {robotics_file} (type={type(robotics_data).__name__})")
+                            print(f"Unrecognized robotics data format in {robotics_file}: {type(robotics_data)}")
+                        print(f"Loaded robotics knowledge from {robotics_file} (type={type(robotics_data).__name__})")
                     break
             
             # Load enhanced ethics data
@@ -733,22 +854,22 @@ class EnhancedReasoningAgent:
                             knowledge_data.setdefault('articles', [])
                             knowledge_data['articles'].extend(ethics_data)
                         else:
-                            print(f"⚠️ Unrecognized ethics data format in {ethics_file}: {type(ethics_data)}")
-                        print(f"✅ Loaded ethics knowledge from {ethics_file} (type={type(ethics_data).__name__})")
+                            print(f"Unrecognized ethics data format in {ethics_file}: {type(ethics_data)}")
+                        print(f"Loaded ethics knowledge from {ethics_file} (type={type(ethics_data).__name__})")
                     break
                     
             if knowledge_data:
                 return knowledge_data
                 
         except Exception as e:
-            print(f"❌ Could not load external knowledge base: {e}")
+            print(f"Could not load external knowledge base: {e}")
             # Dump diagnostics to help debug KB loading in containers/CI
             try:
                 self._dump_kb_diagnostics(robotics_files, ethics_files, exception_info=traceback.format_exc())
             except Exception:
-                print("⚠️ Failed to write KB diagnostics")
+                print("Failed to write KB diagnostics")
         
-        print("⚠️ Using fallback knowledge base")
+        print("Using fallback knowledge base")
         # Also write diagnostics when falling back and no external data was loaded
         try:
             self._dump_kb_diagnostics(robotics_files, ethics_files)
@@ -833,9 +954,9 @@ class EnhancedReasoningAgent:
         try:
             with open(out_path, 'w', encoding='utf-8') as f:
                 json.dump(diag, f, ensure_ascii=False, indent=2)
-            print(f"✅ Wrote KB fallback diagnostics to {out_path}")
+            print(f"Wrote KB fallback diagnostics to {out_path}")
         except Exception as e:
-            print(f"❌ Failed to write diagnostics file: {e}")
+            print(f"Failed to write diagnostics file: {e}")
     
     def _generate_follow_up_questions(self, semantic_analysis: SemanticAnalysis, response: str) -> List[str]:
         """Generate relevant follow-up questions based on the query and response"""
