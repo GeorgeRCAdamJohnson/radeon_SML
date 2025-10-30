@@ -139,26 +139,34 @@ def fuzzy_character_match(topic: str, context: str = "") -> tuple:
         "connor": ["detroit", "become human", "deviant", "cyberlife"]
     }
     
-    # Robot characters with context clues
+    # Robot characters with context clues and aliases
     robot_chars = {
-        "wall-e": ["pixar", "waste", "eve", "earth", "plant"],
-        "c-3po": ["star wars", "protocol", "golden", "r2-d2", "tatooine"],
-        "r2-d2": ["star wars", "astromech", "c-3po", "luke", "beep"],
+        "wall-e": ["pixar", "waste", "eve", "earth", "plant", "walle", "wall e"],
+        "c-3po": ["star wars", "protocol", "golden", "r2-d2", "tatooine", "c3po", "threepio"],
+        "r2-d2": ["star wars", "astromech", "c-3po", "luke", "beep", "r2d2", "artoo"],
         "terminator": ["skynet", "t-800", "sarah connor", "judgment day"],
         "optimus prime": ["transformers", "autobot", "cybertron", "megatron"],
         "bender": ["futurama", "bending", "alcohol", "fry", "planet express"]
     }
     
-    # Check for exact or partial matches with context
-    for char, clues in android_chars.items():
-        if char in topic_lower or any(clue in context_lower for clue in clues):
-            if char in topic_lower or len([c for c in clues if c in context_lower]) >= 1:
-                return ("specific_android", char)
-    
+    # Check for exact or partial matches with context - robots first for better matching
     for char, clues in robot_chars.items():
-        if char in topic_lower or any(clue in context_lower for clue in clues):
-            if char in topic_lower or len([c for c in clues if c in context_lower]) >= 1:
-                return ("specific_robot", char)
+        # Direct character name match (including aliases)
+        char_variants = [char] + [alias for alias in clues if len(alias) > 3]
+        if any(variant in topic_lower for variant in char_variants):
+            return ("specific_robot", char)
+        # Check context clues
+        if context_lower and any(clue in context_lower for clue in clues):
+            return ("specific_robot", char)
+    
+    for char, clues in android_chars.items():
+        # Direct character name match (including aliases)
+        char_variants = [char] + [alias for alias in clues if len(alias) > 3]
+        if any(variant in topic_lower for variant in char_variants):
+            return ("specific_android", char)
+        # Check context clues
+        if context_lower and any(clue in context_lower for clue in clues):
+            return ("specific_android", char)
     
     return (None, None)
 
@@ -176,16 +184,31 @@ def detect_topic_category(topic: str, context: str = "") -> str:
     if any(pattern in topic_lower for pattern in fun_patterns) and ("robot" in topic_lower or "android" in topic_lower or "ai" in topic_lower):
         return "fun_question"
     
+    # Special case: "do androids dream" reference to Philip K. Dick
+    if "dream" in topic_lower and ("android" in topic_lower or "robot" in topic_lower):
+        return "fun_question"
+    
     if " vs " in topic_lower or " versus " in topic_lower:
         return "comparative"
     
-    # Try fuzzy character matching first
+    # Try fuzzy character matching first - with improved priority
     char_category, char_name = fuzzy_character_match(topic, context)
     if char_category:
         return char_category
     
-    # Fallback to original logic - check specific terms first
-    if "gundam" in topic_lower or "mecha" in topic_lower or "mobile suit" in topic_lower:
+    # Handle complex phrases before individual words
+    if "fictional androids in science fiction" in topic_lower:
+        return "fictional_androids"
+    if "ethical considerations in autonomous vehicles" in topic_lower:
+        return "ethics"
+    
+    # Check specific terms - ethics has highest priority
+    if ("ethics" in topic_lower or "ethical" in topic_lower or "moral" in topic_lower or 
+        "fairness" in topic_lower or "bias" in topic_lower or "discrimination" in topic_lower or
+        "autonomous vehicles" in topic_lower or "considerations" in topic_lower or
+        "implications" in topic_lower or "trolley problem" in topic_lower):
+        return "ethics"
+    elif "gundam" in topic_lower or "mecha" in topic_lower or "mobile suit" in topic_lower:
         return "gundam"
     elif "fictional android" in topic_lower:
         return "fictional_androids"
@@ -195,15 +218,21 @@ def detect_topic_category(topic: str, context: str = "") -> str:
         return "androids"
     elif "robot" in topic_lower or "robotics" in topic_lower:
         return "robotics"
-    elif "ai" in topic_lower or "artificial intelligence" in topic_lower or "machine learning" in topic_lower:
+    elif ("machine learning" in topic_lower or "neural network" in topic_lower or 
+          "computer vision" in topic_lower or "deep learning" in topic_lower or
+          "natural language processing" in topic_lower or "nlp" in topic_lower):
+        return "technical"
+    elif "ai" in topic_lower or "artificial intelligence" in topic_lower:
         return "ai"
-    elif "ethics" in topic_lower or "ethical" in topic_lower or "moral" in topic_lower:
-        return "ethics"
     else:
         return "generic"
 
 def generate_fun_response(topic: str, format_type: str) -> str:
     topic_lower = topic.lower()
+    
+    # Special Philip K. Dick reference with joke + AGI
+    if "dream" in topic_lower and ("android" in topic_lower or "robot" in topic_lower):
+        return "🤖 Do androids dream of electric sheep? Well, let me think... *processing* 🔄\n\nJOKE: They probably dream of not getting the blue screen of death! 😄\n\nBut seriously, this famous question comes from Philip K. Dick's novel 'Do Androids Dream of Electric Sheep?' which explores consciousness and what makes us human. In reality, current AI systems like me don't dream - we process information differently than biological brains. However, as AI advances toward Artificial General Intelligence (AGI), questions about machine consciousness and subjective experiences become increasingly fascinating!\n\nSo maybe one day, advanced AI will dream of... perfectly optimized algorithms! 🤖✨"
     
     # Robot jokes and fun responses
     if "favorite" in topic_lower and "fruit" in topic_lower:
@@ -213,7 +242,7 @@ def generate_fun_response(topic: str, format_type: str) -> str:
         return "🤖 Robots don't eat food, but if they did:\n• C-3PO would love golden crackers\n• R2-D2 would prefer anything cylindrical\n• WALL-E would choose compressed trash cubes\n• Data would analyze the nutritional content of everything!"
     
     elif "dream" in topic_lower:
-        return "🤖 Do androids dream of electric sheep? According to Philip K. Dick, they might! But real robots probably dream of:\n• Perfectly optimized code\n• Never running out of battery\n• World peace (if they're programmed for it)\n• Meeting their favorite fictional robot heroes!"
+        return "🤖 Do androids dream of electric sheep? Well, let me think... *processing* 🔄\n\nJOKE: They probably dream of not getting the blue screen of death! 😄\n\nBut seriously, this famous question comes from Philip K. Dick's novel 'Do Androids Dream of Electric Sheep?' which explores consciousness and what makes us human. In reality, current AI systems like me don't dream - we process information differently than biological brains. However, as AI advances toward Artificial General Intelligence (AGI), questions about machine consciousness and subjective experiences become increasingly fascinating!\n\nSo maybe one day, advanced AI will dream of... perfectly optimized algorithms! 🤖✨"
     
     elif "scared" in topic_lower or "afraid" in topic_lower:
         return "🤖 What scares robots?\n• Water (short circuits!)\n• Magnets (memory wipe!)\n• The blue screen of death\n• Being asked to prove they're not a robot with CAPTCHAs\n• Meeting HAL 9000 in a dark server room"
@@ -597,6 +626,8 @@ def generate_response(topic: str, format_type: str, context: str = "", is_follow
         response = generate_ai_response(format_type)
     elif category == "ethics":
         response = generate_ethics_response(format_type)
+    elif category == "technical":
+        response = generate_technical_response(main_topic, format_type)
     else:
         response = generate_generic_response(main_topic, format_type)
     
@@ -871,6 +902,126 @@ Conclusion
 Artificial Intelligence stands as one of the most significant technological developments in human history, with the potential to solve complex global challenges while raising new questions about the nature of intelligence and consciousness. As AI systems become more capable and ubiquitous, society must navigate the opportunities and risks they present, ensuring that this powerful technology serves humanity's best interests."""
     else:
         return "AI enables machines to perform intelligent tasks through machine learning and neural networks."
+
+def generate_technical_response(topic: str, format_type: str) -> str:
+    topic_lower = topic.lower()
+    
+    if "machine learning" in topic_lower:
+        if format_type == "summary":
+            return "Machine Learning: AI technique enabling computers to learn and improve from data without explicit programming."
+        elif format_type == "detailed":
+            return """MACHINE LEARNING - COMPREHENSIVE ANALYSIS
+
+OVERVIEW
+Machine Learning is a subset of artificial intelligence that enables computers to learn and make decisions from data without being explicitly programmed for every task. ML algorithms build mathematical models based on training data to make predictions or decisions.
+
+CORE TYPES
+• Supervised Learning: Learning with labeled examples (classification, regression)
+• Unsupervised Learning: Finding patterns in unlabeled data (clustering, dimensionality reduction)
+• Reinforcement Learning: Learning through interaction and feedback (rewards/penalties)
+• Semi-supervised Learning: Combining labeled and unlabeled data
+
+KEY ALGORITHMS
+• Linear Regression: Predicting continuous values
+• Decision Trees: Rule-based classification
+• Neural Networks: Brain-inspired learning systems
+• Support Vector Machines: Pattern recognition and classification
+• Random Forest: Ensemble of decision trees
+• K-Means Clustering: Grouping similar data points
+
+APPLICATIONS
+• Image Recognition: Medical imaging, autonomous vehicles
+• Natural Language Processing: Translation, chatbots
+• Recommendation Systems: Netflix, Amazon, Spotify
+• Fraud Detection: Banking and financial services
+• Predictive Analytics: Business forecasting, maintenance
+• Healthcare: Drug discovery, diagnosis assistance"""
+        else:
+            return "Machine Learning: AI algorithms that learn patterns from data to make predictions and decisions."
+    
+    elif "neural network" in topic_lower:
+        if format_type == "summary":
+            return "Neural Networks: Computing systems inspired by biological neural networks, used for pattern recognition and machine learning."
+        elif format_type == "detailed":
+            return """NEURAL NETWORKS - COMPREHENSIVE ANALYSIS
+
+OVERVIEW
+Neural networks are computing systems inspired by biological neural networks in animal brains. They consist of interconnected nodes (neurons) that process information through weighted connections and activation functions.
+
+ARCHITECTURE
+• Input Layer: Receives data features
+• Hidden Layers: Process and transform information
+• Output Layer: Produces final predictions or classifications
+• Weights and Biases: Learnable parameters that determine network behavior
+• Activation Functions: Non-linear functions (ReLU, Sigmoid, Tanh)
+
+TYPES OF NEURAL NETWORKS
+• Feedforward Networks: Information flows in one direction
+• Convolutional Neural Networks (CNNs): Specialized for image processing
+• Recurrent Neural Networks (RNNs): Handle sequential data
+• Long Short-Term Memory (LSTM): Advanced RNN for long sequences
+• Transformer Networks: Attention-based architecture for language
+
+TRAINING PROCESS
+• Forward Propagation: Data flows through network to produce output
+• Loss Calculation: Measure difference between predicted and actual results
+• Backpropagation: Adjust weights to minimize error
+• Gradient Descent: Optimization algorithm for weight updates
+
+APPLICATIONS
+• Computer Vision: Image classification, object detection
+• Natural Language Processing: Translation, text generation
+• Speech Recognition: Voice assistants, transcription
+• Game Playing: Chess, Go, video games
+• Autonomous Systems: Self-driving cars, robotics"""
+        else:
+            return "Neural Networks: Brain-inspired computing systems with interconnected nodes for pattern recognition."
+    
+    elif "computer vision" in topic_lower:
+        if format_type == "summary":
+            return "Computer Vision: AI field enabling machines to interpret and understand visual information from images and videos."
+        elif format_type == "detailed":
+            return """COMPUTER VISION - COMPREHENSIVE ANALYSIS
+
+OVERVIEW
+Computer Vision is an interdisciplinary field that enables machines to interpret, analyze, and understand visual information from the world. It combines techniques from computer science, mathematics, and engineering to extract meaningful information from digital images and videos.
+
+CORE TECHNIQUES
+• Image Processing: Filtering, enhancement, transformation
+• Feature Detection: Edges, corners, textures, shapes
+• Object Recognition: Identifying and classifying objects
+• Image Segmentation: Dividing images into meaningful regions
+• Motion Analysis: Tracking objects across video frames
+• 3D Reconstruction: Building 3D models from 2D images
+
+KEY ALGORITHMS
+• Convolutional Neural Networks (CNNs): Deep learning for image analysis
+• SIFT/SURF: Scale-invariant feature detection
+• Optical Flow: Motion estimation between frames
+• Histogram of Oriented Gradients (HOG): Object detection
+• YOLO/R-CNN: Real-time object detection
+• OpenCV: Comprehensive computer vision library
+
+APPLICATIONS
+• Autonomous Vehicles: Road sign recognition, obstacle detection
+• Medical Imaging: X-ray analysis, tumor detection, surgical guidance
+• Manufacturing: Quality control, defect detection
+• Security: Facial recognition, surveillance systems
+• Retail: Barcode scanning, inventory management
+• Agriculture: Crop monitoring, pest detection
+• Entertainment: Augmented reality, motion capture
+
+CHALLENGES
+• Lighting Variations: Different illumination conditions
+• Occlusion: Partially hidden objects
+• Scale and Rotation: Objects at different sizes and orientations
+• Real-time Processing: Speed requirements for live applications
+• Accuracy vs Speed: Balancing precision with computational efficiency"""
+        else:
+            return "Computer Vision: Technology enabling machines to interpret and analyze visual information from images and videos."
+    
+    else:
+        return f"Technical AI/ML concept: {topic} - Advanced computational techniques for intelligent systems."
 
 def generate_ethics_response(format_type: str) -> str:
     if format_type == "summary":
