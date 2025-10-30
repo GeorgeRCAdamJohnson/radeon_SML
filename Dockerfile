@@ -9,8 +9,9 @@ COPY server.py .
 COPY reasoning_agent.py .
 COPY enhanced_search_utils.py .
 COPY data/ ./data/
-COPY src/react/deploy/ ./static/
+COPY static/ ./static/
+COPY auth.py .
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD ["python", "-m", "uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8080"]

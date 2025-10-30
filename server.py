@@ -1,6 +1,9 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+# Temporarily disable auth for deployment testing
+def get_current_user():
+    return {'email': 'test@example.com', 'name': 'Test User'}
 import json
 import time
 import uuid
@@ -1138,22 +1141,17 @@ async def chat(request: ChatRequest):
         if last_ai_response and is_followup:
             context = last_ai_response[:200]
     
-    # Use enhanced reasoning agent with fallback
-    if reasoning_agent:
-        reasoning_result = reasoning_agent.process_query(topic, session_id)
-        response_text = reasoning_result['response'] or "I apologize, but I couldn't generate a response. Please try rephrasing your question."
-    else:
-        # Fallback to built-in response generation
-        response_text = generate_response(topic, format_type, context, is_followup)
-        reasoning_result = {
-            'response': response_text,
-            'confidence': 0.8,
-            'intent': 'followup' if is_followup else 'general_query',
-            'reasoning_steps': [],
-            'entities': [],
-            'complexity': 'simple',
-            'session_context': len(conversations[session_id])
-        }
+    # Use built-in response generation (reasoning agent disabled)
+    response_text = generate_response(topic, format_type, context, is_followup)
+    reasoning_result = {
+        'response': response_text,
+        'confidence': 0.8,
+        'intent': 'followup' if is_followup else 'general_query',
+        'reasoning_steps': [],
+        'entities': [],
+        'complexity': 'simple',
+        'session_context': len(conversations[session_id])
+    }
     
     # Validate ethical content
     ethics_check = validate_ethical_content(topic, response_text)
@@ -1197,6 +1195,7 @@ async def chat(request: ChatRequest):
     return {
         "id": str(uuid.uuid4()),
         "response": response_text,
+        "user": "test@example.com",
         "timestamp": time.time(),
         "confidence": reasoning_result.get('confidence', 0.8),
         "intent": reasoning_result.get('intent', 'general_query'),
@@ -1265,6 +1264,10 @@ if os.path.exists("static"):
     @app.get("/")
     async def read_index():
         return FileResponse('static/index.html')
+    
+    @app.get("/login")
+    async def login_page():
+        return FileResponse('static/login.html')
 
 if __name__ == "__main__":
     import uvicorn
