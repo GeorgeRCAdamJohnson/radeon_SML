@@ -1,0 +1,17 @@
+2025-11-02 13:07:44,129 - src.core.hardware_detector - INFO - Starting comprehensive hardware detection...
+2025-11-02 13:07:44,132 - src.core.hardware_detector - WARNING - Handheld detection failed: No module named 'wmi'
+2025-11-02 13:07:44,132 - src.core.hardware_detector - WARNING - WMI not available for GPU detection
+2025-11-02 13:07:44,132 - src.core.hardware_detector - WARNING - No GPUs detected, creating fallback CPU profile
+2025-11-02 13:07:44,133 - src.core.hardware_detector - INFO - Hardware detection completed successfully
+2025-11-02 13:07:44,138 - src.core.hardware_detector - INFO - Starting comprehensive hardware detection...
+2025-11-02 13:07:44,143 - src.core.hardware_detector - WARNING - Handheld detection failed: No module named 'wmi'
+2025-11-02 13:07:44,144 - src.core.hardware_detector - WARNING - WMI not available for GPU detection
+2025-11-02 13:07:44,145 - src.core.hardware_detector - WARNING - No GPUs detected, creating fallback CPU profile
+2025-11-02 13:07:44,145 - src.core.hardware_detector - INFO - Hardware detection completed successfully
+2025-11-02 13:07:44,145 - src.core.vector_embedder - INFO - Vector embedding system initialized
+2025-11-02 13:07:44,145 - src.core.vector_embedder - INFO - Data directory: data\embeddings
+2025-11-02 13:07:44,145 - src.core.vector_embedder - ERROR - Failed to initialize model: sentence-transformers not available
+2025-11-02 13:07:44,146 - src.core.reasoning_engine - INFO - AI Reasoning Engine initialized
+2025-11-02 13:07:44,146 - src.core.reasoning_engine - INFO - Loading language model: gpt2
+2025-11-02 13:07:44,146 - src.core.reasoning_engine - INFO - Target device: cpu
+2025-11-02 13:07:45,795 - src.core.reasoning_engine - ERROR - Failed to initialize language model: The model has been loaded with `accelerate` and therefore cannot be moved to a specific device. Please discard the `device` argument when creating your pipeline object.

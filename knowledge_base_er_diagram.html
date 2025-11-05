@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Knowledge Base ER Diagram</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8f9fa; }
+    .diagram { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; }
+    .entity { background: #fff; border: 2px solid #0077cc; border-radius: 8px; margin: 20px; padding: 20px; min-width: 260px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .entity h2 { margin-top: 0; color: #0077cc; font-size: 1.2em; }
+    .fields { margin: 10px 0 0 0; }
+    .field { font-size: 0.98em; margin-bottom: 4px; }
+    .relationship { color: #444; font-size: 1em; margin: 10px 0; }
+    .arrow { font-size: 2em; color: #0077cc; margin: 0 10px; }
+    .legend { margin: 30px auto; max-width: 600px; background: #e9ecef; border-radius: 8px; padding: 16px; }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Knowledge Base ER Diagram</h1>
+  <div class="legend">
+    <strong>Legend:</strong><br>
+    <span class="field"><b>PK</b>: Primary Key</span><br>
+    <span class="field"><b>FK</b>: Foreign Key</span><br>
+    <span class="field">Entities are tables. Arrows show relationships (FK links).</span>
+  </div>
+  <div class="diagram">
+    <div class="entity">
+      <h2>Entity</h2>
+      <div class="fields">
+        <div class="field"><b>id</b> (PK, UUID/Int)</div>
+        <div class="field"><b>name</b> (String)</div>
+        <div class="field"><b>entity_type</b> (Enum)</div>
+        <div class="field"><b>description</b> (Text)</div>
+        <div class="field"><b>domain</b> (Enum/String)</div>
+        <div class="field"><b>tags</b> (Array/JSON)</div>
+        <div class="field"><b>is_fiction</b> (Bool/Enum)</div>
+        <div class="field"><b>date_of_birth</b> (Date)</div>
+        <div class="field"><b>date_created</b> (Date)</div>
+        <div class="field"><b>date_retired</b> (Date)</div>
+        <div class="field"><b>date_of_death</b> (Date)</div>
+        <div class="field"><b>image_url</b> (String)</div>
+        <div class="field"><b>source_type</b> (Enum/String)</div>
+        <div class="field"><b>source_url</b> (String)</div>
+        <div class="field"><b>created_at</b> (Timestamp)</div>
+        <div class="field"><b>updated_at</b> (Timestamp)</div>
+        <div class="field"><b>embedding</b> (Array/JSON/BLOB)</div>
+        <div class="field"><b>confidence_score</b> (Float)</div>
+        <div class="field"><b>curation_status</b> (String)</div>
+        <div class="field"><b>ml_label</b> (String)</div>
+        <div class="field"><b>sentiment</b> (Float)</div>
+        <div class="field"><b>topic</b> (String)</div>
+        <div class="field"><b>named_entities</b> (JSON)</div>
+        <div class="field"><b>keywords</b> (JSON)</div>
+        <div class="field"><b>is_gold_standard</b> (Bool)</div>
+      </div>
+      <div style="margin-top:18px; background:#f3f7fa; border-radius:6px; padding:10px; font-size:0.95em;">
+        <b>Example:</b>
+        <pre style="white-space:pre-wrap; word-break:break-word;">
+{
+  "id": 1,
+  "name": "Geoffrey Hinton",
+  "entity_type": "real_person",
+  "description": "Pioneer in deep learning and neural networks.",
+  "domain": "AI",
+  "tags": ["deep learning", "neural networks", "research"],
+  "is_fiction": false,
+  "date_of_birth": "1947-12-06",
+  "image_url": "https://example.com/hinton.jpg",
+  "source_type": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Geoffrey_Hinton"
+}
+        </pre>
+      </div>
+    </div>
+    <span class="arrow">&#8594;</span>
+    <div class="entity">
+      <h2>Article</h2>
+      <div class="fields">
+        <div class="field"><b>id</b> (PK, UUID/Int)</div>
+        <div class="field"><b>title</b> (String)</div>
+        <div class="field"><b>summary</b> (Text)</div>
+        <div class="field"><b>content</b> (Text)</div>
+        <div class="field"><b>word_count</b> (Int)</div>
+        <div class="field"><b>quality_score</b> (Float)</div>
+        <div class="field"><b>domain</b> (Enum/String)</div>
+        <div class="field"><b>entity_id</b> (FK to Entity)</div>
+        <div class="field"><b>created_at</b> (Timestamp)</div>
+        <div class="field"><b>updated_at</b> (Timestamp)</div>
+        <div class="field"><b>embedding</b> (Array/JSON/BLOB)</div>
+        <div class="field"><b>confidence_score</b> (Float)</div>
+        <div class="field"><b>curation_status</b> (String)</div>
+        <div class="field"><b>ml_label</b> (String)</div>
+        <div class="field"><b>sentiment</b> (Float)</div>
+        <div class="field"><b>topic</b> (String)</div>
+        <div class="field"><b>named_entities</b> (JSON)</div>
+        <div class="field"><b>keywords</b> (JSON)</div>
+        <div class="field"><b>is_gold_standard</b> (Bool)</div>
+      </div>
+      <div style="margin-top:18px; background:#f3f7fa; border-radius:6px; padding:10px; font-size:0.95em;">
+        <b>Example:</b>
+        <pre style="white-space:pre-wrap; word-break:break-word;">
+{
+  "id": 101,
+  "title": "AlphaGo",
+  "summary": "AI developed by DeepMind to play the board game Go.",
+  "content": "AlphaGo is an artificial intelligence program developed by DeepMind to play the board game Go...",
+  "word_count": 1200,
+  "quality_score": 0.98,
+  "domain": "AI",
+  "entity_id": 3
+}
+        </pre>
+      </div>
+    </div>
+    <span class="arrow">&#8596;</span>
+    <div class="entity">
+      <h2>Relationship</h2>
+      <div class="fields">
+        <div class="field"><b>id</b> (PK, UUID/Int)</div>
+        <div class="field"><b>from_entity_id</b> (FK to Entity)</div>
+        <div class="field"><b>to_entity_id</b> (FK to Entity)</div>
+        <div class="field"><b>relationship_type</b> (Enum)</div>
+        <div class="field"><b>description</b> (Text)</div>
+        <div class="field"><b>weight</b> (Float)</div>
+        <div class="field"><b>created_at</b> (Timestamp)</div>
+        <div class="field"><b>confidence_score</b> (Float)</div>
+        <div class="field"><b>directionality</b> (String)</div>
+      </div>
+      <div style="margin-top:18px; background:#f3f7fa; border-radius:6px; padding:10px; font-size:0.95em;">
+        <b>Example:</b>
+        <pre style="white-space:pre-wrap; word-break:break-word;">
+{
+  "id": 201,
+  "from_entity_id": 3,
+  "to_entity_id": 1,
+  "relationship_type": "researched_by",
+  "description": "AlphaGo was developed by a team including Geoffrey Hinton.",
+  "weight": 0.9
+}
+        </pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

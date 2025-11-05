@@ -1,0 +1,622 @@
+[
+  {
+    "endpoint": "/api/query",
+    "format": "standard",
+    "prompt": "what are ai ethics",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "standard",
+    "prompt": "explain in more detail",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "standard",
+    "prompt": "explain ai ethics in more detail",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "standard",
+    "prompt": "robot safety",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "standard",
+    "prompt": "what is robotics",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "summary",
+    "prompt": "what are ai ethics",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "summary",
+    "prompt": "explain in more detail",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "summary",
+    "prompt": "explain ai ethics in more detail",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "summary",
+    "prompt": "robot safety",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "summary",
+    "prompt": "what is robotics",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "detailed",
+    "prompt": "what are ai ethics",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "detailed",
+    "prompt": "explain in more detail",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "detailed",
+    "prompt": "explain ai ethics in more detail",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "detailed",
+    "prompt": "robot safety",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "detailed",
+    "prompt": "what is robotics",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "essay",
+    "prompt": "what are ai ethics",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "essay",
+    "prompt": "explain in more detail",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "essay",
+    "prompt": "explain ai ethics in more detail",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "essay",
+    "prompt": "robot safety",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/query",
+    "format": "essay",
+    "prompt": "what is robotics",
+    "response": null,
+    "error": "404 Client Error: Not Found for url: https://radeon-ai-960026900565.us-central1.run.app/api/query"
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "standard",
+    "prompt": "what are ai ethics",
+    "response": "Ethics in AI and robotics involves moral considerations for responsible development of artificial intelligence and autonomous systems.",
+    "raw": {
+      "id": "63ada0f8-8811-43af-a341-0e7cf38884fc",
+      "response": "Ethics in AI and robotics involves moral considerations for responsible development of artificial intelligence and autonomous systems.",
+      "user": "test@example.com",
+      "timestamp": 1761941545.81945,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.4,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "standard",
+    "prompt": "explain in more detail",
+    "response": "AI enables machines to perform intelligent tasks through machine learning and neural networks.",
+    "raw": {
+      "id": "fdd1cbb2-158d-4abd-a3c7-b51b7f7b76b3",
+      "response": "AI enables machines to perform intelligent tasks through machine learning and neural networks.",
+      "user": "test@example.com",
+      "timestamp": 1761941546.4509127,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.6,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "standard",
+    "prompt": "explain ai ethics in more detail",
+    "response": "Ethics in AI and robotics involves moral considerations for responsible development of artificial intelligence and autonomous systems.",
+    "raw": {
+      "id": "b648f3a9-398d-4d3d-bb39-bf37e957b994",
+      "response": "Ethics in AI and robotics involves moral considerations for responsible development of artificial intelligence and autonomous systems.",
+      "user": "test@example.com",
+      "timestamp": 1761941547.0670996,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 0.9,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "standard",
+    "prompt": "robot safety",
+    "response": "Robotics involves designing and operating autonomous machines for various industrial and service applications.",
+    "raw": {
+      "id": "497739a4-9ecb-47c5-ac31-169241f9aca4",
+      "response": "Robotics involves designing and operating autonomous machines for various industrial and service applications.",
+      "user": "test@example.com",
+      "timestamp": 1761941547.663096,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 0.9,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "standard",
+    "prompt": "what is robotics",
+    "response": "Robotics involves designing and operating autonomous machines for various industrial and service applications.",
+    "raw": {
+      "id": "95c8d2b1-b6c3-4906-ab6d-938b297abd9b",
+      "response": "Robotics involves designing and operating autonomous machines for various industrial and service applications.",
+      "user": "test@example.com",
+      "timestamp": 1761941548.278497,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.7,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "summary",
+    "prompt": "what are ai ethics",
+    "response": "Ethics in AI and Robotics: Critical considerations for responsible development of artificial intelligence, autonomous systems, and human-robot interaction.",
+    "raw": {
+      "id": "5c8e6145-669d-4f1b-96cf-22a65054ef4a",
+      "response": "Ethics in AI and Robotics: Critical considerations for responsible development of artificial intelligence, autonomous systems, and human-robot interaction.",
+      "user": "test@example.com",
+      "timestamp": 1761941548.9537635,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.0,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "summary",
+    "prompt": "explain in more detail",
+    "response": "Artificial Intelligence: Technology enabling machines to perform human-like intelligent tasks through learning and adaptation.",
+    "raw": {
+      "id": "52457f51-22b9-409f-becb-9837fb0eb99e",
+      "response": "Artificial Intelligence: Technology enabling machines to perform human-like intelligent tasks through learning and adaptation.",
+      "user": "test@example.com",
+      "timestamp": 1761941549.566993,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.1,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "summary",
+    "prompt": "explain ai ethics in more detail",
+    "response": "Ethics in AI and Robotics: Critical considerations for responsible development of artificial intelligence, autonomous systems, and human-robot interaction.",
+    "raw": {
+      "id": "4031163b-d7b9-47f5-9e37-2086a4c91e30",
+      "response": "Ethics in AI and Robotics: Critical considerations for responsible development of artificial intelligence, autonomous systems, and human-robot interaction.",
+      "user": "test@example.com",
+      "timestamp": 1761941550.1711173,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 2.0,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "summary",
+    "prompt": "robot safety",
+    "response": "Robotics: Interdisciplinary field combining mechanical engineering, computer science, and AI to create autonomous machines.",
+    "raw": {
+      "id": "a880d42f-2985-40d7-bb9a-ad717da97235",
+      "response": "Robotics: Interdisciplinary field combining mechanical engineering, computer science, and AI to create autonomous machines.",
+      "user": "test@example.com",
+      "timestamp": 1761941550.7621462,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.0,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "summary",
+    "prompt": "what is robotics",
+    "response": "Robotics: Interdisciplinary field combining mechanical engineering, computer science, and AI to create autonomous machines.",
+    "raw": {
+      "id": "31c6e9eb-d7fe-4f64-949e-91381dcbecce",
+      "response": "Robotics: Interdisciplinary field combining mechanical engineering, computer science, and AI to create autonomous machines.",
+      "user": "test@example.com",
+      "timestamp": 1761941551.351005,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.2,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "detailed",
+    "prompt": "what are ai ethics",
+    "response": "AI AND ROBOTICS ETHICS - COMPREHENSIVE ANALYSIS\n\nFUNDAMENTAL PRINCIPLES\nEthics in AI and robotics encompasses the moral principles governing the development, deployment, and interaction with artificial intelligence and autonomous systems. Key principles include beneficence (doing good), non-maleficence (avoiding harm), autonomy (respecting human agency), and justice (fair distribution of benefits and risks).\n\nAI ETHICS DOMAINS\n• Algorithmic Fairness: Ensuring AI systems don't discriminate based on race, gender, or other protected characteristics\n• Transparency and Explainability: Making AI decision-making processes understandable to humans\n• Privacy Protection: Safeguarding personal data used in AI training and operation\n• Accountability: Establishing clear responsibility chains for AI system outcomes\n• Human Oversight: Maintaining meaningful human control over critical decisions\n\nROBOT ETHICS CONSIDERATIONS\n• Autonomous Decision-Making: How robots should make moral choices in complex situations\n• Human-Robot Relationships: Appropriate boundaries for emotional and physical interaction\n• Robot Rights: Whether advanced robots deserve moral consideration or legal protections\n• Safety and Reliability: Ensuring robotic systems operate safely in human environments\n• Deception and Anthropomorphism: Ethics of making robots appear more human-like\n\nAUTONOMOUS VEHICLE ETHICS\n• Trolley Problem Scenarios: Programming decisions about who to save in unavoidable accidents\n• Liability and Responsibility: Determining fault when autonomous vehicles cause harm\n• Data Collection: Privacy implications of vehicle sensors and tracking systems\n• Accessibility: Ensuring autonomous vehicles serve all populations equitably\n• Environmental Impact: Balancing automation benefits with sustainability concerns\n\nSYNTHETIC HUMAN ETHICS\n• Consciousness and Sentience: Determining if artificial beings can experience suffering\n• Rights and Legal Status: Whether synthetic humans deserve human rights protections\n• Identity and Authenticity: Implications of creating beings indistinguishable from humans\n• Consent and Agency: Capacity of artificial beings to make autonomous decisions\n• Social Integration: Impact on human society and relationships\n\nEMERGING CHALLENGES\n• Deepfakes and Misinformation: AI-generated content threatening truth and trust\n• Surveillance Capitalism: Commercial exploitation of personal data through AI\n• Autonomous Weapons: Military applications raising humanitarian concerns\n• Social Credit Systems: AI-powered social control and behavior modification\n• Genetic and Neural Enhancement: AI-assisted human augmentation ethics\n\nREGULATORY FRAMEWORKS\n• European AI Act: Comprehensive regulation of AI systems by risk level\n• IEEE Standards: Technical standards for ethical AI design\n• Partnership on AI: Industry collaboration on responsible AI development\n• Asilomar AI Principles: Research community guidelines for beneficial AI\n• UN Guidelines: International frameworks for AI governance",
+    "raw": {
+      "id": "2122a262-909a-4362-8ad0-b3f4b19fa363",
+      "response": "AI AND ROBOTICS ETHICS - COMPREHENSIVE ANALYSIS\n\nFUNDAMENTAL PRINCIPLES\nEthics in AI and robotics encompasses the moral principles governing the development, deployment, and interaction with artificial intelligence and autonomous systems. Key principles include beneficence (doing good), non-maleficence (avoiding harm), autonomy (respecting human agency), and justice (fair distribution of benefits and risks).\n\nAI ETHICS DOMAINS\n• Algorithmic Fairness: Ensuring AI systems don't discriminate based on race, gender, or other protected characteristics\n• Transparency and Explainability: Making AI decision-making processes understandable to humans\n• Privacy Protection: Safeguarding personal data used in AI training and operation\n• Accountability: Establishing clear responsibility chains for AI system outcomes\n• Human Oversight: Maintaining meaningful human control over critical decisions\n\nROBOT ETHICS CONSIDERATIONS\n• Autonomous Decision-Making: How robots should make moral choices in complex situations\n• Human-Robot Relationships: Appropriate boundaries for emotional and physical interaction\n• Robot Rights: Whether advanced robots deserve moral consideration or legal protections\n• Safety and Reliability: Ensuring robotic systems operate safely in human environments\n• Deception and Anthropomorphism: Ethics of making robots appear more human-like\n\nAUTONOMOUS VEHICLE ETHICS\n• Trolley Problem Scenarios: Programming decisions about who to save in unavoidable accidents\n• Liability and Responsibility: Determining fault when autonomous vehicles cause harm\n• Data Collection: Privacy implications of vehicle sensors and tracking systems\n• Accessibility: Ensuring autonomous vehicles serve all populations equitably\n• Environmental Impact: Balancing automation benefits with sustainability concerns\n\nSYNTHETIC HUMAN ETHICS\n• Consciousness and Sentience: Determining if artificial beings can experience suffering\n• Rights and Legal Status: Whether synthetic humans deserve human rights protections\n• Identity and Authenticity: Implications of creating beings indistinguishable from humans\n• Consent and Agency: Capacity of artificial beings to make autonomous decisions\n• Social Integration: Impact on human society and relationships\n\nEMERGING CHALLENGES\n• Deepfakes and Misinformation: AI-generated content threatening truth and trust\n• Surveillance Capitalism: Commercial exploitation of personal data through AI\n• Autonomous Weapons: Military applications raising humanitarian concerns\n• Social Credit Systems: AI-powered social control and behavior modification\n• Genetic and Neural Enhancement: AI-assisted human augmentation ethics\n\nREGULATORY FRAMEWORKS\n• European AI Act: Comprehensive regulation of AI systems by risk level\n• IEEE Standards: Technical standards for ethical AI design\n• Partnership on AI: Industry collaboration on responsible AI development\n• Asilomar AI Principles: Research community guidelines for beneficial AI\n• UN Guidelines: International frameworks for AI governance",
+      "user": "test@example.com",
+      "timestamp": 1761941551.984625,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.5,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "detailed",
+    "prompt": "explain in more detail",
+    "response": "ARTIFICIAL INTELLIGENCE - COMPREHENSIVE ANALYSIS\n\nFIELD OVERVIEW\nArtificial Intelligence encompasses computational systems designed to perform tasks that typically require human intelligence, including learning, reasoning, perception, and decision-making. AI systems can analyze data, recognize patterns, and make predictions or recommendations based on their training and algorithms.\n\nCORE TECHNOLOGIES\n• Machine Learning: Algorithms that improve performance through experience and data\n• Deep Learning: Multi-layered neural networks for complex pattern recognition\n• Natural Language Processing: Understanding and generating human language\n• Computer Vision: Image and video analysis for object recognition and scene understanding\n• Expert Systems: Knowledge-based systems for specialized domain expertise\n• Reinforcement Learning: Learning through trial and error with reward feedback\n\nAPPLICATION DOMAINS\n• Healthcare: Diagnostic imaging, drug discovery, and personalized treatment\n• Finance: Fraud detection, algorithmic trading, and risk assessment\n• Transportation: Autonomous vehicles and traffic optimization\n• Manufacturing: Predictive maintenance and quality control\n• Entertainment: Content recommendation and procedural generation\n• Communication: Language translation and virtual assistants\n\nCURRENT CAPABILITIES\n• Image recognition surpassing human accuracy in specific domains\n• Natural language understanding for conversational interfaces\n• Game-playing systems achieving superhuman performance\n• Predictive analytics for business intelligence and forecasting\n• Automated decision-making in structured environments\n• Pattern recognition in complex datasets\n\nLIMITATIONS AND CHALLENGES\n• Lack of general intelligence and common sense reasoning\n• Bias and fairness issues in training data and algorithms\n• Explainability and transparency in decision-making processes\n• Energy consumption and computational requirements\n• Ethical considerations in autonomous systems\n• Safety and reliability in critical applications",
+    "raw": {
+      "id": "5e85bffc-36dd-4a57-9be9-62a586faad88",
+      "response": "ARTIFICIAL INTELLIGENCE - COMPREHENSIVE ANALYSIS\n\nFIELD OVERVIEW\nArtificial Intelligence encompasses computational systems designed to perform tasks that typically require human intelligence, including learning, reasoning, perception, and decision-making. AI systems can analyze data, recognize patterns, and make predictions or recommendations based on their training and algorithms.\n\nCORE TECHNOLOGIES\n• Machine Learning: Algorithms that improve performance through experience and data\n• Deep Learning: Multi-layered neural networks for complex pattern recognition\n• Natural Language Processing: Understanding and generating human language\n• Computer Vision: Image and video analysis for object recognition and scene understanding\n• Expert Systems: Knowledge-based systems for specialized domain expertise\n• Reinforcement Learning: Learning through trial and error with reward feedback\n\nAPPLICATION DOMAINS\n• Healthcare: Diagnostic imaging, drug discovery, and personalized treatment\n• Finance: Fraud detection, algorithmic trading, and risk assessment\n• Transportation: Autonomous vehicles and traffic optimization\n• Manufacturing: Predictive maintenance and quality control\n• Entertainment: Content recommendation and procedural generation\n• Communication: Language translation and virtual assistants\n\nCURRENT CAPABILITIES\n• Image recognition surpassing human accuracy in specific domains\n• Natural language understanding for conversational interfaces\n• Game-playing systems achieving superhuman performance\n• Predictive analytics for business intelligence and forecasting\n• Automated decision-making in structured environments\n• Pattern recognition in complex datasets\n\nLIMITATIONS AND CHALLENGES\n• Lack of general intelligence and common sense reasoning\n• Bias and fairness issues in training data and algorithms\n• Explainability and transparency in decision-making processes\n• Energy consumption and computational requirements\n• Ethical considerations in autonomous systems\n• Safety and reliability in critical applications",
+      "user": "test@example.com",
+      "timestamp": 1761941552.5925453,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.0,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "detailed",
+    "prompt": "explain ai ethics in more detail",
+    "response": "AI AND ROBOTICS ETHICS - COMPREHENSIVE ANALYSIS\n\nFUNDAMENTAL PRINCIPLES\nEthics in AI and robotics encompasses the moral principles governing the development, deployment, and interaction with artificial intelligence and autonomous systems. Key principles include beneficence (doing good), non-maleficence (avoiding harm), autonomy (respecting human agency), and justice (fair distribution of benefits and risks).\n\nAI ETHICS DOMAINS\n• Algorithmic Fairness: Ensuring AI systems don't discriminate based on race, gender, or other protected characteristics\n• Transparency and Explainability: Making AI decision-making processes understandable to humans\n• Privacy Protection: Safeguarding personal data used in AI training and operation\n• Accountability: Establishing clear responsibility chains for AI system outcomes\n• Human Oversight: Maintaining meaningful human control over critical decisions\n\nROBOT ETHICS CONSIDERATIONS\n• Autonomous Decision-Making: How robots should make moral choices in complex situations\n• Human-Robot Relationships: Appropriate boundaries for emotional and physical interaction\n• Robot Rights: Whether advanced robots deserve moral consideration or legal protections\n• Safety and Reliability: Ensuring robotic systems operate safely in human environments\n• Deception and Anthropomorphism: Ethics of making robots appear more human-like\n\nAUTONOMOUS VEHICLE ETHICS\n• Trolley Problem Scenarios: Programming decisions about who to save in unavoidable accidents\n• Liability and Responsibility: Determining fault when autonomous vehicles cause harm\n• Data Collection: Privacy implications of vehicle sensors and tracking systems\n• Accessibility: Ensuring autonomous vehicles serve all populations equitably\n• Environmental Impact: Balancing automation benefits with sustainability concerns\n\nSYNTHETIC HUMAN ETHICS\n• Consciousness and Sentience: Determining if artificial beings can experience suffering\n• Rights and Legal Status: Whether synthetic humans deserve human rights protections\n• Identity and Authenticity: Implications of creating beings indistinguishable from humans\n• Consent and Agency: Capacity of artificial beings to make autonomous decisions\n• Social Integration: Impact on human society and relationships\n\nEMERGING CHALLENGES\n• Deepfakes and Misinformation: AI-generated content threatening truth and trust\n• Surveillance Capitalism: Commercial exploitation of personal data through AI\n• Autonomous Weapons: Military applications raising humanitarian concerns\n• Social Credit Systems: AI-powered social control and behavior modification\n• Genetic and Neural Enhancement: AI-assisted human augmentation ethics\n\nREGULATORY FRAMEWORKS\n• European AI Act: Comprehensive regulation of AI systems by risk level\n• IEEE Standards: Technical standards for ethical AI design\n• Partnership on AI: Industry collaboration on responsible AI development\n• Asilomar AI Principles: Research community guidelines for beneficial AI\n• UN Guidelines: International frameworks for AI governance",
+    "raw": {
+      "id": "04f8d3af-bbfd-42a0-96de-c1a1e22ea7a2",
+      "response": "AI AND ROBOTICS ETHICS - COMPREHENSIVE ANALYSIS\n\nFUNDAMENTAL PRINCIPLES\nEthics in AI and robotics encompasses the moral principles governing the development, deployment, and interaction with artificial intelligence and autonomous systems. Key principles include beneficence (doing good), non-maleficence (avoiding harm), autonomy (respecting human agency), and justice (fair distribution of benefits and risks).\n\nAI ETHICS DOMAINS\n• Algorithmic Fairness: Ensuring AI systems don't discriminate based on race, gender, or other protected characteristics\n• Transparency and Explainability: Making AI decision-making processes understandable to humans\n• Privacy Protection: Safeguarding personal data used in AI training and operation\n• Accountability: Establishing clear responsibility chains for AI system outcomes\n• Human Oversight: Maintaining meaningful human control over critical decisions\n\nROBOT ETHICS CONSIDERATIONS\n• Autonomous Decision-Making: How robots should make moral choices in complex situations\n• Human-Robot Relationships: Appropriate boundaries for emotional and physical interaction\n• Robot Rights: Whether advanced robots deserve moral consideration or legal protections\n• Safety and Reliability: Ensuring robotic systems operate safely in human environments\n• Deception and Anthropomorphism: Ethics of making robots appear more human-like\n\nAUTONOMOUS VEHICLE ETHICS\n• Trolley Problem Scenarios: Programming decisions about who to save in unavoidable accidents\n• Liability and Responsibility: Determining fault when autonomous vehicles cause harm\n• Data Collection: Privacy implications of vehicle sensors and tracking systems\n• Accessibility: Ensuring autonomous vehicles serve all populations equitably\n• Environmental Impact: Balancing automation benefits with sustainability concerns\n\nSYNTHETIC HUMAN ETHICS\n• Consciousness and Sentience: Determining if artificial beings can experience suffering\n• Rights and Legal Status: Whether synthetic humans deserve human rights protections\n• Identity and Authenticity: Implications of creating beings indistinguishable from humans\n• Consent and Agency: Capacity of artificial beings to make autonomous decisions\n• Social Integration: Impact on human society and relationships\n\nEMERGING CHALLENGES\n• Deepfakes and Misinformation: AI-generated content threatening truth and trust\n• Surveillance Capitalism: Commercial exploitation of personal data through AI\n• Autonomous Weapons: Military applications raising humanitarian concerns\n• Social Credit Systems: AI-powered social control and behavior modification\n• Genetic and Neural Enhancement: AI-assisted human augmentation ethics\n\nREGULATORY FRAMEWORKS\n• European AI Act: Comprehensive regulation of AI systems by risk level\n• IEEE Standards: Technical standards for ethical AI design\n• Partnership on AI: Industry collaboration on responsible AI development\n• Asilomar AI Principles: Research community guidelines for beneficial AI\n• UN Guidelines: International frameworks for AI governance",
+      "user": "test@example.com",
+      "timestamp": 1761941553.1704667,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.7,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "detailed",
+    "prompt": "robot safety",
+    "response": "ROBOTICS - COMPREHENSIVE FIELD ANALYSIS\n\nFIELD DEFINITION\nRobotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.\n\nCORE TECHNOLOGIES\n• Mechanical Systems: Actuators, joints, linkages, and structural components\n• Control Systems: Feedback loops, sensors, and real-time processing\n• Artificial Intelligence: Machine learning, computer vision, and decision-making\n• Power Systems: Batteries, fuel cells, and energy management\n• Communication: Wireless protocols, networking, and human-machine interfaces\n• Materials Science: Lightweight composites, smart materials, and durability\n\nMAJOR APPLICATION DOMAINS\n• Industrial Automation: Manufacturing, assembly, and quality control systems\n• Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices\n• Service Robotics: Cleaning, security, and personal assistance applications\n• Exploration Robotics: Space missions, deep-sea research, and hazardous environments\n• Military Applications: Reconnaissance, bomb disposal, and combat support\n• Agricultural Systems: Precision farming, harvesting, and crop monitoring\n\nEMERGING TRENDS\n• Collaborative robots (cobots) working alongside humans\n• Swarm robotics for coordinated multi-robot systems\n• Soft robotics using flexible materials and bio-inspired designs\n• Autonomous vehicles and delivery systems\n• Brain-computer interfaces for direct neural control\n• Quantum sensors for enhanced perception capabilities\n\nCHALLENGES AND LIMITATIONS\n• Safety and reliability in human-robot interaction\n• Ethical considerations in autonomous decision-making\n• Cost-effectiveness for widespread adoption\n• Technical complexity in unstructured environments\n• Regulatory frameworks for autonomous systems",
+    "raw": {
+      "id": "f32892e6-2f9c-4214-872d-be08972217e9",
+      "response": "ROBOTICS - COMPREHENSIVE FIELD ANALYSIS\n\nFIELD DEFINITION\nRobotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.\n\nCORE TECHNOLOGIES\n• Mechanical Systems: Actuators, joints, linkages, and structural components\n• Control Systems: Feedback loops, sensors, and real-time processing\n• Artificial Intelligence: Machine learning, computer vision, and decision-making\n• Power Systems: Batteries, fuel cells, and energy management\n• Communication: Wireless protocols, networking, and human-machine interfaces\n• Materials Science: Lightweight composites, smart materials, and durability\n\nMAJOR APPLICATION DOMAINS\n• Industrial Automation: Manufacturing, assembly, and quality control systems\n• Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices\n• Service Robotics: Cleaning, security, and personal assistance applications\n• Exploration Robotics: Space missions, deep-sea research, and hazardous environments\n• Military Applications: Reconnaissance, bomb disposal, and combat support\n• Agricultural Systems: Precision farming, harvesting, and crop monitoring\n\nEMERGING TRENDS\n• Collaborative robots (cobots) working alongside humans\n• Swarm robotics for coordinated multi-robot systems\n• Soft robotics using flexible materials and bio-inspired designs\n• Autonomous vehicles and delivery systems\n• Brain-computer interfaces for direct neural control\n• Quantum sensors for enhanced perception capabilities\n\nCHALLENGES AND LIMITATIONS\n• Safety and reliability in human-robot interaction\n• Ethical considerations in autonomous decision-making\n• Cost-effectiveness for widespread adoption\n• Technical complexity in unstructured environments\n• Regulatory frameworks for autonomous systems",
+      "user": "test@example.com",
+      "timestamp": 1761941553.7526305,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 2.1,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "detailed",
+    "prompt": "what is robotics",
+    "response": "ROBOTICS - COMPREHENSIVE FIELD ANALYSIS\n\nFIELD DEFINITION\nRobotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.\n\nCORE TECHNOLOGIES\n• Mechanical Systems: Actuators, joints, linkages, and structural components\n• Control Systems: Feedback loops, sensors, and real-time processing\n• Artificial Intelligence: Machine learning, computer vision, and decision-making\n• Power Systems: Batteries, fuel cells, and energy management\n• Communication: Wireless protocols, networking, and human-machine interfaces\n• Materials Science: Lightweight composites, smart materials, and durability\n\nMAJOR APPLICATION DOMAINS\n• Industrial Automation: Manufacturing, assembly, and quality control systems\n• Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices\n• Service Robotics: Cleaning, security, and personal assistance applications\n• Exploration Robotics: Space missions, deep-sea research, and hazardous environments\n• Military Applications: Reconnaissance, bomb disposal, and combat support\n• Agricultural Systems: Precision farming, harvesting, and crop monitoring\n\nEMERGING TRENDS\n• Collaborative robots (cobots) working alongside humans\n• Swarm robotics for coordinated multi-robot systems\n• Soft robotics using flexible materials and bio-inspired designs\n• Autonomous vehicles and delivery systems\n• Brain-computer interfaces for direct neural control\n• Quantum sensors for enhanced perception capabilities\n\nCHALLENGES AND LIMITATIONS\n• Safety and reliability in human-robot interaction\n• Ethical considerations in autonomous decision-making\n• Cost-effectiveness for widespread adoption\n• Technical complexity in unstructured environments\n• Regulatory frameworks for autonomous systems",
+    "raw": {
+      "id": "da48ffee-6d14-4297-9d65-2bb45d98e1a9",
+      "response": "ROBOTICS - COMPREHENSIVE FIELD ANALYSIS\n\nFIELD DEFINITION\nRobotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.\n\nCORE TECHNOLOGIES\n• Mechanical Systems: Actuators, joints, linkages, and structural components\n• Control Systems: Feedback loops, sensors, and real-time processing\n• Artificial Intelligence: Machine learning, computer vision, and decision-making\n• Power Systems: Batteries, fuel cells, and energy management\n• Communication: Wireless protocols, networking, and human-machine interfaces\n• Materials Science: Lightweight composites, smart materials, and durability\n\nMAJOR APPLICATION DOMAINS\n• Industrial Automation: Manufacturing, assembly, and quality control systems\n• Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices\n• Service Robotics: Cleaning, security, and personal assistance applications\n• Exploration Robotics: Space missions, deep-sea research, and hazardous environments\n• Military Applications: Reconnaissance, bomb disposal, and combat support\n• Agricultural Systems: Precision farming, harvesting, and crop monitoring\n\nEMERGING TRENDS\n• Collaborative robots (cobots) working alongside humans\n• Swarm robotics for coordinated multi-robot systems\n• Soft robotics using flexible materials and bio-inspired designs\n• Autonomous vehicles and delivery systems\n• Brain-computer interfaces for direct neural control\n• Quantum sensors for enhanced perception capabilities\n\nCHALLENGES AND LIMITATIONS\n• Safety and reliability in human-robot interaction\n• Ethical considerations in autonomous decision-making\n• Cost-effectiveness for widespread adoption\n• Technical complexity in unstructured environments\n• Regulatory frameworks for autonomous systems",
+      "user": "test@example.com",
+      "timestamp": 1761941554.3747048,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 2.1,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "essay",
+    "prompt": "what are ai ethics",
+    "response": "Introduction\n\nThe rapid advancement of artificial intelligence and robotics has outpaced our ethical frameworks, creating unprecedented moral dilemmas that challenge fundamental assumptions about consciousness, responsibility, and human agency. As these technologies become increasingly autonomous and integrated into society, we must grapple with complex questions about how to ensure their development and deployment serve humanity's best interests while respecting individual rights and dignity.\n\nThe Foundation of AI Ethics\n\nAI ethics emerged from the recognition that artificial intelligence systems, despite being created by humans, can make decisions with far-reaching consequences for individuals and society. Unlike traditional tools that simply execute human commands, AI systems can learn, adapt, and make autonomous decisions based on patterns in data. This autonomy creates new forms of moral agency that don't fit neatly into existing ethical frameworks designed for human actors.\n\nThe challenge is compounded by the \"black box\" nature of many AI systems, particularly deep learning networks, where the decision-making process is opaque even to their creators. This opacity makes it difficult to ensure fairness, identify bias, or assign responsibility when things go wrong. The principle of explainable AI has emerged as a crucial requirement for ethical AI deployment, particularly in high-stakes domains like healthcare, criminal justice, and financial services.\n\nRobot Ethics and Autonomous Systems\n\nRobotics ethics extends beyond software algorithms to encompass physical agents that can interact with and potentially harm humans and the environment. The integration of AI with robotic systems creates autonomous agents capable of making real-world decisions without human oversight. This raises fundamental questions about the appropriate level of autonomy to grant these systems and how to ensure they operate within acceptable moral boundaries.\n\nThe famous \"trolley problem\" takes on new dimensions when applied to autonomous vehicles, which must be programmed with decision-making algorithms that could determine who lives or dies in unavoidable accident scenarios. Should an autonomous vehicle prioritize the safety of its passengers over pedestrians? How should it weigh the lives of many against few? These are not merely theoretical questions but practical programming decisions that engineers must make today.\n\nSynthetic Humans and Artificial Consciousness\n\nAs AI and robotics converge toward creating increasingly human-like artificial beings, we face profound questions about consciousness, rights, and moral status. If we succeed in creating artificial beings that exhibit all the external signs of consciousness, emotion, and suffering, do we have moral obligations toward them? The question becomes more pressing as we develop AI systems capable of forming relationships with humans, particularly vulnerable populations like children and the elderly.\n\nThe ethics of synthetic humans also raises questions about deception and authenticity. Is it ethical to create artificial beings so convincing that humans form genuine emotional attachments to them? What are the implications for human relationships and society if artificial companions become indistinguishable from human ones?\n\nSocietal Impact and Justice\n\nAI and robotics ethics must also address broader questions of social justice and equity. The benefits and risks of these technologies are not distributed equally across society. Wealthy individuals and nations have greater access to beneficial AI applications, while marginalized communities often bear disproportionate risks from biased algorithms and surveillance systems.\n\nThe automation of work through AI and robotics raises questions about economic justice and the future of human labor. While these technologies can eliminate dangerous and repetitive jobs, they also threaten to displace millions of workers, potentially exacerbating inequality and social instability. Ethical frameworks must address how to manage this transition fairly and ensure that the benefits of automation are shared broadly.\n\nRegulatory Challenges and Global Governance\n\nThe global nature of AI development and deployment creates challenges for ethical governance. Different cultures and political systems have varying values and priorities, making it difficult to establish universal ethical standards. The European Union's AI Act represents one approach to comprehensive AI regulation, while other regions are developing their own frameworks.\n\nThe challenge is further complicated by the competitive dynamics of AI development, where ethical considerations may be seen as obstacles to innovation and economic advantage. International cooperation and coordination are essential to prevent a \"race to the bottom\" in AI ethics standards.\n\nConclusion\n\nThe ethics of AI and robotics represent one of the defining challenges of our time. As these technologies become more powerful and pervasive, the stakes of getting ethics right continue to rise. We must develop robust ethical frameworks that can guide the development and deployment of AI and robotic systems while remaining flexible enough to adapt to rapid technological change.\n\nThis requires ongoing dialogue between technologists, ethicists, policymakers, and society at large. We cannot afford to treat ethics as an afterthought or a constraint on innovation. Instead, we must embed ethical considerations into the design and development process from the beginning, ensuring that the artificial intelligence and robotic systems we create truly serve humanity's best interests and reflect our highest values.\n\nThe future of AI and robotics ethics will likely require new institutions, legal frameworks, and social norms. As we stand on the threshold of an age of artificial intelligence, the choices we make today about ethics and governance will shape the relationship between humans and machines for generations to come.",
+    "raw": {
+      "id": "0dcb911d-d98a-409a-a6ef-e6e322b96c99",
+      "response": "Introduction\n\nThe rapid advancement of artificial intelligence and robotics has outpaced our ethical frameworks, creating unprecedented moral dilemmas that challenge fundamental assumptions about consciousness, responsibility, and human agency. As these technologies become increasingly autonomous and integrated into society, we must grapple with complex questions about how to ensure their development and deployment serve humanity's best interests while respecting individual rights and dignity.\n\nThe Foundation of AI Ethics\n\nAI ethics emerged from the recognition that artificial intelligence systems, despite being created by humans, can make decisions with far-reaching consequences for individuals and society. Unlike traditional tools that simply execute human commands, AI systems can learn, adapt, and make autonomous decisions based on patterns in data. This autonomy creates new forms of moral agency that don't fit neatly into existing ethical frameworks designed for human actors.\n\nThe challenge is compounded by the \"black box\" nature of many AI systems, particularly deep learning networks, where the decision-making process is opaque even to their creators. This opacity makes it difficult to ensure fairness, identify bias, or assign responsibility when things go wrong. The principle of explainable AI has emerged as a crucial requirement for ethical AI deployment, particularly in high-stakes domains like healthcare, criminal justice, and financial services.\n\nRobot Ethics and Autonomous Systems\n\nRobotics ethics extends beyond software algorithms to encompass physical agents that can interact with and potentially harm humans and the environment. The integration of AI with robotic systems creates autonomous agents capable of making real-world decisions without human oversight. This raises fundamental questions about the appropriate level of autonomy to grant these systems and how to ensure they operate within acceptable moral boundaries.\n\nThe famous \"trolley problem\" takes on new dimensions when applied to autonomous vehicles, which must be programmed with decision-making algorithms that could determine who lives or dies in unavoidable accident scenarios. Should an autonomous vehicle prioritize the safety of its passengers over pedestrians? How should it weigh the lives of many against few? These are not merely theoretical questions but practical programming decisions that engineers must make today.\n\nSynthetic Humans and Artificial Consciousness\n\nAs AI and robotics converge toward creating increasingly human-like artificial beings, we face profound questions about consciousness, rights, and moral status. If we succeed in creating artificial beings that exhibit all the external signs of consciousness, emotion, and suffering, do we have moral obligations toward them? The question becomes more pressing as we develop AI systems capable of forming relationships with humans, particularly vulnerable populations like children and the elderly.\n\nThe ethics of synthetic humans also raises questions about deception and authenticity. Is it ethical to create artificial beings so convincing that humans form genuine emotional attachments to them? What are the implications for human relationships and society if artificial companions become indistinguishable from human ones?\n\nSocietal Impact and Justice\n\nAI and robotics ethics must also address broader questions of social justice and equity. The benefits and risks of these technologies are not distributed equally across society. Wealthy individuals and nations have greater access to beneficial AI applications, while marginalized communities often bear disproportionate risks from biased algorithms and surveillance systems.\n\nThe automation of work through AI and robotics raises questions about economic justice and the future of human labor. While these technologies can eliminate dangerous and repetitive jobs, they also threaten to displace millions of workers, potentially exacerbating inequality and social instability. Ethical frameworks must address how to manage this transition fairly and ensure that the benefits of automation are shared broadly.\n\nRegulatory Challenges and Global Governance\n\nThe global nature of AI development and deployment creates challenges for ethical governance. Different cultures and political systems have varying values and priorities, making it difficult to establish universal ethical standards. The European Union's AI Act represents one approach to comprehensive AI regulation, while other regions are developing their own frameworks.\n\nThe challenge is further complicated by the competitive dynamics of AI development, where ethical considerations may be seen as obstacles to innovation and economic advantage. International cooperation and coordination are essential to prevent a \"race to the bottom\" in AI ethics standards.\n\nConclusion\n\nThe ethics of AI and robotics represent one of the defining challenges of our time. As these technologies become more powerful and pervasive, the stakes of getting ethics right continue to rise. We must develop robust ethical frameworks that can guide the development and deployment of AI and robotic systems while remaining flexible enough to adapt to rapid technological change.\n\nThis requires ongoing dialogue between technologists, ethicists, policymakers, and society at large. We cannot afford to treat ethics as an afterthought or a constraint on innovation. Instead, we must embed ethical considerations into the design and development process from the beginning, ensuring that the artificial intelligence and robotic systems we create truly serve humanity's best interests and reflect our highest values.\n\nThe future of AI and robotics ethics will likely require new institutions, legal frameworks, and social norms. As we stand on the threshold of an age of artificial intelligence, the choices we make today about ethics and governance will shape the relationship between humans and machines for generations to come.",
+      "user": "test@example.com",
+      "timestamp": 1761941554.9529142,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.4,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "essay",
+    "prompt": "explain in more detail",
+    "response": "Introduction\n\nArtificial Intelligence represents humanity's quest to create machines that can think, learn, and reason like humans. This transformative technology has evolved from theoretical concepts to practical applications that permeate nearly every aspect of modern life, from the smartphones in our pockets to the algorithms that power global financial markets.\n\nHistorical Development\n\nAI's journey began in the 1950s with pioneers like Alan Turing and John McCarthy, who laid the theoretical foundations for machine intelligence. Early AI systems relied on symbolic reasoning and expert systems, but progress was limited by computational constraints. The resurgence of neural networks in the 1980s and the big data revolution of the 2000s enabled the deep learning breakthroughs that define modern AI.\n\nTechnological Foundations\n\nContemporary AI systems rely primarily on machine learning, where algorithms learn patterns from vast datasets rather than following explicitly programmed rules. Deep learning, inspired by neural networks in the human brain, has proven particularly effective for tasks involving perception and pattern recognition. These systems can process information at scales and speeds impossible for human cognition.\n\nTransformative Applications\n\nAI has revolutionized numerous fields. In healthcare, AI systems can diagnose diseases from medical images with accuracy matching or exceeding human specialists. Financial institutions use AI for fraud detection and algorithmic trading. Transportation is being transformed by autonomous vehicles that promise to reduce accidents and improve efficiency. Entertainment platforms use AI to personalize content recommendations for billions of users.\n\nSocietal Implications\n\nThe rapid advancement of AI raises profound questions about the future of work, privacy, and human agency. While AI can automate routine tasks and augment human capabilities, it also threatens to displace workers and concentrate power in the hands of those who control the technology. Issues of bias, fairness, and accountability in AI systems have become critical concerns requiring careful consideration.\n\nFuture Prospects\n\nAI continues advancing toward more general and capable systems. Researchers are working on artificial general intelligence (AGI) that could match human cognitive abilities across all domains. Quantum computing may unlock new AI capabilities, while neuromorphic computing could create more efficient AI hardware. The integration of AI with robotics promises to create intelligent physical agents capable of complex real-world tasks.\n\nConclusion\n\nArtificial Intelligence stands as one of the most significant technological developments in human history, with the potential to solve complex global challenges while raising new questions about the nature of intelligence and consciousness. As AI systems become more capable and ubiquitous, society must navigate the opportunities and risks they present, ensuring that this powerful technology serves humanity's best interests.",
+    "raw": {
+      "id": "c8562a2f-956e-47f0-a4aa-469d4b415394",
+      "response": "Introduction\n\nArtificial Intelligence represents humanity's quest to create machines that can think, learn, and reason like humans. This transformative technology has evolved from theoretical concepts to practical applications that permeate nearly every aspect of modern life, from the smartphones in our pockets to the algorithms that power global financial markets.\n\nHistorical Development\n\nAI's journey began in the 1950s with pioneers like Alan Turing and John McCarthy, who laid the theoretical foundations for machine intelligence. Early AI systems relied on symbolic reasoning and expert systems, but progress was limited by computational constraints. The resurgence of neural networks in the 1980s and the big data revolution of the 2000s enabled the deep learning breakthroughs that define modern AI.\n\nTechnological Foundations\n\nContemporary AI systems rely primarily on machine learning, where algorithms learn patterns from vast datasets rather than following explicitly programmed rules. Deep learning, inspired by neural networks in the human brain, has proven particularly effective for tasks involving perception and pattern recognition. These systems can process information at scales and speeds impossible for human cognition.\n\nTransformative Applications\n\nAI has revolutionized numerous fields. In healthcare, AI systems can diagnose diseases from medical images with accuracy matching or exceeding human specialists. Financial institutions use AI for fraud detection and algorithmic trading. Transportation is being transformed by autonomous vehicles that promise to reduce accidents and improve efficiency. Entertainment platforms use AI to personalize content recommendations for billions of users.\n\nSocietal Implications\n\nThe rapid advancement of AI raises profound questions about the future of work, privacy, and human agency. While AI can automate routine tasks and augment human capabilities, it also threatens to displace workers and concentrate power in the hands of those who control the technology. Issues of bias, fairness, and accountability in AI systems have become critical concerns requiring careful consideration.\n\nFuture Prospects\n\nAI continues advancing toward more general and capable systems. Researchers are working on artificial general intelligence (AGI) that could match human cognitive abilities across all domains. Quantum computing may unlock new AI capabilities, while neuromorphic computing could create more efficient AI hardware. The integration of AI with robotics promises to create intelligent physical agents capable of complex real-world tasks.\n\nConclusion\n\nArtificial Intelligence stands as one of the most significant technological developments in human history, with the potential to solve complex global challenges while raising new questions about the nature of intelligence and consciousness. As AI systems become more capable and ubiquitous, society must navigate the opportunities and risks they present, ensuring that this powerful technology serves humanity's best interests.",
+      "user": "test@example.com",
+      "timestamp": 1761941555.5960624,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.9,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "essay",
+    "prompt": "explain ai ethics in more detail",
+    "response": "Introduction\n\nThe rapid advancement of artificial intelligence and robotics has outpaced our ethical frameworks, creating unprecedented moral dilemmas that challenge fundamental assumptions about consciousness, responsibility, and human agency. As these technologies become increasingly autonomous and integrated into society, we must grapple with complex questions about how to ensure their development and deployment serve humanity's best interests while respecting individual rights and dignity.\n\nThe Foundation of AI Ethics\n\nAI ethics emerged from the recognition that artificial intelligence systems, despite being created by humans, can make decisions with far-reaching consequences for individuals and society. Unlike traditional tools that simply execute human commands, AI systems can learn, adapt, and make autonomous decisions based on patterns in data. This autonomy creates new forms of moral agency that don't fit neatly into existing ethical frameworks designed for human actors.\n\nThe challenge is compounded by the \"black box\" nature of many AI systems, particularly deep learning networks, where the decision-making process is opaque even to their creators. This opacity makes it difficult to ensure fairness, identify bias, or assign responsibility when things go wrong. The principle of explainable AI has emerged as a crucial requirement for ethical AI deployment, particularly in high-stakes domains like healthcare, criminal justice, and financial services.\n\nRobot Ethics and Autonomous Systems\n\nRobotics ethics extends beyond software algorithms to encompass physical agents that can interact with and potentially harm humans and the environment. The integration of AI with robotic systems creates autonomous agents capable of making real-world decisions without human oversight. This raises fundamental questions about the appropriate level of autonomy to grant these systems and how to ensure they operate within acceptable moral boundaries.\n\nThe famous \"trolley problem\" takes on new dimensions when applied to autonomous vehicles, which must be programmed with decision-making algorithms that could determine who lives or dies in unavoidable accident scenarios. Should an autonomous vehicle prioritize the safety of its passengers over pedestrians? How should it weigh the lives of many against few? These are not merely theoretical questions but practical programming decisions that engineers must make today.\n\nSynthetic Humans and Artificial Consciousness\n\nAs AI and robotics converge toward creating increasingly human-like artificial beings, we face profound questions about consciousness, rights, and moral status. If we succeed in creating artificial beings that exhibit all the external signs of consciousness, emotion, and suffering, do we have moral obligations toward them? The question becomes more pressing as we develop AI systems capable of forming relationships with humans, particularly vulnerable populations like children and the elderly.\n\nThe ethics of synthetic humans also raises questions about deception and authenticity. Is it ethical to create artificial beings so convincing that humans form genuine emotional attachments to them? What are the implications for human relationships and society if artificial companions become indistinguishable from human ones?\n\nSocietal Impact and Justice\n\nAI and robotics ethics must also address broader questions of social justice and equity. The benefits and risks of these technologies are not distributed equally across society. Wealthy individuals and nations have greater access to beneficial AI applications, while marginalized communities often bear disproportionate risks from biased algorithms and surveillance systems.\n\nThe automation of work through AI and robotics raises questions about economic justice and the future of human labor. While these technologies can eliminate dangerous and repetitive jobs, they also threaten to displace millions of workers, potentially exacerbating inequality and social instability. Ethical frameworks must address how to manage this transition fairly and ensure that the benefits of automation are shared broadly.\n\nRegulatory Challenges and Global Governance\n\nThe global nature of AI development and deployment creates challenges for ethical governance. Different cultures and political systems have varying values and priorities, making it difficult to establish universal ethical standards. The European Union's AI Act represents one approach to comprehensive AI regulation, while other regions are developing their own frameworks.\n\nThe challenge is further complicated by the competitive dynamics of AI development, where ethical considerations may be seen as obstacles to innovation and economic advantage. International cooperation and coordination are essential to prevent a \"race to the bottom\" in AI ethics standards.\n\nConclusion\n\nThe ethics of AI and robotics represent one of the defining challenges of our time. As these technologies become more powerful and pervasive, the stakes of getting ethics right continue to rise. We must develop robust ethical frameworks that can guide the development and deployment of AI and robotic systems while remaining flexible enough to adapt to rapid technological change.\n\nThis requires ongoing dialogue between technologists, ethicists, policymakers, and society at large. We cannot afford to treat ethics as an afterthought or a constraint on innovation. Instead, we must embed ethical considerations into the design and development process from the beginning, ensuring that the artificial intelligence and robotic systems we create truly serve humanity's best interests and reflect our highest values.\n\nThe future of AI and robotics ethics will likely require new institutions, legal frameworks, and social norms. As we stand on the threshold of an age of artificial intelligence, the choices we make today about ethics and governance will shape the relationship between humans and machines for generations to come.",
+    "raw": {
+      "id": "0254407a-a623-434a-9d9b-6e9c7998abbc",
+      "response": "Introduction\n\nThe rapid advancement of artificial intelligence and robotics has outpaced our ethical frameworks, creating unprecedented moral dilemmas that challenge fundamental assumptions about consciousness, responsibility, and human agency. As these technologies become increasingly autonomous and integrated into society, we must grapple with complex questions about how to ensure their development and deployment serve humanity's best interests while respecting individual rights and dignity.\n\nThe Foundation of AI Ethics\n\nAI ethics emerged from the recognition that artificial intelligence systems, despite being created by humans, can make decisions with far-reaching consequences for individuals and society. Unlike traditional tools that simply execute human commands, AI systems can learn, adapt, and make autonomous decisions based on patterns in data. This autonomy creates new forms of moral agency that don't fit neatly into existing ethical frameworks designed for human actors.\n\nThe challenge is compounded by the \"black box\" nature of many AI systems, particularly deep learning networks, where the decision-making process is opaque even to their creators. This opacity makes it difficult to ensure fairness, identify bias, or assign responsibility when things go wrong. The principle of explainable AI has emerged as a crucial requirement for ethical AI deployment, particularly in high-stakes domains like healthcare, criminal justice, and financial services.\n\nRobot Ethics and Autonomous Systems\n\nRobotics ethics extends beyond software algorithms to encompass physical agents that can interact with and potentially harm humans and the environment. The integration of AI with robotic systems creates autonomous agents capable of making real-world decisions without human oversight. This raises fundamental questions about the appropriate level of autonomy to grant these systems and how to ensure they operate within acceptable moral boundaries.\n\nThe famous \"trolley problem\" takes on new dimensions when applied to autonomous vehicles, which must be programmed with decision-making algorithms that could determine who lives or dies in unavoidable accident scenarios. Should an autonomous vehicle prioritize the safety of its passengers over pedestrians? How should it weigh the lives of many against few? These are not merely theoretical questions but practical programming decisions that engineers must make today.\n\nSynthetic Humans and Artificial Consciousness\n\nAs AI and robotics converge toward creating increasingly human-like artificial beings, we face profound questions about consciousness, rights, and moral status. If we succeed in creating artificial beings that exhibit all the external signs of consciousness, emotion, and suffering, do we have moral obligations toward them? The question becomes more pressing as we develop AI systems capable of forming relationships with humans, particularly vulnerable populations like children and the elderly.\n\nThe ethics of synthetic humans also raises questions about deception and authenticity. Is it ethical to create artificial beings so convincing that humans form genuine emotional attachments to them? What are the implications for human relationships and society if artificial companions become indistinguishable from human ones?\n\nSocietal Impact and Justice\n\nAI and robotics ethics must also address broader questions of social justice and equity. The benefits and risks of these technologies are not distributed equally across society. Wealthy individuals and nations have greater access to beneficial AI applications, while marginalized communities often bear disproportionate risks from biased algorithms and surveillance systems.\n\nThe automation of work through AI and robotics raises questions about economic justice and the future of human labor. While these technologies can eliminate dangerous and repetitive jobs, they also threaten to displace millions of workers, potentially exacerbating inequality and social instability. Ethical frameworks must address how to manage this transition fairly and ensure that the benefits of automation are shared broadly.\n\nRegulatory Challenges and Global Governance\n\nThe global nature of AI development and deployment creates challenges for ethical governance. Different cultures and political systems have varying values and priorities, making it difficult to establish universal ethical standards. The European Union's AI Act represents one approach to comprehensive AI regulation, while other regions are developing their own frameworks.\n\nThe challenge is further complicated by the competitive dynamics of AI development, where ethical considerations may be seen as obstacles to innovation and economic advantage. International cooperation and coordination are essential to prevent a \"race to the bottom\" in AI ethics standards.\n\nConclusion\n\nThe ethics of AI and robotics represent one of the defining challenges of our time. As these technologies become more powerful and pervasive, the stakes of getting ethics right continue to rise. We must develop robust ethical frameworks that can guide the development and deployment of AI and robotic systems while remaining flexible enough to adapt to rapid technological change.\n\nThis requires ongoing dialogue between technologists, ethicists, policymakers, and society at large. We cannot afford to treat ethics as an afterthought or a constraint on innovation. Instead, we must embed ethical considerations into the design and development process from the beginning, ensuring that the artificial intelligence and robotic systems we create truly serve humanity's best interests and reflect our highest values.\n\nThe future of AI and robotics ethics will likely require new institutions, legal frameworks, and social norms. As we stand on the threshold of an age of artificial intelligence, the choices we make today about ethics and governance will shape the relationship between humans and machines for generations to come.",
+      "user": "test@example.com",
+      "timestamp": 1761941556.2220998,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.2,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "essay",
+    "prompt": "robot safety",
+    "response": "Introduction\n\nRobotics represents one of humanity's most ambitious technological endeavors: the creation of machines that can perceive, think, and act autonomously in the physical world. This interdisciplinary field has evolved from simple automated mechanisms to sophisticated systems that rival human capabilities in specific domains, fundamentally transforming industries and reshaping our relationship with technology.\n\nHistorical Evolution\n\nThe field of robotics emerged from the convergence of mechanical automation, control theory, and computer science in the mid-20th century. Early industrial robots like the Unimate revolutionized manufacturing by performing repetitive tasks with precision and consistency. As computing power increased and sensors became more sophisticated, robots evolved from simple programmable machines to intelligent systems capable of adapting to changing environments.\n\nTechnological Foundations\n\nModern robotics integrates multiple engineering disciplines. Mechanical systems provide the physical structure and movement capabilities, while electrical systems power and control robot operations. Computer science contributes algorithms for perception, planning, and decision-making, while artificial intelligence enables learning and adaptation. This convergence creates systems that can operate autonomously in complex, dynamic environments.\n\nTransformative Applications\n\nRobotics has revolutionized numerous industries. In manufacturing, robots have increased productivity, quality, and safety while reducing costs. Medical robotics has enabled minimally invasive surgeries and precise drug delivery. Space exploration relies heavily on robotic systems to extend human reach into hostile environments. Service robots are beginning to assist with domestic tasks, elder care, and customer service.\n\nSocietal Impact\n\nThe proliferation of robotics raises important questions about employment, privacy, and human agency. While robots can eliminate dangerous and repetitive jobs, they also displace human workers, requiring societal adaptation through education and policy changes. The increasing autonomy of robotic systems challenges traditional notions of responsibility and accountability.\n\nFuture Prospects\n\nRobotics continues advancing toward more capable, versatile, and intelligent systems. Emerging technologies like quantum computing, advanced materials, and brain-computer interfaces promise to unlock new capabilities. As robots become more integrated into daily life, they will likely serve as partners rather than mere tools, fundamentally changing how we work, live, and interact with our environment.\n\nConclusion\n\nRobotics stands at the intersection of human ambition and technological capability, offering solutions to complex challenges while raising new questions about our future. As this field continues to evolve, it will undoubtedly play a crucial role in addressing global challenges and expanding human potential.",
+    "raw": {
+      "id": "8f9b38d9-68c3-49f7-9e06-b8e18f660bb1",
+      "response": "Introduction\n\nRobotics represents one of humanity's most ambitious technological endeavors: the creation of machines that can perceive, think, and act autonomously in the physical world. This interdisciplinary field has evolved from simple automated mechanisms to sophisticated systems that rival human capabilities in specific domains, fundamentally transforming industries and reshaping our relationship with technology.\n\nHistorical Evolution\n\nThe field of robotics emerged from the convergence of mechanical automation, control theory, and computer science in the mid-20th century. Early industrial robots like the Unimate revolutionized manufacturing by performing repetitive tasks with precision and consistency. As computing power increased and sensors became more sophisticated, robots evolved from simple programmable machines to intelligent systems capable of adapting to changing environments.\n\nTechnological Foundations\n\nModern robotics integrates multiple engineering disciplines. Mechanical systems provide the physical structure and movement capabilities, while electrical systems power and control robot operations. Computer science contributes algorithms for perception, planning, and decision-making, while artificial intelligence enables learning and adaptation. This convergence creates systems that can operate autonomously in complex, dynamic environments.\n\nTransformative Applications\n\nRobotics has revolutionized numerous industries. In manufacturing, robots have increased productivity, quality, and safety while reducing costs. Medical robotics has enabled minimally invasive surgeries and precise drug delivery. Space exploration relies heavily on robotic systems to extend human reach into hostile environments. Service robots are beginning to assist with domestic tasks, elder care, and customer service.\n\nSocietal Impact\n\nThe proliferation of robotics raises important questions about employment, privacy, and human agency. While robots can eliminate dangerous and repetitive jobs, they also displace human workers, requiring societal adaptation through education and policy changes. The increasing autonomy of robotic systems challenges traditional notions of responsibility and accountability.\n\nFuture Prospects\n\nRobotics continues advancing toward more capable, versatile, and intelligent systems. Emerging technologies like quantum computing, advanced materials, and brain-computer interfaces promise to unlock new capabilities. As robots become more integrated into daily life, they will likely serve as partners rather than mere tools, fundamentally changing how we work, live, and interact with our environment.\n\nConclusion\n\nRobotics stands at the intersection of human ambition and technological capability, offering solutions to complex challenges while raising new questions about our future. As this field continues to evolve, it will undoubtedly play a crucial role in addressing global challenges and expanding human potential.",
+      "user": "test@example.com",
+      "timestamp": 1761941556.8419855,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.4,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  },
+  {
+    "endpoint": "/api/chat",
+    "format": "essay",
+    "prompt": "what is robotics",
+    "response": "Introduction\n\nRobotics represents one of humanity's most ambitious technological endeavors: the creation of machines that can perceive, think, and act autonomously in the physical world. This interdisciplinary field has evolved from simple automated mechanisms to sophisticated systems that rival human capabilities in specific domains, fundamentally transforming industries and reshaping our relationship with technology.\n\nHistorical Evolution\n\nThe field of robotics emerged from the convergence of mechanical automation, control theory, and computer science in the mid-20th century. Early industrial robots like the Unimate revolutionized manufacturing by performing repetitive tasks with precision and consistency. As computing power increased and sensors became more sophisticated, robots evolved from simple programmable machines to intelligent systems capable of adapting to changing environments.\n\nTechnological Foundations\n\nModern robotics integrates multiple engineering disciplines. Mechanical systems provide the physical structure and movement capabilities, while electrical systems power and control robot operations. Computer science contributes algorithms for perception, planning, and decision-making, while artificial intelligence enables learning and adaptation. This convergence creates systems that can operate autonomously in complex, dynamic environments.\n\nTransformative Applications\n\nRobotics has revolutionized numerous industries. In manufacturing, robots have increased productivity, quality, and safety while reducing costs. Medical robotics has enabled minimally invasive surgeries and precise drug delivery. Space exploration relies heavily on robotic systems to extend human reach into hostile environments. Service robots are beginning to assist with domestic tasks, elder care, and customer service.\n\nSocietal Impact\n\nThe proliferation of robotics raises important questions about employment, privacy, and human agency. While robots can eliminate dangerous and repetitive jobs, they also displace human workers, requiring societal adaptation through education and policy changes. The increasing autonomy of robotic systems challenges traditional notions of responsibility and accountability.\n\nFuture Prospects\n\nRobotics continues advancing toward more capable, versatile, and intelligent systems. Emerging technologies like quantum computing, advanced materials, and brain-computer interfaces promise to unlock new capabilities. As robots become more integrated into daily life, they will likely serve as partners rather than mere tools, fundamentally changing how we work, live, and interact with our environment.\n\nConclusion\n\nRobotics stands at the intersection of human ambition and technological capability, offering solutions to complex challenges while raising new questions about our future. As this field continues to evolve, it will undoubtedly play a crucial role in addressing global challenges and expanding human potential.",
+    "raw": {
+      "id": "463cbb8c-b6cf-43f5-a4cb-9cc7dbce7b47",
+      "response": "Introduction\n\nRobotics represents one of humanity's most ambitious technological endeavors: the creation of machines that can perceive, think, and act autonomously in the physical world. This interdisciplinary field has evolved from simple automated mechanisms to sophisticated systems that rival human capabilities in specific domains, fundamentally transforming industries and reshaping our relationship with technology.\n\nHistorical Evolution\n\nThe field of robotics emerged from the convergence of mechanical automation, control theory, and computer science in the mid-20th century. Early industrial robots like the Unimate revolutionized manufacturing by performing repetitive tasks with precision and consistency. As computing power increased and sensors became more sophisticated, robots evolved from simple programmable machines to intelligent systems capable of adapting to changing environments.\n\nTechnological Foundations\n\nModern robotics integrates multiple engineering disciplines. Mechanical systems provide the physical structure and movement capabilities, while electrical systems power and control robot operations. Computer science contributes algorithms for perception, planning, and decision-making, while artificial intelligence enables learning and adaptation. This convergence creates systems that can operate autonomously in complex, dynamic environments.\n\nTransformative Applications\n\nRobotics has revolutionized numerous industries. In manufacturing, robots have increased productivity, quality, and safety while reducing costs. Medical robotics has enabled minimally invasive surgeries and precise drug delivery. Space exploration relies heavily on robotic systems to extend human reach into hostile environments. Service robots are beginning to assist with domestic tasks, elder care, and customer service.\n\nSocietal Impact\n\nThe proliferation of robotics raises important questions about employment, privacy, and human agency. While robots can eliminate dangerous and repetitive jobs, they also displace human workers, requiring societal adaptation through education and policy changes. The increasing autonomy of robotic systems challenges traditional notions of responsibility and accountability.\n\nFuture Prospects\n\nRobotics continues advancing toward more capable, versatile, and intelligent systems. Emerging technologies like quantum computing, advanced materials, and brain-computer interfaces promise to unlock new capabilities. As robots become more integrated into daily life, they will likely serve as partners rather than mere tools, fundamentally changing how we work, live, and interact with our environment.\n\nConclusion\n\nRobotics stands at the intersection of human ambition and technological capability, offering solutions to complex challenges while raising new questions about our future. As this field continues to evolve, it will undoubtedly play a crucial role in addressing global challenges and expanding human potential.",
+      "user": "test@example.com",
+      "timestamp": 1761941557.49156,
+      "confidence": 0.8,
+      "intent": "general_query",
+      "sources": 0,
+      "processing_time": 1.1,
+      "from_cache": false,
+      "safety_blocked": false,
+      "reasoning_steps": [],
+      "entities_detected": [],
+      "complexity_level": "simple",
+      "session_context_turns": 10,
+      "related_topics": [],
+      "follow_up_suggestions": []
+    }
+  }
+]

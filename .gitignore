@@ -1,0 +1,7 @@
+# Ignore local database credentials and environment files
+.env
+.env.local
+.env.production
+*.db
+postgres_password.txt
+knowledge_db_credentials.txt

@@ -1,0 +1,14 @@
+[
+  {
+    "turn_id": "e8827c3331c8",
+    "user_query": "6c2c581ffbf48b815eb7992f21aa5b16",
+    "system_response": "I understand you're asking about 'history of robotics'. I don't have specific information on this topic in my current knowledge base. Could you provide more context or ask about robotics-related topics?\n\n\u26a0\ufe0f Safety Note: Always follow proper safety protocols when working with robotics systems.",
+    "timestamp": "2025-10-15T22:11:42.915307",
+    "processing_time": 0.27198100090026855,
+    "confidence_score": 0.3,
+    "knowledge_sources_used": 0,
+    "intent_classified": "general",
+    "safety_flags": [],
+    "user_satisfaction": null
+  }
+]
