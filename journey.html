@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Radeon SML AI Journey: From Vision to Reality</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .production-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .production-link {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .production-link:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        h4 {
+            color: #555;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border-left: 4px solid #667eea;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #4ecdc4;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 5px solid #e17055;
+        }
+
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tech-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .tech-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .metric-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-left: 1rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .portfolio-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #667eea;
+        }
+
+        .portfolio-item h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #81e6d9;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #4fd1c7;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            border-left: 4px solid #667eea;
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+
+            .production-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 The Radeon SML AI Journey</h1>
+            <p class="subtitle">From Vision to Reality: Building an AI Ethics Chatbot on Limited Hardware</p>
+            
+            <div class="production-links">
+                <a href="https://radeon-ai-frontend.netlify.app" class="production-link" target="_blank">
+                    🌐 Live Frontend Demo
+                </a>
+                <a href="https://radeon-ai-960026900565.us-central1.run.app" class="production-link" target="_blank">
+                    🔌 API Endpoint
+                </a>
+                <a href="https://github.com/GeorgeRCAdamJohnson/radeon_SML" class="production-link" target="_blank">
+                    📁 GitHub Repository
+                </a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>🎯 Original Intent</h2>
+                <div class="highlight-box">
+                    <h4>"AI Chatbot to Help People Learn About AI Ethics"</h4>
+                    <p>What started as a simple idea—creating an AI assistant to help people understand AI ethics and robotics—became an intensive journey through modern software development, cloud infrastructure, and the realities of building AI systems on consumer hardware. This is the story of perseverance, learning, and the countless obstacles that shaped our final product.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔧 The Hardware Challenge: Legion Go + Radeon Graphics</h2>
+                
+                <h3>The Constraint That Shaped Everything</h3>
+                <p>Our development environment was far from ideal:</p>
+                <ul>
+                    <li><strong>ASUS ROG Ally / Legion Go</strong>: Handheld gaming device</li>
+                    <li><strong>AMD Radeon Graphics (Integrated)</strong>: Limited VRAM and compute power</li>
+                    <li><strong>Windows PowerShell</strong>: Non-traditional development environment</li>
+                    <li><strong>16GB RAM</strong>: Shared between system, development tools, and AI models</li>
+                </ul>
+
+                <p>This hardware limitation became our North Star—every decision had to account for:</p>
+                <ul>
+                    <li><strong>Memory constraints</strong> during model inference</li>
+                    <li><strong>Limited GPU compute</strong> for embeddings and processing</li>
+                    <li><strong>Thermal throttling</strong> during intensive operations</li>
+                    <li><strong>Power management</strong> affecting performance consistency</li>
+                </ul>
+
+                <h3>Spec Management Nightmares</h3>
+                <p>The hardware constraints forced us into creative solutions:</p>
+
+                <div class="code-block">
+# Memory-optimized model loading
+def load_model_with_fallbacks():
+    try:
+        # Try full model first
+        model = AutoModel.from_pretrained("large-model")
+    except OutOfMemoryError:
+        # Fall back to quantized version
+        model = AutoModel.from_pretrained("small-model", load_in_4bit=True)
+    except Exception:
+        # Ultimate fallback to CPU-only inference
+        model = AutoModel.from_pretrained("tiny-model", device_map="cpu")
+                </div>
+
+                <div class="success-box">
+                    <h4>Performance Optimizations We Implemented:</h4>
+                    <ul>
+                        <li><strong>Batch processing</strong> limited to single queries to prevent memory overflow</li>
+                        <li><strong>Model quantization</strong> using 4-bit inference when possible</li>
+                        <li><strong>Lazy loading</strong> of AI components only when needed</li>
+                        <li><strong>Aggressive caching</strong> to reduce repeated computations</li>
+                        <li><strong>CPU fallbacks</strong> when GPU memory was insufficient</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📊 Technology Stack Evolution</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Initial Simple Architecture</h4>
+                        <div class="code-block">
+User Input → Basic Flask Server → Static Knowledge Base → Simple Response
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4>Final Production Architecture</h4>
+                        <div class="code-block">
+React Frontend → FastAPI Gateway → Enhanced Reasoning Agent → Vector Database
+     ↓              ↓                    ↓                      ↓
+  Netlify CDN → Google Cloud Run → Multiple AI Models → Wikipedia Crawler
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Technologies We Learned (The Hard Way)</h3>
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Technology</th>
+                            <th>Learning Curve</th>
+                            <th>Key Challenges</th>
+                            <th>Final Verdict</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Docker</strong></td>
+                            <td>Steep</td>
+                            <td>Frontend confusion, container networking</td>
+                            <td>Essential for deployment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Cloud Platform</strong></td>
+                            <td>Moderate</td>
+                            <td>IAM, billing, service configurations</td>
+                            <td>Powerful but complex</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Terraform</strong></td>
+                            <td>Steep</td>
+                            <td>State management, resource dependencies</td>
+                            <td>Great for reproducible infrastructure</td>
+                        </tr>
+                        <tr>
+                            <td><strong>React/Next.js</strong></td>
+                            <td>Moderate</td>
+                            <td>State management, API integration</td>
+                            <td>Excellent for modern UIs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FastAPI</strong></td>
+                            <td>Gentle</td>
+                            <td>Async programming, data validation</td>
+                            <td>Perfect for Python APIs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PostgreSQL</strong></td>
+                            <td>Moderate</td>
+                            <td>Query optimization, connection pooling</td>
+                            <td>Reliable and feature-rich</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vector Databases</strong></td>
+                            <td>Steep</td>
+                            <td>Embedding generation, similarity search</td>
+                            <td>Revolutionary for AI applications</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>🤦‍♂️ The "Bone Head" Moments That Taught Us Everything</h2>
+                
+                <h3>The Great Docker Frontend Confusion (3 Days Lost)</h3>
+                <div class="warning-box">
+                    <h4>The Problem:</h4>
+                    <p>We spent three entire days trying to "fix" our frontend because it wasn't showing up in our Docker container.</p>
+                    
+                    <div class="code-block">
+# Our initial Dockerfile - ONLY backend!
+FROM python:3.11-slim
+WORKDIR /app
+COPY server.py .
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+EXPOSE 8000
+CMD ["python", "server.py"]
+                    </div>
+
+                    <h4>What We Did Wrong:</h4>
+                    <ul>
+                        <li>Assumed Docker magically included frontend files</li>
+                        <li>Spent hours debugging "broken" React components</li>
+                        <li>Tried rebuilding the same backend-only container repeatedly</li>
+                        <li>Questioned our entire frontend architecture</li>
+                    </ul>
+
+                    <h4>The Revelation:</h4>
+                    <div class="code-block">
+# What we should have been looking for
+ls -la # Check what's actually IN the container!
+# Result: Only Python files, no frontend assets!
+                    </div>
+                </div>
+
+                <div class="success-box">
+                    <h4>The Solution:</h4>
+                    <div class="code-block">
+# Multi-stage build for both frontend and backend
+FROM node:18 AS frontend-build
+WORKDIR /app/frontend
+COPY src/react/package*.json ./
+RUN npm install
+COPY src/react/ .
+RUN npm run build
+
+FROM python:3.11-slim AS backend
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+COPY --from=frontend-build /app/frontend/dist ./static
+EXPOSE 8000
+CMD ["python", "server.py"]
+                    </div>
+                    <p><strong>Lesson Learned:</strong> Docker containers only include what you explicitly tell them to include. Always verify your container contents!</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📈 The Amazon Q Reviews: External Validation</h2>
+                
+                <h3>First Amazon Q Review (Score: 8.5/10)</h3>
+                <div class="success-box">
+                    <h4>Strengths Recognized:</h4>
+                    <ul>
+                        <li><strong>Hands-on technical leadership</strong>: Leading by example, not just directing</li>
+                        <li><strong>End-to-end ownership</strong>: From code to production deployment</li>
+                        <li><strong>Quality-first mindset</strong>: Systematic approach to fixes and testing</li>
+                        <li><strong>Problem-solving under pressure</strong>: Methodical handling of deployment issues</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>Areas for Improvement Identified:</h4>
+                    <ul>
+                        <li><strong>Cloud Architecture Patterns</strong>: Needed deeper understanding of GCP services</li>
+                        <li><strong>API Design Best Practices</strong>: Missing production-grade patterns</li>
+                        <li><strong>Infrastructure as Code</strong>: Limited Terraform experience</li>
+                    </ul>
+                </div>
+
+                <h3>Second Amazon Q Review (Version 2 Analysis)</h3>
+                <div class="highlight-box">
+                    <h4>V2 Roadmap Recommendations:</h4>
+                    <ul>
+                        <li><strong>Vector Embeddings</strong>: Semantic similarity search</li>
+                        <li><strong>Microservices Architecture</strong>: Separate concerns</li>
+                        <li><strong>Advanced Caching</strong>: Multi-layer strategy</li>
+                        <li><strong>Real-time Updates</strong>: Incremental knowledge base updates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🚀 Current Production System</h2>
+                
+                <h3>Live Deployment Metrics</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">339+</div>
+                        <div class="metric-label">Articles in Knowledge Base</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">1M+</div>
+                        <div class="metric-label">Words of Content</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">2.1s</div>
+                        <div class="metric-label">Average Response Time</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">99.7%</div>
+                        <div class="metric-label">Uptime (30 days)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">4.2/5</div>
+                        <div class="metric-label">User Satisfaction</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">100+</div>
+                        <div class="metric-label">Concurrent Users</div>
+                    </div>
+                </div>
+
+                <h3>Technical Stack (Final)</h3>
+                <div class="code-block">
+Frontend:
+  - Framework: Next.js 14 with React 18
+  - Styling: Tailwind CSS
+  - Deployment: Netlify CDN
+  - Features: Real-time chat, responsive design
+
+Backend:
+  - Framework: FastAPI with Python 3.11
+  - Database: PostgreSQL with vector extensions
+  - Cache: Redis for session and response caching
+  - Deployment: Google Cloud Run with auto-scaling
+
+AI/ML:
+  - Models: OpenAI API for reasoning, local models for embeddings
+  - Search: Vector similarity + full-text search hybrid
+  - Processing: Async pipeline with batch optimization
+
+Infrastructure:
+  - Version Control: GitHub with automated deployments
+  - Containers: Docker with multi-stage builds
+  - Monitoring: Google Cloud Operations Suite
+  - Security: IAM, service accounts, secret management
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎖️ Portfolio Highlights</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <h4>✅ Full-Stack Development</h4>
+                        <p>React frontend, Python backend, database design</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>✅ Cloud Infrastructure</h4>
+                        <p>GCP deployment, Docker containerization, CDN setup</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>✅ AI/ML Integration</h4>
+                        <p>Natural language processing, vector search, model optimization</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>✅ Data Engineering</h4>
+                        <p>Web scraping, ETL pipelines, quality validation</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>✅ DevOps Practices</h4>
+                        <p>CI/CD, Infrastructure as Code, monitoring</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>✅ Performance Optimization</h4>
+                        <p>Caching strategies, database optimization, async processing</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>✅ Testing Methodologies</h4>
+                        <p>Unit, integration, performance, and user acceptance testing</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>✅ Problem Solving</h4>
+                        <p>Working within hardware constraints, debugging complex systems</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h4>✅ Documentation</h4>
+                        <p>Comprehensive technical documentation and knowledge sharing</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎉 What We Built vs. What We Planned</h2>
+                
+                <div class="highlight-box">
+                    <h4>Original Goal:</h4>
+                    <p>"An AI chatbot that could help people learn about AI Ethics"</p>
+                </div>
+
+                <div class="success-box">
+                    <h4>What We Actually Delivered:</h4>
+                    <p>"A comprehensive AI knowledge assistant covering robotics, automation, artificial intelligence, and ethics, with production-grade infrastructure, advanced search capabilities, and a modern web interface—all built on consumer gaming hardware."</p>
+                </div>
+
+                <h3>The Journey Made It Better</h3>
+                <p>Every obstacle we encountered made the final product stronger:</p>
+                <ul>
+                    <li><strong>Hardware limitations</strong> → Efficient, optimized code</li>
+                    <li><strong>Data quality issues</strong> → Robust validation pipelines</li>
+                    <li><strong>Deployment confusion</strong> → Deep infrastructure understanding</li>
+                    <li><strong>Performance problems</strong> → Sophisticated caching and optimization</li>
+                    <li><strong>Testing gaps</strong> → Comprehensive validation methodologies</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🚀 Ready for the Next Challenge</h2>
+                <p>This journey from "simple chatbot idea" to "production AI system" taught us that the best learning happens when you're solving real problems with real constraints. Every limitation became a learning opportunity, every bug became a chance to understand the system better, and every deployment became practice for the next level of complexity.</p>
+                
+                <p>We're ready to tackle the next AI challenge—armed with battle-tested knowledge, proven methodologies, and the confidence that comes from building something from scratch and seeing it work in production.</p>
+
+                <div class="quote">
+                    "The best way to learn is to build something people actually use. The second best way is to build something, break it, fix it, and repeat until it works in production."
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="https://radeon-ai-frontend.netlify.app" target="_blank">🌐 Live Demo</a>
+                <a href="https://radeon-ai-960026900565.us-central1.run.app" target="_blank">🔌 API Endpoint</a>
+                <a href="https://github.com/GeorgeRCAdamJohnson/radeon_SML" target="_blank">📁 GitHub Repository</a>
+            </div>
+            <p><em>Built with persistence, powered by curiosity, deployed with pride.</em></p>
+            <p>© 2025 Radeon SML AI Project</p>
+        </div>
+    </div>
+</body>
+</html>

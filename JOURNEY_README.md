@@ -720,6 +720,11 @@ class IntelligentCache:
 - **Uptime**: 99.7% over the last 30 days
 - **User Satisfaction**: 4.2/5 based on feedback
 
+### **🌐 Production Links**
+- **Live Frontend Demo**: https://radeon-ai-frontend.netlify.app
+- **API Endpoint**: https://radeon-ai-960026900565.us-central1.run.app
+- **GitHub Repository**: https://github.com/GeorgeRCAdamJohnson/radeon_SML
+
 ### **Technical Stack (Final)**
 ```yaml
 Frontend:
