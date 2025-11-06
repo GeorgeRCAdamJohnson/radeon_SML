@@ -1,0 +1,519 @@
+{
+  "timestamp": "2025-11-02 13:10:51",
+  "production_server": "https://radeon-ai-960026900565.us-central1.run.app",
+  "local_server": "http://localhost:8000",
+  "comparisons": [
+    {
+      "query": "What is a robot?",
+      "production": {
+        "id": "570a9e91-4f6d-4f6e-9a17-46613eb68ec9",
+        "response": "ROBOTICS - COMPREHENSIVE FIELD ANALYSIS\n\nFIELD DEFINITION\nRobotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.\n\nCORE TECHNOLOGIES\n\u2022 Mechanical Systems: Actuators, joints, linkages, and structural components\n\u2022 Control Systems: Feedback loops, sensors, and real-time processing\n\u2022 Artificial Intelligence: Machine learning, computer vision, and decision-making\n\u2022 Power Systems: Batteries, fuel cells, and energy management\n\u2022 Communication: Wireless protocols, networking, and human-machine interfaces\n\u2022 Materials Science: Lightweight composites, smart materials, and durability\n\nMAJOR APPLICATION DOMAINS\n\u2022 Industrial Automation: Manufacturing, assembly, and quality control systems\n\u2022 Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices\n\u2022 Service Robotics: Cleaning, security, and personal assistance applications\n\u2022 Exploration Robotics: Space missions, deep-sea research, and hazardous environments\n\u2022 Military Applications: Reconnaissance, bomb disposal, and combat support\n\u2022 Agricultural Systems: Precision farming, harvesting, and crop monitoring\n\nEMERGING TRENDS\n\u2022 Collaborative robots (cobots) working alongside humans\n\u2022 Swarm robotics for coordinated multi-robot systems\n\u2022 Soft robotics using flexible materials and bio-inspired designs\n\u2022 Autonomous vehicles and delivery systems\n\u2022 Brain-computer interfaces for direct neural control\n\u2022 Quantum sensors for enhanced perception capabilities\n\nCHALLENGES AND LIMITATIONS\n\u2022 Safety and reliability in human-robot interaction\n\u2022 Ethical considerations in autonomous decision-making\n\u2022 Cost-effectiveness for widespread adoption\n\u2022 Technical complexity in unstructured environments\n\u2022 Regulatory frameworks for autonomous systems",
+        "user": "test@example.com",
+        "timestamp": 1762117853.8531659,
+        "confidence": 0.8,
+        "intent": "general_query",
+        "sources": 0,
+        "processing_time": 1.7,
+        "from_cache": false,
+        "safety_blocked": false,
+        "reasoning_steps": [],
+        "entities_detected": [],
+        "complexity_level": "simple",
+        "session_context_turns": 1,
+        "related_topics": [],
+        "follow_up_suggestions": [],
+        "response_time": 1.212294340133667,
+        "server": "production"
+      },
+      "local": {
+        "turn_id": "turn_1762117854769",
+        "response": "I couldn't find specific information about 'What is a robot?' in my knowledge base. I have information about ethics, robotics, science. Could you rephrase your question or ask about one of these topics?",
+        "confidence": 0.6,
+        "intent": "clarification",
+        "knowledge_sources": 0,
+        "processing_time": 0.015301704406738281,
+        "safety_flags": false,
+        "from_cache": false,
+        "available_domains": [
+          "ethics",
+          "robotics",
+          "science"
+        ],
+        "response_time": 2.0660910606384277,
+        "server": "local"
+      }
+    },
+    {
+      "query": "Tell me about RoboCup",
+      "production": {
+        "id": "3c2ef9f7-8dda-4293-9b8d-ebc816e4fb9a",
+        "response": "COMPREHENSIVE ANALYSIS: TELL ME ABOUT ROBOCUP\n\nOVERVIEW\nTell Me About Robocup represents a significant area of technological development with applications across multiple industries and research domains. This field combines theoretical foundations with practical implementations to address real-world challenges and opportunities.\n\nTECHNICAL FOUNDATIONS\nThe underlying principles of tell me about robocup involve complex interactions between hardware systems, software algorithms, and human interface design. These systems require careful engineering to balance performance, reliability, and cost-effectiveness.\n\nCURRENT APPLICATIONS\n\u2022 Industrial and manufacturing processes\n\u2022 Research and development initiatives\n\u2022 Consumer and commercial products\n\u2022 Healthcare and medical applications\n\u2022 Educational and training systems\n\u2022 Entertainment and media platforms\n\nBENEFITS AND ADVANTAGES\n\u2022 Improved efficiency and productivity\n\u2022 Enhanced accuracy and precision\n\u2022 Reduced human error and safety risks\n\u2022 Cost savings through automation\n\u2022 Scalability for large-scale operations\n\u2022 Innovation in related fields\n\nCHALLENGES AND LIMITATIONS\n\u2022 Technical complexity requiring specialized expertise\n\u2022 High initial development and implementation costs\n\u2022 Integration challenges with existing systems\n\u2022 Regulatory and compliance requirements\n\u2022 Ethical and social considerations\n\u2022 Maintenance and upgrade requirements\n\nFUTURE PROSPECTS\nContinued advancement in tell me about robocup technology promises new capabilities and applications, with ongoing research focusing on improved performance, reduced costs, and broader accessibility across various sectors.",
+        "user": "test@example.com",
+        "timestamp": 1762117858.055116,
+        "confidence": 0.8,
+        "intent": "general_query",
+        "sources": 0,
+        "processing_time": 2.0,
+        "from_cache": false,
+        "safety_blocked": false,
+        "reasoning_steps": [],
+        "entities_detected": [],
+        "complexity_level": "simple",
+        "session_context_turns": 3,
+        "related_topics": [],
+        "follow_up_suggestions": [],
+        "response_time": 1.1268036365509033,
+        "server": "production"
+      },
+      "local": {
+        "turn_id": "turn_1762117858954",
+        "response": "RoboCup: RoboCup is an annual international robotics competition founded in 1996 by a group of university professors (including Hiroaki Kitano, Manuela M. Veloso, Itsuki Noda and Minoru Asada). The aim of the competition is to promote robotics and AI research by offering a publicly appealing \u2013 but formidable \u2013 challenge. The name RoboCup is a contraction of the competition's full name, \"Robot World Cup Initiative\" (based on the FIFA World Cup), but there are many other areas of competition such as \"RoboCupRescue\", \"RoboCup@Home\" and \"RoboCupJunior\". Claude Sammut is the current president of RoboCup, and has been since 2019. The official goal of the project is: \"By the middle of the 21st century, a team of fully autonomous humanoid robot soccer players shall win a soccer game, complying with the official rules of FIFA, against the winner of the most recent World Cup.\"\n\nRelated topics: IranOpen",
+        "confidence": 1.0,
+        "intent": "informational",
+        "knowledge_sources": 2,
+        "processing_time": 0.0027494430541992188,
+        "safety_flags": false,
+        "from_cache": false,
+        "domain": "robotics",
+        "entities_found": [
+          {
+            "name": "RoboCup",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "IranOpen",
+            "domain": "robotics",
+            "confidence": 1.0
+          }
+        ],
+        "response_time": 2.0343897342681885,
+        "server": "local"
+      }
+    },
+    {
+      "query": "How do robots work?",
+      "production": {
+        "id": "1e79f7f2-20bc-4c77-820f-535ceeae93dd",
+        "response": "ROBOTICS - COMPREHENSIVE FIELD ANALYSIS\n\nFIELD DEFINITION\nRobotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.\n\nCORE TECHNOLOGIES\n\u2022 Mechanical Systems: Actuators, joints, linkages, and structural components\n\u2022 Control Systems: Feedback loops, sensors, and real-time processing\n\u2022 Artificial Intelligence: Machine learning, computer vision, and decision-making\n\u2022 Power Systems: Batteries, fuel cells, and energy management\n\u2022 Communication: Wireless protocols, networking, and human-machine interfaces\n\u2022 Materials Science: Lightweight composites, smart materials, and durability\n\nMAJOR APPLICATION DOMAINS\n\u2022 Industrial Automation: Manufacturing, assembly, and quality control systems\n\u2022 Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices\n\u2022 Service Robotics: Cleaning, security, and personal assistance applications\n\u2022 Exploration Robotics: Space missions, deep-sea research, and hazardous environments\n\u2022 Military Applications: Reconnaissance, bomb disposal, and combat support\n\u2022 Agricultural Systems: Precision farming, harvesting, and crop monitoring\n\nEMERGING TRENDS\n\u2022 Collaborative robots (cobots) working alongside humans\n\u2022 Swarm robotics for coordinated multi-robot systems\n\u2022 Soft robotics using flexible materials and bio-inspired designs\n\u2022 Autonomous vehicles and delivery systems\n\u2022 Brain-computer interfaces for direct neural control\n\u2022 Quantum sensors for enhanced perception capabilities\n\nCHALLENGES AND LIMITATIONS\n\u2022 Safety and reliability in human-robot interaction\n\u2022 Ethical considerations in autonomous decision-making\n\u2022 Cost-effectiveness for widespread adoption\n\u2022 Technical complexity in unstructured environments\n\u2022 Regulatory frameworks for autonomous systems",
+        "user": "test@example.com",
+        "timestamp": 1762117861.7402086,
+        "confidence": 0.8,
+        "intent": "general_query",
+        "sources": 0,
+        "processing_time": 2.0,
+        "from_cache": false,
+        "safety_blocked": false,
+        "reasoning_steps": [],
+        "entities_detected": [],
+        "complexity_level": "simple",
+        "session_context_turns": 5,
+        "related_topics": [],
+        "follow_up_suggestions": [],
+        "response_time": 0.6431195735931396,
+        "server": "production"
+      },
+      "local": {
+        "turn_id": "turn_1762117862650",
+        "response": "Robot combat: Robot combat is a type of robot competition in which custom-built machines fight using various methods to incapacitate each other. The machines have generally been remote-controlled vehicles rather than autonomous robots. Robot combat competitions have been made into television series, including Robot Wars in the United Kingdom and BattleBots in the United States. These shows were originally broadcast in the late 1990s to early 2000s and experienced revivals in the mid-2010s. As well as televised competitions, smaller robot combat events are staged for live audiences such as those organized by the Robot Fighting League. Robot builders are generally hobbyists and the complexity and cost of their machines can vary substantially. Robot combat uses weight classes, with the heaviest robots able to exert more power and destructive capabilities. The rules of competitions are designed for the safety of the builders, operators, and spectators while also providing an entertaining spectacle. Robot combat arenas are generally surrounded by a bulletproof screen. Competitor robots come in a variety of designs, with different strategies for winning fights. Robot designs typically incorporate weapons for attacking opponents, such as axes, hammers, flippers, and spinning devices. Rules almost always prohibit gun-like weapons as well as other strategies not conducive to the safety and enjoyment of participants and spectators.\n\nRelated topics: Robofest, Robo One, Multi Autonomous Ground-robotic International Challenge",
+        "confidence": 1.0,
+        "intent": "informational",
+        "knowledge_sources": 5,
+        "processing_time": 0.0020084381103515625,
+        "safety_flags": false,
+        "from_cache": false,
+        "domain": "robotics",
+        "entities_found": [
+          {
+            "name": "Robot combat",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Robofest",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Robo One",
+            "domain": "robotics",
+            "confidence": 1.0
+          }
+        ],
+        "response_time": 2.0468883514404297,
+        "server": "local"
+      }
+    },
+    {
+      "query": "What are the ethical considerations in robotics?",
+      "production": {
+        "id": "c5f98a6e-4173-4e8e-b70c-a34df1a0b835",
+        "response": "AI AND ROBOTICS ETHICS - COMPREHENSIVE ANALYSIS\n\nFUNDAMENTAL PRINCIPLES\nEthics in AI and robotics encompasses the moral principles governing the development, deployment, and interaction with artificial intelligence and autonomous systems. Key principles include beneficence (doing good), non-maleficence (avoiding harm), autonomy (respecting human agency), and justice (fair distribution of benefits and risks).\n\nAI ETHICS DOMAINS\n\u2022 Algorithmic Fairness: Ensuring AI systems don't discriminate based on race, gender, or other protected characteristics\n\u2022 Transparency and Explainability: Making AI decision-making processes understandable to humans\n\u2022 Privacy Protection: Safeguarding personal data used in AI training and operation\n\u2022 Accountability: Establishing clear responsibility chains for AI system outcomes\n\u2022 Human Oversight: Maintaining meaningful human control over critical decisions\n\nROBOT ETHICS CONSIDERATIONS\n\u2022 Autonomous Decision-Making: How robots should make moral choices in complex situations\n\u2022 Human-Robot Relationships: Appropriate boundaries for emotional and physical interaction\n\u2022 Robot Rights: Whether advanced robots deserve moral consideration or legal protections\n\u2022 Safety and Reliability: Ensuring robotic systems operate safely in human environments\n\u2022 Deception and Anthropomorphism: Ethics of making robots appear more human-like\n\nAUTONOMOUS VEHICLE ETHICS\n\u2022 Trolley Problem Scenarios: Programming decisions about who to save in unavoidable accidents\n\u2022 Liability and Responsibility: Determining fault when autonomous vehicles cause harm\n\u2022 Data Collection: Privacy implications of vehicle sensors and tracking systems\n\u2022 Accessibility: Ensuring autonomous vehicles serve all populations equitably\n\u2022 Environmental Impact: Balancing automation benefits with sustainability concerns\n\nSYNTHETIC HUMAN ETHICS\n\u2022 Consciousness and Sentience: Determining if artificial beings can experience suffering\n\u2022 Rights and Legal Status: Whether synthetic humans deserve human rights protections\n\u2022 Identity and Authenticity: Implications of creating beings indistinguishable from humans\n\u2022 Consent and Agency: Capacity of artificial beings to make autonomous decisions\n\u2022 Social Integration: Impact on human society and relationships\n\nEMERGING CHALLENGES\n\u2022 Deepfakes and Misinformation: AI-generated content threatening truth and trust\n\u2022 Surveillance Capitalism: Commercial exploitation of personal data through AI\n\u2022 Autonomous Weapons: Military applications raising humanitarian concerns\n\u2022 Social Credit Systems: AI-powered social control and behavior modification\n\u2022 Genetic and Neural Enhancement: AI-assisted human augmentation ethics\n\nREGULATORY FRAMEWORKS\n\u2022 European AI Act: Comprehensive regulation of AI systems by risk level\n\u2022 IEEE Standards: Technical standards for ethical AI design\n\u2022 Partnership on AI: Industry collaboration on responsible AI development\n\u2022 Asilomar AI Principles: Research community guidelines for beneficial AI\n\u2022 UN Guidelines: International frameworks for AI governance",
+        "user": "test@example.com",
+        "timestamp": 1762117865.6596334,
+        "confidence": 0.8,
+        "intent": "general_query",
+        "sources": 0,
+        "processing_time": 1.8,
+        "from_cache": false,
+        "safety_blocked": false,
+        "reasoning_steps": [],
+        "entities_detected": [],
+        "complexity_level": "simple",
+        "session_context_turns": 7,
+        "related_topics": [],
+        "follow_up_suggestions": [],
+        "response_time": 0.8691205978393555,
+        "server": "production"
+      },
+      "local": {
+        "turn_id": "turn_1762117866582",
+        "response": "Foundation for Responsible Robotics: The Foundation for Responsible Robotics (FRR) is a not for profit non-government organization that advocates for the ethical design and production of robots.\n\nRelated topics: Eike-Henner Kluge, Richard Huxtable, Moira Gunn",
+        "confidence": 1.0,
+        "intent": "informational",
+        "knowledge_sources": 5,
+        "processing_time": 0.0030019283294677734,
+        "safety_flags": false,
+        "from_cache": false,
+        "domain": "robotics",
+        "entities_found": [
+          {
+            "name": "Foundation for Responsible Robotics",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Eike-Henner Kluge",
+            "domain": "ethics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Richard Huxtable",
+            "domain": "ethics",
+            "confidence": 1.0
+          }
+        ],
+        "response_time": 2.058908462524414,
+        "server": "local"
+      }
+    },
+    {
+      "query": "Define machine learning",
+      "production": {
+        "id": "bb8f1f1d-1804-4d0a-b035-5597486b9e10",
+        "response": "MACHINE LEARNING - COMPREHENSIVE ANALYSIS\n\nOVERVIEW\nMachine Learning is a subset of artificial intelligence that enables computers to learn and make decisions from data without being explicitly programmed for every task. ML algorithms build mathematical models based on training data to make predictions or decisions.\n\nCORE TYPES\n\u2022 Supervised Learning: Learning with labeled examples (classification, regression)\n\u2022 Unsupervised Learning: Finding patterns in unlabeled data (clustering, dimensionality reduction)\n\u2022 Reinforcement Learning: Learning through interaction and feedback (rewards/penalties)\n\u2022 Semi-supervised Learning: Combining labeled and unlabeled data\n\nKEY ALGORITHMS\n\u2022 Linear Regression: Predicting continuous values\n\u2022 Decision Trees: Rule-based classification\n\u2022 Neural Networks: Brain-inspired learning systems\n\u2022 Support Vector Machines: Pattern recognition and classification\n\u2022 Random Forest: Ensemble of decision trees\n\u2022 K-Means Clustering: Grouping similar data points\n\nAPPLICATIONS\n\u2022 Image Recognition: Medical imaging, autonomous vehicles\n\u2022 Natural Language Processing: Translation, chatbots\n\u2022 Recommendation Systems: Netflix, Amazon, Spotify\n\u2022 Fraud Detection: Banking and financial services\n\u2022 Predictive Analytics: Business forecasting, maintenance\n\u2022 Healthcare: Drug discovery, diagnosis assistance",
+        "user": "test@example.com",
+        "timestamp": 1762117869.282253,
+        "confidence": 0.8,
+        "intent": "general_query",
+        "sources": 0,
+        "processing_time": 0.8,
+        "from_cache": false,
+        "safety_blocked": false,
+        "reasoning_steps": [],
+        "entities_detected": [],
+        "complexity_level": "simple",
+        "session_context_turns": 9,
+        "related_topics": [],
+        "follow_up_suggestions": [],
+        "response_time": 0.5560653209686279,
+        "server": "production"
+      },
+      "local": {
+        "turn_id": "turn_1762117870194",
+        "response": "Eureka Prometheus Project: The Eureka PROMETHEUS Project (PROgraMme for a European Traffic of Highest Efficiency and Unprecedented Safety, 1987\u20131995) was the largest R&D project ever in the field of driverless cars. It received \u20ac749,000,000 in funding from the EUREKA member states, and defined the state of the art of autonomous vehicles. Numerous universities and car manufacturers participated in this Pan-European project. In formulating the project, the automotive and industrial partners recognised the need for a wide range of skills and cooperated with over forty research establishments to create a programme consisting of seven sub-projects. Under a steering committee were three projects on industrial research and four on basic research. Industrial research PRO-CAR : Driver assistance by computer systems PRO-NET : Vehicle-to-vehicle communication PRO-ROAD : Vehicle-to-environment communication Basic Research PRO-ART : Methods and systems of artificial intelligence PRO-CHIP: Custom hardware for intelligent processing in vehicles PRO-COM : Methods and standards for communication PRO-GEN : Traffic scenario for new assessment and introduction of new systems In 1987, some UK Universities expressed concern that the industrial focus on the project neglected import traffic safety issues such as pedestrian protection. PRO-GEN project leader, the UK Government's Transport and Road Research Laboratory noted that research activities should 'in some way, further the aims of the vehicle companies.\n\nRelated topics: Remote Applications in Challenging Environments, Glen Stassen, Augustine of Hippo",
+        "confidence": 1.0,
+        "intent": "informational",
+        "knowledge_sources": 5,
+        "processing_time": 0.004193305969238281,
+        "safety_flags": false,
+        "from_cache": false,
+        "domain": "robotics",
+        "entities_found": [
+          {
+            "name": "Eureka Prometheus Project",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Remote Applications in Challenging Environments",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Glen Stassen",
+            "domain": "ethics",
+            "confidence": 1.0
+          }
+        ],
+        "response_time": 2.052541732788086,
+        "server": "local"
+      }
+    },
+    {
+      "query": "Explain autonomous systems",
+      "production": {
+        "id": "af5dddcc-23f3-492e-b99b-74a921bf547e",
+        "response": "ARTIFICIAL INTELLIGENCE - COMPREHENSIVE ANALYSIS\n\nFIELD OVERVIEW\nArtificial Intelligence encompasses computational systems designed to perform tasks that typically require human intelligence, including learning, reasoning, perception, and decision-making. AI systems can analyze data, recognize patterns, and make predictions or recommendations based on their training and algorithms.\n\nCORE TECHNOLOGIES\n\u2022 Machine Learning: Algorithms that improve performance through experience and data\n\u2022 Deep Learning: Multi-layered neural networks for complex pattern recognition\n\u2022 Natural Language Processing: Understanding and generating human language\n\u2022 Computer Vision: Image and video analysis for object recognition and scene understanding\n\u2022 Expert Systems: Knowledge-based systems for specialized domain expertise\n\u2022 Reinforcement Learning: Learning through trial and error with reward feedback\n\nAPPLICATION DOMAINS\n\u2022 Healthcare: Diagnostic imaging, drug discovery, and personalized treatment\n\u2022 Finance: Fraud detection, algorithmic trading, and risk assessment\n\u2022 Transportation: Autonomous vehicles and traffic optimization\n\u2022 Manufacturing: Predictive maintenance and quality control\n\u2022 Entertainment: Content recommendation and procedural generation\n\u2022 Communication: Language translation and virtual assistants\n\nCURRENT CAPABILITIES\n\u2022 Image recognition surpassing human accuracy in specific domains\n\u2022 Natural language understanding for conversational interfaces\n\u2022 Game-playing systems achieving superhuman performance\n\u2022 Predictive analytics for business intelligence and forecasting\n\u2022 Automated decision-making in structured environments\n\u2022 Pattern recognition in complex datasets\n\nLIMITATIONS AND CHALLENGES\n\u2022 Lack of general intelligence and common sense reasoning\n\u2022 Bias and fairness issues in training data and algorithms\n\u2022 Explainability and transparency in decision-making processes\n\u2022 Energy consumption and computational requirements\n\u2022 Ethical considerations in autonomous systems\n\u2022 Safety and reliability in critical applications",
+        "user": "test@example.com",
+        "timestamp": 1762117872.9341757,
+        "confidence": 0.8,
+        "intent": "general_query",
+        "sources": 0,
+        "processing_time": 1.1,
+        "from_cache": false,
+        "safety_blocked": false,
+        "reasoning_steps": [],
+        "entities_detected": [],
+        "complexity_level": "simple",
+        "session_context_turns": 10,
+        "related_topics": [],
+        "follow_up_suggestions": [],
+        "response_time": 0.5961811542510986,
+        "server": "production"
+      },
+      "local": {
+        "turn_id": "turn_1762117873849",
+        "response": "Robot combat: Robot combat is a type of robot competition in which custom-built machines fight using various methods to incapacitate each other. The machines have generally been remote-controlled vehicles rather than autonomous robots. Robot combat competitions have been made into television series, including Robot Wars in the United Kingdom and BattleBots in the United States. These shows were originally broadcast in the late 1990s to early 2000s and experienced revivals in the mid-2010s. As well as televised competitions, smaller robot combat events are staged for live audiences such as those organized by the Robot Fighting League. Robot builders are generally hobbyists and the complexity and cost of their machines can vary substantially. Robot combat uses weight classes, with the heaviest robots able to exert more power and destructive capabilities. The rules of competitions are designed for the safety of the builders, operators, and spectators while also providing an entertaining spectacle. Robot combat arenas are generally surrounded by a bulletproof screen. Competitor robots come in a variety of designs, with different strategies for winning fights. Robot designs typically incorporate weapons for attacking opponents, such as axes, hammers, flippers, and spinning devices. Rules almost always prohibit gun-like weapons as well as other strategies not conducive to the safety and enjoyment of participants and spectators.\n\nRelated topics: Roborace, Robofest, RoboCup",
+        "confidence": 1.0,
+        "intent": "informational",
+        "knowledge_sources": 5,
+        "processing_time": 0.005228281021118164,
+        "safety_flags": false,
+        "from_cache": false,
+        "domain": "robotics",
+        "entities_found": [
+          {
+            "name": "Robot combat",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Roborace",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Robofest",
+            "domain": "robotics",
+            "confidence": 1.0
+          }
+        ],
+        "response_time": 2.0554277896881104,
+        "server": "local"
+      }
+    },
+    {
+      "query": "Robot competitions",
+      "production": {
+        "id": "69a1e096-cf6b-4fe0-8c0f-4fd2b0e10f34",
+        "response": "\ud83e\udd16 That's a fun question! While robots and AI don't have human experiences like emotions or physical needs, it's entertaining to imagine what they might be like if they did. Science fiction has given us many examples of robots with personalities and preferences!",
+        "user": "test@example.com",
+        "timestamp": 1762117876.612222,
+        "confidence": 0.8,
+        "intent": "general_query",
+        "sources": 0,
+        "processing_time": 1.6,
+        "from_cache": false,
+        "safety_blocked": false,
+        "reasoning_steps": [],
+        "entities_detected": [],
+        "complexity_level": "simple",
+        "session_context_turns": 10,
+        "related_topics": [],
+        "follow_up_suggestions": [],
+        "response_time": 0.6141853332519531,
+        "server": "production"
+      },
+      "local": {
+        "turn_id": "turn_1762117877509",
+        "response": "Robot combat: Robot combat is a type of robot competition in which custom-built machines fight using various methods to incapacitate each other. The machines have generally been remote-controlled vehicles rather than autonomous robots. Robot combat competitions have been made into television series, including Robot Wars in the United Kingdom and BattleBots in the United States. These shows were originally broadcast in the late 1990s to early 2000s and experienced revivals in the mid-2010s. As well as televised competitions, smaller robot combat events are staged for live audiences such as those organized by the Robot Fighting League. Robot builders are generally hobbyists and the complexity and cost of their machines can vary substantially. Robot combat uses weight classes, with the heaviest robots able to exert more power and destructive capabilities. The rules of competitions are designed for the safety of the builders, operators, and spectators while also providing an entertaining spectacle. Robot combat arenas are generally surrounded by a bulletproof screen. Competitor robots come in a variety of designs, with different strategies for winning fights. Robot designs typically incorporate weapons for attacking opponents, such as axes, hammers, flippers, and spinning devices. Rules almost always prohibit gun-like weapons as well as other strategies not conducive to the safety and enjoyment of participants and spectators.\n\nRelated topics: RoboMaster, Robofest, RoboCup",
+        "confidence": 1.0,
+        "intent": "informational",
+        "knowledge_sources": 5,
+        "processing_time": 0.0017774105072021484,
+        "safety_flags": false,
+        "from_cache": false,
+        "domain": "robotics",
+        "entities_found": [
+          {
+            "name": "Robot combat",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "RoboMaster",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Robofest",
+            "domain": "robotics",
+            "confidence": 1.0
+          }
+        ],
+        "response_time": 2.0355465412139893,
+        "server": "local"
+      }
+    },
+    {
+      "query": "Ethics in AI",
+      "production": {
+        "id": "c0271cc5-c0e6-4e21-8012-b4face722810",
+        "response": "AI AND ROBOTICS ETHICS - COMPREHENSIVE ANALYSIS\n\nFUNDAMENTAL PRINCIPLES\nEthics in AI and robotics encompasses the moral principles governing the development, deployment, and interaction with artificial intelligence and autonomous systems. Key principles include beneficence (doing good), non-maleficence (avoiding harm), autonomy (respecting human agency), and justice (fair distribution of benefits and risks).\n\nAI ETHICS DOMAINS\n\u2022 Algorithmic Fairness: Ensuring AI systems don't discriminate based on race, gender, or other protected characteristics\n\u2022 Transparency and Explainability: Making AI decision-making processes understandable to humans\n\u2022 Privacy Protection: Safeguarding personal data used in AI training and operation\n\u2022 Accountability: Establishing clear responsibility chains for AI system outcomes\n\u2022 Human Oversight: Maintaining meaningful human control over critical decisions\n\nROBOT ETHICS CONSIDERATIONS\n\u2022 Autonomous Decision-Making: How robots should make moral choices in complex situations\n\u2022 Human-Robot Relationships: Appropriate boundaries for emotional and physical interaction\n\u2022 Robot Rights: Whether advanced robots deserve moral consideration or legal protections\n\u2022 Safety and Reliability: Ensuring robotic systems operate safely in human environments\n\u2022 Deception and Anthropomorphism: Ethics of making robots appear more human-like\n\nAUTONOMOUS VEHICLE ETHICS\n\u2022 Trolley Problem Scenarios: Programming decisions about who to save in unavoidable accidents\n\u2022 Liability and Responsibility: Determining fault when autonomous vehicles cause harm\n\u2022 Data Collection: Privacy implications of vehicle sensors and tracking systems\n\u2022 Accessibility: Ensuring autonomous vehicles serve all populations equitably\n\u2022 Environmental Impact: Balancing automation benefits with sustainability concerns\n\nSYNTHETIC HUMAN ETHICS\n\u2022 Consciousness and Sentience: Determining if artificial beings can experience suffering\n\u2022 Rights and Legal Status: Whether synthetic humans deserve human rights protections\n\u2022 Identity and Authenticity: Implications of creating beings indistinguishable from humans\n\u2022 Consent and Agency: Capacity of artificial beings to make autonomous decisions\n\u2022 Social Integration: Impact on human society and relationships\n\nEMERGING CHALLENGES\n\u2022 Deepfakes and Misinformation: AI-generated content threatening truth and trust\n\u2022 Surveillance Capitalism: Commercial exploitation of personal data through AI\n\u2022 Autonomous Weapons: Military applications raising humanitarian concerns\n\u2022 Social Credit Systems: AI-powered social control and behavior modification\n\u2022 Genetic and Neural Enhancement: AI-assisted human augmentation ethics\n\nREGULATORY FRAMEWORKS\n\u2022 European AI Act: Comprehensive regulation of AI systems by risk level\n\u2022 IEEE Standards: Technical standards for ethical AI design\n\u2022 Partnership on AI: Industry collaboration on responsible AI development\n\u2022 Asilomar AI Principles: Research community guidelines for beneficial AI\n\u2022 UN Guidelines: International frameworks for AI governance",
+        "user": "test@example.com",
+        "timestamp": 1762117880.2575622,
+        "confidence": 0.8,
+        "intent": "general_query",
+        "sources": 0,
+        "processing_time": 1.0,
+        "from_cache": false,
+        "safety_blocked": false,
+        "reasoning_steps": [],
+        "entities_detected": [],
+        "complexity_level": "simple",
+        "session_context_turns": 10,
+        "related_topics": [],
+        "follow_up_suggestions": [],
+        "response_time": 0.6072750091552734,
+        "server": "production"
+      },
+      "local": {
+        "turn_id": "turn_1762117881167",
+        "response": "Nikolaus Knoepffler: Nikolaus Knoepffler (born 1962 in Miltenberg, Bavaria) is a philosopher and theologian. He currently holds the Chair of Applied Ethics and is the director of the Ethics Center (Ethikzentrum) at the Friedrich Schiller University of Jena, Germany. Knoepffler is founder and president of the Global Applied Ethics Institute, a consortium mainly involved with research on bioethics and business ethics.\n\nRelated topics: Eike-Henner Kluge, Richard Huxtable, Matti H\u00e4yry",
+        "confidence": 1.0,
+        "intent": "informational",
+        "knowledge_sources": 5,
+        "processing_time": 0.0039653778076171875,
+        "safety_flags": false,
+        "from_cache": false,
+        "domain": "ethics",
+        "entities_found": [
+          {
+            "name": "Nikolaus Knoepffler",
+            "domain": "ethics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Eike-Henner Kluge",
+            "domain": "ethics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Richard Huxtable",
+            "domain": "ethics",
+            "confidence": 1.0
+          }
+        ],
+        "response_time": 2.046276569366455,
+        "server": "local"
+      }
+    },
+    {
+      "query": "Future of robotics",
+      "production": {
+        "id": "dfd39b1b-9c0d-42cc-a83f-25c6a666593c",
+        "response": "ROBOTICS - COMPREHENSIVE FIELD ANALYSIS\n\nFIELD DEFINITION\nRobotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.\n\nCORE TECHNOLOGIES\n\u2022 Mechanical Systems: Actuators, joints, linkages, and structural components\n\u2022 Control Systems: Feedback loops, sensors, and real-time processing\n\u2022 Artificial Intelligence: Machine learning, computer vision, and decision-making\n\u2022 Power Systems: Batteries, fuel cells, and energy management\n\u2022 Communication: Wireless protocols, networking, and human-machine interfaces\n\u2022 Materials Science: Lightweight composites, smart materials, and durability\n\nMAJOR APPLICATION DOMAINS\n\u2022 Industrial Automation: Manufacturing, assembly, and quality control systems\n\u2022 Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices\n\u2022 Service Robotics: Cleaning, security, and personal assistance applications\n\u2022 Exploration Robotics: Space missions, deep-sea research, and hazardous environments\n\u2022 Military Applications: Reconnaissance, bomb disposal, and combat support\n\u2022 Agricultural Systems: Precision farming, harvesting, and crop monitoring\n\nEMERGING TRENDS\n\u2022 Collaborative robots (cobots) working alongside humans\n\u2022 Swarm robotics for coordinated multi-robot systems\n\u2022 Soft robotics using flexible materials and bio-inspired designs\n\u2022 Autonomous vehicles and delivery systems\n\u2022 Brain-computer interfaces for direct neural control\n\u2022 Quantum sensors for enhanced perception capabilities\n\nCHALLENGES AND LIMITATIONS\n\u2022 Safety and reliability in human-robot interaction\n\u2022 Ethical considerations in autonomous decision-making\n\u2022 Cost-effectiveness for widespread adoption\n\u2022 Technical complexity in unstructured environments\n\u2022 Regulatory frameworks for autonomous systems",
+        "user": "test@example.com",
+        "timestamp": 1762117883.886402,
+        "confidence": 0.8,
+        "intent": "general_query",
+        "sources": 0,
+        "processing_time": 1.3,
+        "from_cache": false,
+        "safety_blocked": false,
+        "reasoning_steps": [],
+        "entities_detected": [],
+        "complexity_level": "simple",
+        "session_context_turns": 10,
+        "related_topics": [],
+        "follow_up_suggestions": [],
+        "response_time": 0.5754227638244629,
+        "server": "production"
+      },
+      "local": {
+        "turn_id": "turn_1762117884793",
+        "response": "Roborace: Roborace was a competition with autonomously driving, electrically powered vehicles. Founded in 2015 by Denis Sverdlov, it aimed to be the first global championship for autonomous cars. From 2017 to 2019, the official CEO was 2016\u201317 Formula E champion, Lucas Di Grassi, who later became a member of Roborace\u2019s supervisory board. The series tested their technology and race formats at FIA Formula E Championship events during 2016\u20132018. In 2019 Roborace organized Season Alpha, which consisted of 4 trial racing events with several independent teams competing against each other for the first time. In 2020\u201321 Roborace held Season Beta with 7 competing teams. All teams utilized the same chassis and powertrain, but they had to develop their own real-time computing algorithms and artificial intelligence technologies. In May 2022, Arrival, the owner of Roborace, confirmed that they were no longer continuing the Roborace programme, but that they were hoping to find alternative funding. In February 2024, after getting its stock delisted from the Nasdaq, Arrival's UK division entered administration, with future plans of a sale of Arrival and all of its affiliated assets.\n\nRelated topics: Midwestern Robotics Design Competition, Infinite Recharge (2021), Ars Electronica",
+        "confidence": 1.0,
+        "intent": "informational",
+        "knowledge_sources": 5,
+        "processing_time": 0.004038333892822266,
+        "safety_flags": false,
+        "from_cache": false,
+        "domain": "robotics",
+        "entities_found": [
+          {
+            "name": "Roborace",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Midwestern Robotics Design Competition",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Infinite Recharge (2021)",
+            "domain": "robotics",
+            "confidence": 1.0
+          }
+        ],
+        "response_time": 2.047311544418335,
+        "server": "local"
+      }
+    },
+    {
+      "query": "Safety in robotics",
+      "production": {
+        "id": "35805fca-62bf-41c0-8586-f16bb1f86437",
+        "response": "ROBOTICS - COMPREHENSIVE FIELD ANALYSIS\n\nFIELD DEFINITION\nRobotics is an interdisciplinary engineering field that integrates mechanical engineering, electrical engineering, computer science, and artificial intelligence to design, construct, and operate autonomous machines capable of performing tasks traditionally requiring human intervention.\n\nCORE TECHNOLOGIES\n\u2022 Mechanical Systems: Actuators, joints, linkages, and structural components\n\u2022 Control Systems: Feedback loops, sensors, and real-time processing\n\u2022 Artificial Intelligence: Machine learning, computer vision, and decision-making\n\u2022 Power Systems: Batteries, fuel cells, and energy management\n\u2022 Communication: Wireless protocols, networking, and human-machine interfaces\n\u2022 Materials Science: Lightweight composites, smart materials, and durability\n\nMAJOR APPLICATION DOMAINS\n\u2022 Industrial Automation: Manufacturing, assembly, and quality control systems\n\u2022 Medical Robotics: Surgical assistance, rehabilitation, and prosthetic devices\n\u2022 Service Robotics: Cleaning, security, and personal assistance applications\n\u2022 Exploration Robotics: Space missions, deep-sea research, and hazardous environments\n\u2022 Military Applications: Reconnaissance, bomb disposal, and combat support\n\u2022 Agricultural Systems: Precision farming, harvesting, and crop monitoring\n\nEMERGING TRENDS\n\u2022 Collaborative robots (cobots) working alongside humans\n\u2022 Swarm robotics for coordinated multi-robot systems\n\u2022 Soft robotics using flexible materials and bio-inspired designs\n\u2022 Autonomous vehicles and delivery systems\n\u2022 Brain-computer interfaces for direct neural control\n\u2022 Quantum sensors for enhanced perception capabilities\n\nCHALLENGES AND LIMITATIONS\n\u2022 Safety and reliability in human-robot interaction\n\u2022 Ethical considerations in autonomous decision-making\n\u2022 Cost-effectiveness for widespread adoption\n\u2022 Technical complexity in unstructured environments\n\u2022 Regulatory frameworks for autonomous systems",
+        "user": "test@example.com",
+        "timestamp": 1762117887.551111,
+        "confidence": 0.8,
+        "intent": "general_query",
+        "sources": 0,
+        "processing_time": 1.5,
+        "from_cache": false,
+        "safety_blocked": false,
+        "reasoning_steps": [],
+        "entities_detected": [],
+        "complexity_level": "simple",
+        "session_context_turns": 10,
+        "related_topics": [],
+        "follow_up_suggestions": [],
+        "response_time": 0.6086888313293457,
+        "server": "production"
+      },
+      "local": {
+        "turn_id": "turn_1762117888461",
+        "response": "Robot combat: Robot combat is a type of robot competition in which custom-built machines fight using various methods to incapacitate each other. The machines have generally been remote-controlled vehicles rather than autonomous robots. Robot combat competitions have been made into television series, including Robot Wars in the United Kingdom and BattleBots in the United States. These shows were originally broadcast in the late 1990s to early 2000s and experienced revivals in the mid-2010s. As well as televised competitions, smaller robot combat events are staged for live audiences such as those organized by the Robot Fighting League. Robot builders are generally hobbyists and the complexity and cost of their machines can vary substantially. Robot combat uses weight classes, with the heaviest robots able to exert more power and destructive capabilities. The rules of competitions are designed for the safety of the builders, operators, and spectators while also providing an entertaining spectacle. Robot combat arenas are generally surrounded by a bulletproof screen. Competitor robots come in a variety of designs, with different strategies for winning fights. Robot designs typically incorporate weapons for attacking opponents, such as axes, hammers, flippers, and spinning devices. Rules almost always prohibit gun-like weapons as well as other strategies not conducive to the safety and enjoyment of participants and spectators.\n\nRelated topics: Eureka Prometheus Project, Nuro, Raymond Goertz",
+        "confidence": 1.0,
+        "intent": "informational",
+        "knowledge_sources": 5,
+        "processing_time": 0.002062082290649414,
+        "safety_flags": false,
+        "from_cache": false,
+        "domain": "robotics",
+        "entities_found": [
+          {
+            "name": "Robot combat",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Eureka Prometheus Project",
+            "domain": "robotics",
+            "confidence": 1.0
+          },
+          {
+            "name": "Nuro",
+            "domain": "robotics",
+            "confidence": 1.0
+          }
+        ],
+        "response_time": 2.050905227661133,
+        "server": "local"
+      }
+    }
+  ]
+}
