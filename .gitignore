@@ -1,3 +1,7 @@
+# Radeon SML AI - Comprehensive .gitignore
+# V3 Ready: Enterprise-grade exclusions for AI/ML platform
+
+# === Python ===
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -20,6 +24,7 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -49,7 +54,7 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# Virtual environments
+# Virtual environments (CRITICAL - never commit these)
 venv/
 .venv/
 env/
@@ -67,47 +72,93 @@ venv.bak/
 .env.development
 .env.*
 
+# === Node.js & Frontend ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+package-lock.json
+yarn.lock
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+.nuxt/
+.cache/
+.parcel-cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# === Development Tools ===
 # IDEs and editors
 .vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 .idea/
 *.swp
 *.swo
 *~
+*.sublime-workspace
+*.sublime-project
 
-# OS generated files
+# === Operating Systems ===
+# macOS
 .DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
 ehthumbs.db
 Thumbs.db
+Thumbs.db:encryptable
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.stackdump
 
-# Node.js
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-yarn.lock
+# Linux
+.directory
+.Trash-*
 
-# Next.js
-.next/
-out/
-build/
-
-# Deployment
+# === Cloud & Deployment ===
 .netlify/
 .vercel/
+.gcp/
+.aws/
 
-# Database files
+# Kubernetes
+*.kubeconfig
+kube-config
+
+# Docker
+.dockerignore
+Dockerfile.dev
+docker-compose.override.yml
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# === Database ===
 *.db
 *.sqlite
 *.sqlite3
 postgres_password.txt
 knowledge_db_credentials.txt
 
-# AI/ML model files
+# === AI/ML Specific ===
+# Model files (large binary files)
 *.pkl
 *.pickle
 *.h5
@@ -116,47 +167,109 @@ knowledge_db_credentials.txt
 *.pth
 *.onnx
 *.pb
+*.bin
+*.safetensors
+*.model
+*.joblib
+
+# Model directories
 model/
 models/
 checkpoints/
 
-# Large data files
+# ML Experiment tracking
+mlruns/
+mlartifacts/
+wandb/
+runs/
+lightning_logs/
+experiments/
+outputs/
+
+# === Data Files (selective exclusion) ===
+# Large datasets
 *.csv
-*.json
-*.xml
-*.txt
+*.parquet
+*.hdf5
+*.feather
+
+# Raw data files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Keep essential project files
 !requirements.txt
 !README.txt
 !README.md
 !LICENSE.txt
 !setup.py
 !pyproject.toml
+!package.json
+!yarn.lock
+!Pipfile.lock
 
-# Logs
+# Keep configuration templates
+!config.template.json
+!settings.template.json
+!.env.example
+
+# Keep documentation
+!docs/**/*.md
+!docs/**/*.txt
+!docs/**/*.json
+
+# === Logs & Temporary Files ===
 *.log
 logs/
-
-# Temporary files
 *.tmp
 *.temp
 *.bak
 *.swp
 *.swo
 
-# Text generation WebUI
-text-generation-webui/
+# === Security & Credentials ===
+# API Keys and secrets
+*.key
+*.pem
+*.crt
+*.csr
+secrets.json
+credentials.json
+service-account*.json
 
-# Project specific
+# SSH keys
+id_rsa
+id_rsa.pub
+id_ecdsa
+id_ecdsa.pub
+id_ed25519
+id_ed25519.pub
+
+# === Project Specific ===
+# Text generation WebUI (large model files)
+text-generation-webui/models/
+text-generation-webui/characters/
+text-generation-webui/presets/
+text-generation-webui/training/
+text-generation-webui/logs/
+
+# Local data directories
 data/badformat/
+data/local/
+data/temp/
+data/cache/
+
+# Legacy project directory
 radeon-ai/
+
+# Generated files
 crawler_output.txt
 DxDiag.txt
 dxdiag_gpu.txt
 
-# Docker
-.dockerignore
-Dockerfile.dev
-
+# === Python Tools ===
 # Jupyter Notebook
 .ipynb_checkpoints
 
@@ -167,39 +280,67 @@ ipython_config.py
 # pyenv
 .python-version
 
-# pipenv
-Pipfile.lock
-
 # Poetry
 poetry.lock
 
-# Celery stuff
+# Celery
 celerybeat-schedule
 celerybeat.pid
 
-# SageMath parsed files
+# SageMath
 *.sage.py
 
-# Spyder project settings
+# Spyder
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope
 .ropeproject
 
-# mkdocs documentation
+# mkdocs
 /site
 
-# mypy
+# Type checkers
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
-# Pyre type checker
 .pyre/
-
-# pytype static type analyzer
 .pytype/
 
-# Cython debug symbols
+# Cython
 cython_debug/
+
+# === Cache Directories ===
+.cache/
+cache/
+tmp/
+temp/
+
+# === Test Outputs ===
+test_output/
+test_results/
+coverage/
+
+# === Local Overrides ===
+config.local.json
+settings.local.json
+local_settings.py
+
+# === V3 Platform Additions ===
+# Microservices
+.kubernetes/
+.helm/
+
+# API Documentation
+api-docs/generated/
+
+# Performance logs
+performance_logs/
+metrics/
+
+# Feature flags
+feature-flags.local.json
+
+# Plugin development
+plugins/local/
+extensions/local/
