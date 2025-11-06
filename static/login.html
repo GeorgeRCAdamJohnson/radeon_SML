@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radeon AI - Login</title>
+    <meta name="google-signin-client_id" content="960026900565-8ntpodmp8ceprohgqgsg9c1g3dchr7q7.apps.googleusercontent.com">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .container { max-width: 400px; margin: 0 auto; }
+        .logo { font-size: 24px; font-weight: bold; margin-bottom: 30px; }
+        #g_id_onload { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🤖 Radeon AI Knowledge Base</div>
+        <p>Sign in with your Google account to access the AI assistant</p>
+        
+        <div id="g_id_onload"
+             data-client_id="960026900565-8ntpodmp8ceprohgqgsg9c1g3dchr7q7.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse"
+             data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin" data-type="standard"></div>
+    </div>
+
+    <script>
+        function handleCredentialResponse(response) {
+            localStorage.setItem('google_token', response.credential);
+            window.location.href = '/';
+        }
+
+        if (localStorage.getItem('google_token')) {
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>

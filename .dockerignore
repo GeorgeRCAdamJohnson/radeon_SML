@@ -1,0 +1,17 @@
+venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+README.md
+scripts/
+data/cache/
+data/logs/
+data/wikipedia/
+tests/
+src/react/.next/
+src/react/node_modules/
+src/react/src/
+src/react/pages/
+src/react/public/
+docs/

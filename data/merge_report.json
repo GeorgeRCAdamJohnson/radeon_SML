@@ -1,0 +1,232 @@
+{
+  "summary": {
+    "total_articles": 186,
+    "domain_counts": {
+      "robotics": 24,
+      "ai": 26,
+      "automation": 20,
+      "advanced_tech": 18,
+      "engineering": 17,
+      "industry": 16,
+      "ethics": 45,
+      "scifi_ethics": 14,
+      "academic": 6
+    },
+    "top_10_by_word_count": [
+      {
+        "title": "Fairness (machine learning)",
+        "word_count": 8607,
+        "domain": "ethics",
+        "url": "https://en.wikipedia.org/wiki/Fairness%20%28machine%20learning%29"
+      },
+      {
+        "title": "Fairness (machine learning)",
+        "word_count": 8607,
+        "domain": "ethics",
+        "url": "https://en.wikipedia.org/wiki/Algorithmic%20fairness"
+      },
+      {
+        "title": "Proportional–integral–derivative controller",
+        "word_count": 8159,
+        "domain": "automation",
+        "url": "https://en.wikipedia.org/wiki/PID%20controller"
+      },
+      {
+        "title": "Virtual reality",
+        "word_count": 7988,
+        "domain": "advanced_tech",
+        "url": "https://en.wikipedia.org/wiki/Virtual%20reality"
+      },
+      {
+        "title": "Surveillance",
+        "word_count": 7948,
+        "domain": "ethics",
+        "url": "https://en.wikipedia.org/wiki/Surveillance"
+      },
+      {
+        "title": "Robotics",
+        "word_count": 7913,
+        "domain": "robotics",
+        "url": "https://en.wikipedia.org/wiki/Robotics"
+      },
+      {
+        "title": "Brain–computer interface",
+        "word_count": 7853,
+        "domain": "ethics",
+        "url": "https://en.wikipedia.org/wiki/Brain-computer%20interface"
+      },
+      {
+        "title": "The Matrix",
+        "word_count": 7830,
+        "domain": "scifi_ethics",
+        "url": "https://en.wikipedia.org/wiki/The%20Matrix"
+      },
+      {
+        "title": "Black Mirror",
+        "word_count": 7782,
+        "domain": "scifi_ethics",
+        "url": "https://en.wikipedia.org/wiki/Black%20Mirror"
+      },
+      {
+        "title": "Quantum computing",
+        "word_count": 7781,
+        "domain": "advanced_tech",
+        "url": "https://en.wikipedia.org/wiki/Quantum%20computing"
+      }
+    ],
+    "likely_partial_count": 8
+  },
+  "likely_partial_samples": [
+    {
+      "title": "Facial recognition",
+      "word_count": 120,
+      "domain": "ai",
+      "url": "https://en.wikipedia.org/wiki/Facial%20recognition"
+    },
+    {
+      "title": "Ex Machina",
+      "word_count": 220,
+      "domain": "scifi_ethics",
+      "url": "https://en.wikipedia.org/wiki/Ex%20Machina"
+    },
+    {
+      "title": "arXiv: Raising AI Ethics Awareness through an AI Ethics Quiz for Software\n  Practitioners",
+      "word_count": 259,
+      "domain": "academic",
+      "url": "https://arxiv.org/search/?query=AI+ethics"
+    },
+    {
+      "title": "arXiv: Big data ethics, machine ethics or information ethics? Navigating the\n  maze of applied ethics in IT",
+      "word_count": 196,
+      "domain": "academic",
+      "url": "https://arxiv.org/search/?query=AI+ethics"
+    },
+    {
+      "title": "arXiv: E-LENS: User Requirements-Oriented AI Ethics Assurance",
+      "word_count": 192,
+      "domain": "academic",
+      "url": "https://arxiv.org/search/?query=AI+ethics"
+    },
+    {
+      "title": "arXiv: Big data ethics, machine ethics or information ethics? Navigating the\n  maze of applied ethics in IT",
+      "word_count": 196,
+      "domain": "academic",
+      "url": "https://arxiv.org/search/?query=machine+ethics"
+    },
+    {
+      "title": "arXiv: Reinforcement Learning and Machine ethics:a systematic review",
+      "word_count": 147,
+      "domain": "academic",
+      "url": "https://arxiv.org/search/?query=machine+ethics"
+    },
+    {
+      "title": "arXiv: A Bibliometric View of AI Ethics Development",
+      "word_count": 106,
+      "domain": "academic",
+      "url": "https://arxiv.org/search/?query=machine+ethics"
+    }
+  ],
+  "rechecks": [
+    {
+      "title": "Facial recognition",
+      "original_word_count": 120,
+      "url": "https://en.wikipedia.org/wiki/Facial%20recognition",
+      "html_status": 200,
+      "recheck_word_count_html": 120
+    },
+    {
+      "title": "Ex Machina",
+      "original_word_count": 220,
+      "url": "https://en.wikipedia.org/wiki/Ex%20Machina",
+      "html_status": 200,
+      "recheck_word_count_html": 220
+    },
+    {
+      "title": "arXiv: Raising AI Ethics Awareness through an AI Ethics Quiz for Software\n  Practitioners",
+      "original_word_count": 259,
+      "url": "https://arxiv.org/search/?query=AI+ethics",
+      "html_status": 403,
+      "summary_status": 403
+    },
+    {
+      "title": "arXiv: Big data ethics, machine ethics or information ethics? Navigating the\n  maze of applied ethics in IT",
+      "original_word_count": 196,
+      "url": "https://arxiv.org/search/?query=AI+ethics",
+      "html_status": 403,
+      "summary_status": 403
+    },
+    {
+      "title": "arXiv: E-LENS: User Requirements-Oriented AI Ethics Assurance",
+      "original_word_count": 192,
+      "url": "https://arxiv.org/search/?query=AI+ethics",
+      "html_status": 403,
+      "summary_status": 504
+    },
+    {
+      "title": "arXiv: Big data ethics, machine ethics or information ethics? Navigating the\n  maze of applied ethics in IT",
+      "original_word_count": 196,
+      "url": "https://arxiv.org/search/?query=machine+ethics",
+      "html_status": 403,
+      "summary_status": 403
+    },
+    {
+      "title": "arXiv: Reinforcement Learning and Machine ethics:a systematic review",
+      "original_word_count": 147,
+      "url": "https://arxiv.org/search/?query=machine+ethics",
+      "html_status": 403,
+      "summary_status": 504
+    },
+    {
+      "title": "arXiv: A Bibliometric View of AI Ethics Development",
+      "original_word_count": 106,
+      "url": "https://arxiv.org/search/?query=machine+ethics",
+      "html_status": 403,
+      "summary_status": 504
+    }
+  ],
+  "pseudonym_suggestions": {
+    "Facial recognition": [
+      "Facial recognition",
+      "facial recognition"
+    ],
+    "Ex Machina": [
+      "Ex Machina",
+      "ex machina"
+    ],
+    "arXiv: Raising AI Ethics Awareness through an AI Ethics Quiz for Software\n  Practitioners": [
+      "arXiv: Raising AI Ethics Awareness through an AI Ethics Quiz for Software\n  Practitioners",
+      "arXiv: Raising AI",
+      "arxiv: raising ai ethics awareness through an ai ethics quiz for software\n  practitioners",
+      "arXiv Raising AI Ethics Awareness through an AI Ethics Quiz for Software\n  Practitioners"
+    ],
+    "arXiv: Big data ethics, machine ethics or information ethics? Navigating the\n  maze of applied ethics in IT": [
+      "arXiv: Big data ethics, machine ethics or information ethics? Navigating the\n  maze of applied ethics in IT",
+      "arXiv: Big data",
+      "arxiv: big data ethics, machine ethics or information ethics? navigating the\n  maze of applied ethics in it",
+      "arXiv Big data ethics machine ethics or information ethics Navigating the\n  maze of applied ethics in IT"
+    ],
+    "arXiv: E-LENS: User Requirements-Oriented AI Ethics Assurance": [
+      "arXiv: E LENS: User Requirements Oriented AI Ethics Assurance",
+      "arXiv: E-LENS: User",
+      "arxiv: e-lens: user requirements-oriented ai ethics assurance",
+      "arXiv ELENS User RequirementsOriented AI Ethics Assurance"
+    ],
+    "arXiv: Reinforcement Learning and Machine ethics:a systematic review": [
+      "arXiv: Reinforcement Learning and Machine ethics:a systematic review",
+      "arXiv: Reinforcement Learning",
+      "arxiv: reinforcement learning and machine ethics:a systematic review",
+      "arXiv Reinforcement Learning and Machine ethicsa systematic review"
+    ],
+    "arXiv: A Bibliometric View of AI Ethics Development": [
+      "arXiv: A Bibliometric View of AI Ethics Development",
+      "arXiv: A Bibliometric",
+      "arxiv: a bibliometric view of ai ethics development",
+      "arXiv A Bibliometric View of AI Ethics Development"
+    ]
+  },
+  "notes": {
+    "heuristic_threshold_word_count": 300,
+    "recheck_limit": 8,
+    "advice": "For titles where HTML fetch returns > summary word count, consider replacing stored content with HTML-extracted text or rerunning crawler with higher timeout and different user-agent. For titles returning 404, try pseudonym suggestions or query the Wikipedia search API."
+  }
+}

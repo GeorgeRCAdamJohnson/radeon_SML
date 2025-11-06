@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "scientists": {
+      "Isaac Asimov": ["enhanced_robotics_knowledge.json"],
+      "Alan Turing": ["enhanced_robotics_knowledge.json"]
+    },
+    "theories": {
+      "Three Laws of Robotics": ["enhanced_robotics_knowledge.json"],
+      "Turing Test": ["enhanced_robotics_knowledge.json"]
+    },
+    "ai_characters": {
+      "HAL 9000": ["enhanced_robotics_knowledge.json"]
+    },
+    "android_characters": {
+      "Data": ["enhanced_robotics_knowledge.json"]
+    },
+    "human_characters": {
+      "Amuro Ray": ["enhanced_robotics_knowledge.json"]
+    },
+    "mobile_suits": {
+      "RX-78-2 Gundam": ["enhanced_robotics_knowledge.json"]
+    },
+    "franchises": {
+      "Star Trek": ["enhanced_robotics_knowledge.json"],
+      "Mobile Suit Gundam": ["enhanced_robotics_knowledge.json"],
+      "2001: A Space Odyssey": ["enhanced_robotics_knowledge.json"]
+    },
+    "technologies": {
+      "beam rifle": ["enhanced_robotics_knowledge.json"],
+      "psycho-frame": ["enhanced_robotics_knowledge.json"],
+      "Newtype": ["enhanced_robotics_knowledge.json"],
+      "positronic brain": ["enhanced_robotics_knowledge.json"]
+    },
+    "concepts": {
+      "Newtype": ["enhanced_robotics_knowledge.json"],
+      "AI alignment": ["enhanced_robotics_knowledge.json"],
+      "machine consciousness": ["enhanced_robotics_knowledge.json"]
+    }
+  },
+  "relationships": {
+    "pilots": [
+      {"pilot": "Amuro Ray", "mobile_suit": "RX-78-2 Gundam"}
+    ],
+    "appears_in": [
+      {"character": "HAL 9000", "franchise": "2001: A Space Odyssey"},
+      {"character": "Data", "franchise": "Star Trek"},
+      {"character": "Amuro Ray", "franchise": "Mobile Suit Gundam"}
+    ]
+  },
+  "tags": {
+    "artificial_intelligence": ["enhanced_robotics_knowledge.json"],
+    "android": ["enhanced_robotics_knowledge.json"],
+    "mecha": ["enhanced_robotics_knowledge.json"],
+    "space_opera": ["enhanced_robotics_knowledge.json"],
+    "dystopian": ["enhanced_robotics_knowledge.json"],
+    "utopian": ["enhanced_robotics_knowledge.json"],
+    "malfunction": ["enhanced_robotics_knowledge.json"],
+    "newtype": ["enhanced_robotics_knowledge.json"],
+    "beam_weapons": ["enhanced_robotics_knowledge.json"],
+    "emotion_quest": ["enhanced_robotics_knowledge.json"],
+    "theoretical": ["enhanced_robotics_knowledge.json"],
+    "ethics": ["enhanced_robotics_knowledge.json"],
+    "ai_safety": ["enhanced_robotics_knowledge.json"],
+    "research": ["enhanced_robotics_knowledge.json"],
+    "consciousness": ["enhanced_robotics_knowledge.json"],
+    "science_fiction": ["enhanced_robotics_knowledge.json"]
+  },
+  "domains": {
+    "Sci-Fi Ethics": ["enhanced_robotics_knowledge.json"],
+    "Sci-Fi Mecha": ["enhanced_robotics_knowledge.json"],
+    "Sci-Fi Characters": ["enhanced_robotics_knowledge.json"],
+    "Sci-Fi Concepts": ["enhanced_robotics_knowledge.json"],
+    "robotics": ["enhanced_robotics_knowledge.json"]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "d41b768f-daca-4c80-bff5-5d6e74b650d0",
+  "response": "Comprehensive analysis of technology covering technical foundations, applications, and impact.",
+  "timestamp": 1761357576.8538566,
+  "confidence": 0.8625,
+  "intent": "factual",
+  "sources": 4,
+  "processing_time": 2.0,
+  "from_cache": false,
+  "safety_blocked": false,
+  "reasoning_steps": [
+    {
+      "type": "knowledge_retrieval",
+      "content": "Retrieved 0 relevant sources",
+      "confidence": 0.9
+    },
+    {
+      "type": "logical_analysis",
+      "content": "Comprehensive analysis of technology covering technical foundations, applications, and impact.",
+      "confidence": 0.8
+    },
+    {
+      "type": "synthesis",
+      "content": "Comprehensive analysis of technology covering technical foundations, applications, and impact.",
+      "confidence": 0.85
+    },
+    {
+      "type": "validation",
+      "content": "Reasoning validated with confidence: 0.90",
+      "confidence": 0.9
+    }
+  ],
+  "entities_detected": [],
+  "complexity_level": "simple",
+  "session_context_turns": 1,
+  "related_topics": [
+    "Background Information",
+    "Related Technologies",
+    "Examples"
+  ],
+  "follow_up_suggestions": [
+    "How does this technology work?"
+  ]
+}

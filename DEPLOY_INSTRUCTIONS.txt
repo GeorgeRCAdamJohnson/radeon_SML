@@ -1,0 +1,20 @@
+GOOGLE CLOUD DEPLOYMENT INSTRUCTIONS
+
+1. Open Command Prompt (cmd)
+2. Navigate to your project folder:
+   cd "C:\Users\biges\OneDrive\Desktop\amd_ai\radeon-ai"
+
+3. Create project:
+   gcloud projects create radeon-ai-kb-2024
+
+4. Set project:
+   gcloud config set project radeon-ai-kb-2024
+
+5. Enable services:
+   gcloud services enable run.googleapis.com
+   gcloud services enable cloudbuild.googleapis.com
+
+6. Deploy app:
+   gcloud run deploy radeon-ai --source . --platform managed --region us-central1 --allow-unauthenticated
+
+Your app will be live at the URL shown after deployment!
